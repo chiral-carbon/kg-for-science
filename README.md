@@ -8,14 +8,35 @@ We use Llama-3 70B for structured information extraction.
 
 ## Installation 
 
+Clone and navigate to the repository:
+```
+git clone https://github.com/chiral-carbon/kg-for-science.git
+cd kg-for-science
+```
 Create a conda or virtual environment:
 ```
 conda create --name kg4s python=3.11
+```
+Activate the environment:
+```
+conda activate kg4s
 ```
 Install the dependencies:
 ```
 pip install -r requirements.txt
 ```
+Download the spacy model for paragraph splitting:
+```
+python -m spacy download en_core_web_sm
+```
+Set up code formatting and pre-commit hooks:
+```
+black .
+
+pre-commit install
+```
+
+## Running the tool
 
 Then, run `scripts/data_collect.py` to download papers for arXiv:
 ```

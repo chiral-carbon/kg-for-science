@@ -1,5 +1,6 @@
 from typing import Dict
 
+
 def classify_predictions(gold: dict, pred: dict, union=False) -> Dict[str, float]:
     """
     Returns true positives, false positives, and false negatives for one example
@@ -17,9 +18,9 @@ def classify_predictions(gold: dict, pred: dict, union=False) -> Dict[str, float
         return n_tp, n_fp, n_fn
 
     for tag in set(gold.keys()).union(pred.keys()):
-        gold_phrases = set(gold.get(tag, []))   
+        gold_phrases = set(gold.get(tag, []))
         pred_phrases = set(pred.get(tag, []))
-            
+
         n_tp += len(gold_phrases & pred_phrases)
         n_fp += len(pred_phrases - gold_phrases)
         n_fn += len(gold_phrases - pred_phrases)

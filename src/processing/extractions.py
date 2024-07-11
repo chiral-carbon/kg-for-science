@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 from collections import defaultdict
 from typing import Dict, List
 
+
 # TODO: review this function
 def extract_all_tagged_phrases(text: str) -> Dict[str, List[str]]:
     soup = BeautifulSoup(text, "html.parser")
@@ -12,7 +13,7 @@ def extract_all_tagged_phrases(text: str) -> Dict[str, List[str]]:
     # Recursive function to extract text from nested tags
     def extract_text(tag):
         if tag.name:
-            full_text = ' '.join(tag.stripped_strings)
+            full_text = " ".join(tag.stripped_strings)
             tagged_phrases[tag.name].append(full_text)
             # Recursively process all children tags
             for child in tag.find_all(True):
@@ -23,13 +24,13 @@ def extract_all_tagged_phrases(text: str) -> Dict[str, List[str]]:
 
     for tag in tagged_phrases:
         tagged_phrases[tag] = list(dict.fromkeys(tagged_phrases[tag]))
-    
+
     return dict(tagged_phrases)
 
 
 def extract_prediction(schema: dict, prediction: str, kind: str = "json") -> dict:
     if kind == "json":
-        json_match = re.search(r'\{[^}]+\}', prediction)
+        json_match = re.search(r"\{[^}]+\}", prediction)
         if json_match:
             # TODO: Replace single quotes with double quotes in prompt and remove code below.
             json_str = json_match.group(0)
@@ -44,12 +45,13 @@ def extract_prediction(schema: dict, prediction: str, kind: str = "json") -> dic
                 print(f"Error: {str(e)}")
                 pred = {}
     elif kind == "readable":
-        match = re.findall(rf'^({"|".join(list(schema.keys()))}): (.+)$', prediction, flags=re.MULTILINE)
-        pred = {
-            tag: values.split(", ")
-            for tag, values in match
-        }
+        match = re.findall(
+            rf'^({"|".join(list(schema.keys()))}): (.+)$',
+            prediction,
+            flags=re.MULTILINE,
+        )
+        pred = {tag: values.split(", ") for tag, values in match}
     else:
         raise ValueError(f"Invalid kind: {kind}")
 
-    return pred    
+    return pred
