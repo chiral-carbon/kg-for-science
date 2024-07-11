@@ -1,3 +1,4 @@
+import click
 import json
 import numpy as np
 import os
@@ -9,6 +10,7 @@ import string
 import torch.nn.functional as F
 import warnings
 
+from datetime import datetime
 from time import time
 from tqdm import tqdm
 
@@ -29,10 +31,6 @@ from torch.profiler import profile, record_function, ProfilerActivity
 from transformers import AutoTokenizer, AutoModelForCausalLM, AutoConfig
 
 
-# constants
-kind = "readable"
-
-
 # helper functions
 def set_env_vars(fname="../access_keys.json"):
     with open(fname) as f:
@@ -48,6 +46,9 @@ def load_model_and_tokenizer(model_id: str):
     tokenizer = AutoTokenizer.from_pretrained(model_id, padding_side="left")
     # device_map = infer_auto_device_map(model, max_memory=max_memory)
 
+    if tokenizer.pad_token_id is None:
+        tokenizer.pad_token_id = tokenizer.eos_token_id
+
     model = AutoModelForCausalLM.from_pretrained(
         model_id,
         torch_dtype=torch.bfloat16,
@@ -55,12 +56,18 @@ def load_model_and_tokenizer(model_id: str):
         token=os.getenv("HF_TOKEN"),
     )
 
-    model = accelerator.prepare(model)
+    model, tokenizer = accelerator.prepare(model, tokenizer)
 
     return model, tokenizer
 
 
-def main():
+@click.command()
+@click.option(
+    "--kind",
+    default="json",
+    help="Specify the kind of prompt input: json (default) or readable",
+)
+def main(kind):
     # set random seeds
     warnings.filterwarnings("ignore")
     random.seed(0)
@@ -79,7 +86,7 @@ def main():
         for line in f:
             examples.append(json.loads(line))
 
-    with open("schema.json", "r") as f:
+    with open("src/schema.json", "r") as f:
         schema = json.load(f)
 
     # load model and tokenizer
@@ -187,11 +194,14 @@ def main():
     uuid = "".join(
         random.choice(string.ascii_letters + string.digits) for _ in range(8)
     )
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     res_dir = "results"
     few_shot = "random"
-    fname = f"prompt_{few_shot}_{kind}_{uuid}.txt"
+    out_dir = f"{few_shot}_{kind}_{uuid}_{datetime}"
+    os.makedirs(os.path.join(res_dir, out_dir), exist_ok=True)
 
-    with open(os.path.join(res_dir, fname), "w", encoding="utf-8") as f:
+    fname = "prompts.txt"
+    with open(os.path.join(res_dir, out_dir, fname), "w", encoding="utf-8") as f:
         for input, predicted_response, gold_tag, pred_tag in zip(
             all_inputs, predicted_responses, gold_tags, predicted_tags
         ):
@@ -201,23 +211,27 @@ def main():
             f.write(f"Predicted Tag:\n{pred_tag}\n")
             f.write("#" * 50 + "\n")
 
-    ground_truth_file = f"ground_truth_{few_shot}_{kind}_{uuid}.json"
-    with open(os.path.join(res_dir, ground_truth_file), "w") as f:
+    ground_truth_file = f"ground_truth.json"
+    with open(os.path.join(res_dir, out_dir, ground_truth_file), "w") as f:
         json.dump({"gold_tags": gold_tags}, f, indent=4)
 
-    pred_file = f"predictions_{few_shot}_{kind}_{uuid}.json"
-    with open(os.path.join(res_dir, pred_file), "w") as f:
+    pred_file = f"predictions.json"
+    with open(os.path.join(res_dir, out_dir, pred_file), "w") as f:
         json.dump({"predicted_tags": predicted_tags}, f, indent=4)
 
-    pred_responses_file = f"predicted_responses_{few_shot}_{kind}_{uuid}.txt"
-    with open(os.path.join(res_dir, pred_responses_file), "w", encoding="utf-8") as f:
+    pred_responses_file = f"predicted_responses.txt"
+    with open(
+        os.path.join(res_dir, out_dir, pred_responses_file), "w", encoding="utf-8"
+    ) as f:
         for response in predicted_responses:
             f.write(f"{response}\n")
             f.write("#" * 50 + "\n")
 
-    mname = f"metrics_{few_shot}_{kind}_{uuid}.json"
-    with open(os.path.join(res_dir, mname), "w") as f:
+    mname = f"metrics.json"
+    with open(os.path.join(res_dir, out_dir, mname), "w") as f:
         json.dump({"metrics": metrics, "prompt_file": fname}, f, indent=4)
+
+    print(f"Results saved in: {os.path.join(res_dir, out_dir)}")
 
 
 if __name__ == "__main__":

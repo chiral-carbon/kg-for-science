@@ -12,10 +12,13 @@ nlp = spacy.load("en_core_web_sm")
 
 
 def get_sentences(text: str) -> List[str]:
-    doc = nlp(text)
-    sentences = [sent.text.strip() for sent in doc.sents]
-    sentences = [s for s in sentences if s]
-    return sentences
+    # TODO: spacy splitting results in unequal lengths
+    # doc = nlp(text)
+    # sentences = [sent.text.strip() for sent in doc.sents]
+    # sentences = [s for s in sentences if s]
+    # return sentences
+
+    return text.split(". ")
 
 
 def format_instance(sentence: str, extraction: Union[str, None]) -> str:
