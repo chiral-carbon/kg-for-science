@@ -32,7 +32,6 @@ python -m spacy download en_core_web_sm
 Set up code formatting and pre-commit hooks:
 ```
 black .
-
 pre-commit install
 ```
 
