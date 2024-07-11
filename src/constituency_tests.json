@@ -1,0 +1,45 @@
+{
+    "model": [
+        "Could you imagine it as the representation of a data system?",
+        "Could you use it to map observed data into an alternate representation?",
+        "Could you imagine it as a construct to simulate behavior of a system?",
+        "Examples: \n1. Autoregressive language modeling: Models language by predicting the next token \n2. Standard Model in physics"
+    ],
+    "task": [
+        "Is this a goal or an end unto itself?",
+        "Could you imagine multiple ways to accomplish this goal? If not, it might be a method.",
+        "Examples: \n1. Language modeling \n2. Physical surrogate modeling \n3. Predicting swarm dynamics"
+    ],
+    "dataset": [
+        "Could you imagine this as a set of factual information collected through observation, measurement, or research?",
+        "Examples: \n1. ATCA radio-continuum observations \n2. CIFAR-10 \n3. ATLAS experiment data"
+    ],
+    "field": [
+        "Could you imagine a conference, journal, or tutorial on this topic?",
+        "Examples: \n1. Cosmology \n2. Physics \n3. Machine Learning"
+    ],
+    "modality": [
+        "Could you imagine this as a way that some aspect/facet of factual information or data is represented?",
+        "Examples: \n1. Text is a modality where data is in the form of words and sentences. \n2. Images are a modality where data consists of pixel values arranged in a grid. \n3. Spectra are a modality that represent data as a series of intensity values across a range of wavelengths or frequencies."
+    ],
+    "method": [
+        "Do people use this as a way to accomplish a task?",
+        "Examples: \n1.Multiple Physics Pretraining \n2. Cross-modal contrastive learning \n3. Autoregressive training of Transformers \n4. Direct Preference Optimization \n5. Ordinary Differential Equations"
+    ],
+    "object": [
+        "Could you imagine it as a physical or abstract entity that can be examined and studied?",
+        "Examples: \n1. Galaxies \n2. Black holes \n3. Radio emission \n4. Transformers"
+    ],
+    "property": [
+        "Could you imagine it as an inherent attribute or characteristic of an entity that can be studied?",
+        "Could you imagine it as a quantitative measurement of an entity, method, data, or data modality?",
+        "Could you understand it as a concept that can describe an entity?",
+        "Does it make sense independently, without being attached to another tag? If so, it might not be a property.",
+        "Examples: \n1. Sampling frequency is a property of a signal \n2. Expansion rate is a property of supernovae \n3. Gaussianity is a property of a dataset or signal being normally distributed \n4. Scale invariance is a property of Einstein field equations \n5. Gravity or gravitational acceleration is a property of any object that has mass \n6. Mass is a property of all matter, like planets, stars or protons \n7. Magnetic field strength (B)"
+    ],
+    "instrument": [
+        "Can it be used to produce data?",
+        "Does it measure something?",
+        "Examples: \n1.HATNet \n2. Australia Telescope Compact Array (ATCA) \n3. Dark Energy Spectroscopic Instrument (DESI)"
+    ]
+}
