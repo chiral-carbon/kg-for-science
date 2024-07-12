@@ -42,7 +42,7 @@ Then, run `scripts/data_collect.py` to download papers for arXiv:
 python scripts/data_collect.py --max_results 1000 --search_query astro-ph --sort_by 'last_updated_date' --sort_order desc 
 ```
 
-These are the default arguments, you can modify them to specify the arxiv channel, number of papers and order of search.
+These are the default arguments, you can modify them to specify the arxiv channel, number of papers and order of search. The data is stored in the `data` directory.
 
 Then run `main.py` to call Llama-3 70B and perform extractions on the downloaded papers:
 ```

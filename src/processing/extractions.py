@@ -29,6 +29,7 @@ def extract_all_tagged_phrases(text: str) -> Dict[str, List[str]]:
 
 
 def extract_prediction(schema: dict, prediction: str, kind: str = "json") -> dict:
+    pred = {}
     if kind == "json":
         json_match = re.search(r"\{[^}]+\}", prediction)
         if json_match:
@@ -43,7 +44,6 @@ def extract_prediction(schema: dict, prediction: str, kind: str = "json") -> dic
                 # TODO: Use the warning module here.
                 print(f"Failed to parse JSON: {json_str}")
                 print(f"Error: {str(e)}")
-                pred = {}
     elif kind == "readable":
         match = re.findall(
             rf'^({"|".join(list(schema.keys()))}): (.+)$',

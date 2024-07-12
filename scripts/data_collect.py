@@ -25,30 +25,40 @@ from tqdm import tqdm
     help="Sort order (ascending or descending)",
 )
 @click.option("--out_file", default=None, help="Output file name")
-def main(
-    search_query="astro-ph",
-    max_results=1000,
-    sort_by="last_updated_date",
-    sort_order="desc",
-    out_file=None,
-):
+@click.option(
+    "--annotations_file",
+    default="data/human_annotations.jsonl",
+    help="File with manual annotations that is reserved",
+)
+def main(search_query, max_results, sort_by, sort_order, out_file, annotations_file):
+    annotations = []
+    with open(annotations_file, "r") as f:
+        for line in f:
+            annotations.append(json.loads(line))
+
+    titles = set(ex["title"] for ex in annotations)
+    assert len(titles) == len(annotations)
+
+    results = get_arxiv_papers(search_query, max_results, sort_by, sort_order, titles)
+
     data_dir = "data"
     os.makedirs(data_dir, exist_ok=True)
     if out_file is None:
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         out_file = (
-            f"{search_query}_{max_results}_{sort_by}_{sort_order}_{timestamp}.json"
+            f"{search_query}_{max_results}_{sort_by}_{sort_order}_{timestamp}.jsonl"
         )
 
-    results = get_arxiv_papers(search_query, max_results, sort_by, sort_order)
-
     with open(os.path.join(data_dir, out_file), "w") as f:
-        for r in results["id"]:
-            f.write(json.dumps(r) + "\n")
-    click.echo(f"Results written to {data_dir}/{out_file}")
+        for result in results:
+            f.write(json.dumps(result) + "\n")
+
+    click.echo(f"Saved {len(results)} results to {out_file}")
 
 
-def get_arxiv_papers(search_query, max_results, sort_by="relevance", sort_order="desc"):
+def get_arxiv_papers(
+    search_query, max_results, sort_by="relevance", sort_order="desc", annotated=None
+):
     client = arxiv.Client()
 
     sort_criterion = {
@@ -70,26 +80,31 @@ def get_arxiv_papers(search_query, max_results, sort_by="relevance", sort_order=
         sort_order=sort_order,
     )
 
-    dict_results = {"id": []}
-    for result in tqdm(client.results(search)):
-        dict_results["id"].append(
-            {
-                "id": result.entry_id,
-                "title": result.title,
-                "authors": [author.name for author in result.authors],
-                "summary": result.summary,
-                "published": result.published.isoformat(),
-                "updated": result.updated.isoformat(),
-                "pdf_url": result.pdf_url,
-                "doi": result.doi,
-                "links": [link.href for link in result.links],
-                "journal_reference": result.journal_ref,
-                "primary_category": result.primary_category,
-                "categories": result.categories,
-            }
-        )
+    non_overlapping_results = []
+    with tqdm(total=max_results) as pbar:
+        for result in tqdm(client.results(search)):
+            if len(non_overlapping_results) == max_results:
+                break
+            if result.title not in annotated:
+                non_overlapping_results.append(
+                    {
+                        "id": result.entry_id,
+                        "title": result.title,
+                        "authors": [author.name for author in result.authors],
+                        "summary": result.summary,
+                        "published": result.published.isoformat(),
+                        "updated": result.updated.isoformat(),
+                        "pdf_url": result.pdf_url,
+                        "doi": result.doi,
+                        "links": [link.href for link in result.links],
+                        "journal_reference": result.journal_ref,
+                        "primary_category": result.primary_category,
+                        "categories": result.categories,
+                    }
+                )
+                pbar.update(1)
 
-    return dict_results
+    return non_overlapping_results
 
 
 if __name__ == "__main__":

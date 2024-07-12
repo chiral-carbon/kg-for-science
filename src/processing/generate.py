@@ -2,6 +2,7 @@ import json
 import random
 import re
 import spacy
+import torch
 
 from typing import List, Dict, Tuple, Union
 from transformers import AutoTokenizer, AutoModelForCausalLM, AutoConfig
@@ -16,6 +17,9 @@ def get_sentences(text: str) -> List[str]:
     # doc = nlp(text)
     # sentences = [sent.text.strip() for sent in doc.sents]
     # sentences = [s for s in sentences if s]
+    # return sentences
+    # return sentences
+
     # return sentences
 
     return text.split(". ")
@@ -39,7 +43,7 @@ def generate_instructions(schema: dict, kind: str = "json") -> str:
         "The following schema is provided to tag the title and abstract of a given scientific paper as shown in the examples:\n"
     ]
     if kind == "json":
-        instruction_parts.append(f"{schema}\n")
+        instruction_parts.append(f"{json.dumps(schema, indent=2)}\n\n")
     elif kind == "readable":
         readable_schema = ""
         for tag, description in schema.items():
@@ -53,7 +57,7 @@ def generate_instructions(schema: dict, kind: str = "json") -> str:
 
 def generate_demonstrations(examples: List[dict], kind: str = "json") -> str:
     demonstration_parts = []
-    for example in examples:
+    for example in random.sample(examples, k=3):
         sentences = get_sentences(example["abstract"])
         tagged_sentences = get_sentences(example["tagged_abstract"])
 
@@ -62,7 +66,7 @@ def generate_demonstrations(examples: List[dict], kind: str = "json") -> str:
         ):
             tag_to_phrase = extract_all_tagged_phrases(tagged_sentence)
             if kind == "json":
-                extractions = str(tag_to_phrase)
+                extractions = f"{json.dumps(tag_to_phrase, indent=2)}\n"
             elif kind == "readable":
                 extractions = "".join(
                     f"{tag}: {', '.join(phrase)}\n"
@@ -107,10 +111,56 @@ def generate_prediction(model, tokenizer, prefix: str, input: str, kind: str) ->
         eos_token_id=terminators,
         # num_beams=8,
         do_sample=True,
-        temperature=0.6,
+        temperature=1.0,
         top_p=0.9,
     )
     response = outputs[0][input_ids.shape[-1] :]
     prediction_response = tokenizer.decode(response, skip_special_tokens=True)
 
     return prediction_response
+
+
+# def generate_prediction_forward_pass(model, tokenizer, prefix, input, kind, end_token_ids):
+#     end_token_ids = []
+#     for i in range(len(tokenizer)):
+#         tok = tokenizer.decode(i)
+#         if tok == tokenizer.eos_token or tok.strip() == "":
+#             # print(f"token id: {i}, token: {repr(tok)}")
+#             end_token_ids.append(i)
+
+#     prompt = prefix + input
+#     i = 0
+#     response = ""
+#     while True:
+#         inputs = tokenizer(prefix + input, return_tensors="pt", truncation=True, max_length=2048)
+
+#         input_ids = inputs.input_ids.to(model.device)
+#         attention_mask = inputs.attention_mask.to(model.device)
+
+#         # Get model outputs
+#         with torch.no_grad():
+#             outputs = model(input_ids=input_ids, attention_mask=attention_mask)
+
+#         # Get logits
+#         logits = outputs.logits
+#         token_probs = torch.nn.functional.log_softmax(logits, dim=-1)
+
+#         # Get the next token
+#         next_token_logits = logits[0, -1, :]
+#         next_token_id = torch.argmax(next_token_logits).item() # sampling methods
+#         if i == 0 and next_token_id == tokenizer.eos_token_id:
+#             next_token_id = torch.argsort(next_token_logits, descending=True)[1].item()
+
+#         response_token = tokenizer.decode(next_token_id)
+#         if next_token_id in end_token_ids:
+#             break
+
+#         token_prob = token_probs[0, -1, next_token_id].item()
+
+#         response += response_token
+#         input += response_token
+
+#         i += 1
+
+
+#     return response
