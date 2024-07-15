@@ -69,7 +69,6 @@ def save_results(
 
     with open(os.path.join(RES_DIR, out_dir_path, "metrics.json"), "w") as f:
         json.dump({"metrics": metrics, "prompt_file": "prompts.txt"}, f, indent=4)
-        f.write("#" * 50 + "\n")
 
     logging.info(f"Results saved in: {os.path.join(RES_DIR, out_dir_path)}")
 
