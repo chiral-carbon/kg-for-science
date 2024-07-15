@@ -1,7 +1,8 @@
 import json
 import random
 import re
-import spacy
+
+# import spacy
 import torch
 
 from typing import List, Dict, Tuple, Union
@@ -9,7 +10,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM, AutoConfig
 
 from .extractions import extract_all_tagged_phrases
 
-nlp = spacy.load("en_core_web_sm")
+# nlp = spacy.load("en_core_web_sm")
 
 
 def get_sentences(text: str) -> List[str]:

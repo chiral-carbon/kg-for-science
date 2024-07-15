@@ -8,6 +8,7 @@ import random
 import re
 import torch
 import string
+import sys
 import torch.nn.functional as F
 import warnings
 
@@ -95,9 +96,9 @@ def main(kind, runtype, data):
     few_shot = "random"
     out_dir_path = f"{runtype}_{few_shot}_{kind}_{uuid}_{timestamp}"
     os.makedirs(os.path.join(res_dir, out_dir_path), exist_ok=True)
-    os.makedirs(log_dir, exist_ok=True)
+    os.makedirs(os.path.join(res_dir, out_dir_path, log_dir), exist_ok=True)
 
-    log_file = os.path.join(log_dir, f"log_{out_dir_path}.txt")
+    log_file = os.path.join(res_dir, out_dir_path, log_dir, f"log.txt")
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s - %(levelname)s - %(message)s",
@@ -124,21 +125,23 @@ def main(kind, runtype, data):
 
     # load the data
     examples = []
-    train, valid = [], []
     with open("data/human_annotations.jsonl", "r") as f:
         for line in f:
             examples.append(json.loads(line))
 
+    train = examples[:3]
+    valid = []
     if runtype == "new":
         valid = []
-        with open(data, "r") as f:
-            for line in f:
-                valid.append(json.loads(line))
-        train = examples.copy()
-
+        for file in os.listdir(data):
+            with open(os.path.join(data, file), "r") as f:
+                for line in f:
+                    valid.append(json.loads(line))
     else:
-        train = examples[:3]
         valid = examples[3:]
+
+    logging.info(f"Number of training examples: {len(train)}")
+    logging.info(f"Number of validation examples: {len(valid)}")
 
     logging.info("loading model and tokenizer...")
     # load model and tokenizer
@@ -159,12 +162,13 @@ def main(kind, runtype, data):
     logging.info(f"Model: {model_id}")
 
     # run/evaluate the model
-    n_tp = 0
-    n_fp = 0
-    n_fn = 0
-    n_tp_union = 0
-    n_fp_union = 0
-    n_fn_union = 0
+    if runtype == "eval":
+        n_tp = 0
+        n_fp = 0
+        n_fn = 0
+        n_tp_union = 0
+        n_fp_union = 0
+        n_fn_union = 0
     running_time = 0
     pred_times = []
     all_inputs = []
@@ -287,11 +291,11 @@ def main(kind, runtype, data):
             f.write(f"True Tag: {gold_tag}\n")
             f.write("#" * 50 + "\n")
 
-    pred_file = f"predictions.json"
+    pred_file = "predictions.json"
     with open(os.path.join(res_dir, out_dir_path, pred_file), "w") as f:
         json.dump({"predicted_tags": predicted_tags}, f, indent=4)
 
-    pred_responses_file = f"predicted_responses.txt"
+    pred_responses_file = "predicted_responses.txt"
     with open(
         os.path.join(res_dir, out_dir_path, pred_responses_file), "w", encoding="utf-8"
     ) as f:
@@ -299,7 +303,7 @@ def main(kind, runtype, data):
             f.write(f"{response}\n")
             f.write("#" * 50 + "\n")
 
-    mname = f"metrics.json"
+    mname = "metrics.json"
     with open(os.path.join(res_dir, out_dir_path, mname), "w") as f:
         json.dump({"metrics": metrics, "prompt_file": fname}, f, indent=4)
 

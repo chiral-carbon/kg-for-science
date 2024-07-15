@@ -75,34 +75,36 @@ def get_arxiv_papers(
 
     search = arxiv.Search(
         query=search_query,
-        max_results=max_results,
+        max_results=None,
         sort_by=sort_criterion,
         sort_order=sort_order,
     )
 
     non_overlapping_results = []
-    with tqdm(total=max_results) as pbar:
-        for result in tqdm(client.results(search)):
-            if len(non_overlapping_results) == max_results:
+    pbar = tqdm(total=max_results, desc="Fetching papers")
+    for result in client.results(search):
+        if result.title not in annotated:
+            non_overlapping_results.append(
+                {
+                    "id": result.entry_id,
+                    "title": result.title,
+                    "authors": [author.name for author in result.authors],
+                    "summary": result.summary,
+                    "published": result.published.isoformat(),
+                    "updated": result.updated.isoformat(),
+                    "pdf_url": result.pdf_url,
+                    "doi": result.doi,
+                    "links": [link.href for link in result.links],
+                    "journal_reference": result.journal_ref,
+                    "primary_category": result.primary_category,
+                    "categories": result.categories,
+                }
+            )
+            pbar.update(1)
+            if len(non_overlapping_results) >= max_results:
                 break
-            if result.title not in annotated:
-                non_overlapping_results.append(
-                    {
-                        "id": result.entry_id,
-                        "title": result.title,
-                        "authors": [author.name for author in result.authors],
-                        "summary": result.summary,
-                        "published": result.published.isoformat(),
-                        "updated": result.updated.isoformat(),
-                        "pdf_url": result.pdf_url,
-                        "doi": result.doi,
-                        "links": [link.href for link in result.links],
-                        "journal_reference": result.journal_ref,
-                        "primary_category": result.primary_category,
-                        "categories": result.categories,
-                    }
-                )
-                pbar.update(1)
+
+    pbar.close()
 
     return non_overlapping_results
 
