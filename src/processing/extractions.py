@@ -6,29 +6,7 @@ from collections import defaultdict
 from typing import Dict, List
 
 
-# TODO: review this function
-# def extract_all_tagged_phrases(text: str) -> Dict[str, List[str]]:
-#     soup = BeautifulSoup(text, "html.parser")
-#     tagged_phrases = defaultdict(list)
-
-#     # Recursive function to extract text from nested tags
-#     def extract_text(tag):
-#         if tag.name:
-#             full_text = " ".join(tag.stripped_strings)
-#             tagged_phrases[tag.name].append(full_text)
-#             # Recursively process all children tags
-#             for child in tag.find_all(True):
-#                 extract_text(child)
-
-#     for tag in soup.find_all(True):
-#         extract_text(tag)
-
-#     for tag in tagged_phrases:
-#         tagged_phrases[tag] = list(dict.fromkeys(tagged_phrases[tag]))
-
-#     return dict(tagged_phrases)
-
-
+# TODO: review the functions here
 def extract_all_tagged_phrases(text: str) -> Dict[str, List[str]]:
     soup = BeautifulSoup(text, "html.parser")
     tagged_phrases = defaultdict(list)

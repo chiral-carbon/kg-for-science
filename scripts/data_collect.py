@@ -7,6 +7,8 @@ from datetime import datetime
 from tqdm import tqdm
 
 
+# TODO: add error handling for invalid search queries
+# TODO: modify script to allow all the results for a given search query till exhaustion. max_results not specified
 @click.command()
 @click.option(
     "--search_query", default="astro-ph", help="Search query for arXiv papers"
@@ -75,8 +77,6 @@ def get_arxiv_papers(
         if sort_order == "desc"
         else arxiv.SortOrder.Ascending
     )
-    # TODO: add error handling for invalid search queries
-    # TODO: modify script to allow all the results for a given search query till exhaustion. max_results not specified
     search = arxiv.Search(
         query=search_query,
         max_results=None,

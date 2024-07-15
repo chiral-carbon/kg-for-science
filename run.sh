@@ -8,8 +8,8 @@
 #SBATCH -C a100-80gb&ib-a100
 #SBATCH --mem=512G
 #SBATCH --time=3-00:00:00
-#SBATCH --output=logs/%x-%j.out
-#SBATCH --error=logs/%x-%j.err
+#SBATCH --output=slurm_logs/%x-%j.out
+#SBATCH --error=slurm_logs/%x-%j.err
 #SBATCH --job-name=kg-for-science
 
 module --force purge

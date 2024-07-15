@@ -1,4 +1,7 @@
 None
+True Tag: Sentence: How coronal mass ejections are influenced by the morphology and toroidal flux of their source magnetic flux ropes?
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -12,11 +15,13 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'object': ['coronal mass ejections', 'magnetic flux ropes'], 'property': ['morphology', 'toroidal flux']}
-True Tag: Sentence: How coronal mass ejections are influenced by the morphology and toroidal flux of their source magnetic flux ropes?
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: Coronal mass ejections (CMEs) stand as intense eruptions of magnetized plasma
+from the Sun, playing a pivotal role in driving significant changes of the
+heliospheric environment
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -28,13 +33,14 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'object': ['coronal mass ejections', 'CMEs', 'Sun', 'heliospheric environment']}
-True Tag: Sentence: Coronal mass ejections (CMEs) stand as intense eruptions of magnetized plasma
-from the Sun, playing a pivotal role in driving significant changes of the
-heliospheric environment
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: Deducing the properties of CMEs from their
+progenitors in solar source regions is crucial for space weather forecasting.
+Deducing the properties of CMEs from their progenitors in solar source regions
+is crucial for space weather forecasting
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -51,14 +57,14 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'object': ['CMEs', 'progenitors', 'solar source regions'], 'property': ['properties'], 'field': ['space weather']}
-True Tag: Sentence: Deducing the properties of CMEs from their
-progenitors in solar source regions is crucial for space weather forecasting.
-Deducing the properties of CMEs from their progenitors in solar source regions
-is crucial for space weather forecasting
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: The primary objective of this paper
+is to establish a connection between CMEs and their progenitors in solar source
+regions, enabling us to infer the magnetic structures of CMEs before their full
+development
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -73,14 +79,13 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'task': ['primary objective'], 'object': ['CMEs', 'progenitors', 'solar source regions', 'magnetic structures']}
-True Tag: Sentence: The primary objective of this paper
-is to establish a connection between CMEs and their progenitors in solar source
-regions, enabling us to infer the magnetic structures of CMEs before their full
-development
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: To this end, we create a dataset comprising a magnetic flux rope
+series with varying projection shapes, sizes and toroidal fluxes, using the
+Regularized Biot-Savart Laws (RBSL)
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -99,13 +104,13 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'dataset': ['dataset'], 'instrument': ['Regularized Biot-Savart Laws (RBSL)'], 'object': ['magnetic flux rope', 'series', 'projection shapes', 'sizes', 'toroidal fluxes']}
-True Tag: Sentence: To this end, we create a dataset comprising a magnetic flux rope
-series with varying projection shapes, sizes and toroidal fluxes, using the
-Regularized Biot-Savart Laws (RBSL)
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: Thereafter, we simulate the propagation of
+these flux ropes from the solar surface to a distance of 25$R_{\odot}$ with our
+global coronal MHD model which is named COCONUT
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -119,13 +124,12 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'model': ['global coronal MHD model', 'COCONUT'], 'object': ['flux ropes', 'solar surface']}
-True Tag: Sentence: Thereafter, we simulate the propagation of
-these flux ropes from the solar surface to a distance of 25$R_{\odot}$ with our
-global coronal MHD model which is named COCONUT
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: Our parametric survey reveals
+significant impacts of source flux ropes on the consequent CMEs
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -135,12 +139,13 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'object': ['flux ropes', 'CMEs']}
-True Tag: Sentence: Our parametric survey reveals
-significant impacts of source flux ropes on the consequent CMEs
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: We find that
+the projection shape can influence the magnetic structures of CMEs at
+20$R_{\odot}$, albeit with minimal impacts on the propagation speed
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -149,24 +154,24 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'object': ['CMEs']}
-True Tag: Sentence: We find that
-the projection shape can influence the magnetic structures of CMEs at
-20$R_{\odot}$, albeit with minimal impacts on the propagation speed
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: However,
+these impacts diminish as source flux ropes become fat
+Extractions:
+
 Predicted Response: assistant
 
 Extractions:
 {}
 Predicted Tag: {}
-True Tag: Sentence: However,
-these impacts diminish as source flux ropes become fat
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: In terms of toroidal
+flux, our simulation results demonstrate a pronounced correlation with the
+propagation speed of CMEs, as well as the successfulness in erupting
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -179,13 +184,13 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'object': ['CMEs'], 'property': ['toroidal flux', 'propagation speed']}
-True Tag: Sentence: In terms of toroidal
-flux, our simulation results demonstrate a pronounced correlation with the
-propagation speed of CMEs, as well as the successfulness in erupting
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: This work
+builds the bridge between the CMEs in the outer corona and their progenitors in
+solar source regions
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -196,13 +201,14 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'object': ['CMEs', 'outer corona', 'solar source regions']}
-True Tag: Sentence: This work
-builds the bridge between the CMEs in the outer corona and their progenitors in
-solar source regions
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: Our parametric survey suggests that the projection shape,
+cross-section radius and toroidal flux of source flux ropes are crucial
+parameters in predicting magnetic structures and propagation speed of CMEs,
+providing valuable insights for space weather prediction.
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -218,14 +224,11 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'object': ['source flux ropes', 'CMEs'], 'property': ['projection shape', 'cross-section radius', 'toroidal flux', 'propagation speed']}
-True Tag: Sentence: Our parametric survey suggests that the projection shape,
-cross-section radius and toroidal flux of source flux ropes are crucial
-parameters in predicting magnetic structures and propagation speed of CMEs,
-providing valuable insights for space weather prediction.
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: How coronal mass ejections are influenced by the morphology and toroidal flux of their source magnetic flux ropes?
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -239,11 +242,13 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'object': ['coronal mass ejections', 'magnetic flux ropes'], 'property': ['morphology', 'toroidal flux']}
-True Tag: Sentence: How coronal mass ejections are influenced by the morphology and toroidal flux of their source magnetic flux ropes?
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: Coronal mass ejections (CMEs) stand as intense eruptions of magnetized plasma
+from the Sun, playing a pivotal role in driving significant changes of the
+heliospheric environment
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -255,13 +260,14 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'object': ['coronal mass ejections', 'CMEs', 'Sun', 'heliospheric environment']}
-True Tag: Sentence: Coronal mass ejections (CMEs) stand as intense eruptions of magnetized plasma
-from the Sun, playing a pivotal role in driving significant changes of the
-heliospheric environment
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: Deducing the properties of CMEs from their
+progenitors in solar source regions is crucial for space weather forecasting.
+Deducing the properties of CMEs from their progenitors in solar source regions
+is crucial for space weather forecasting
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -278,14 +284,14 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'object': ['CMEs', 'progenitors', 'solar source regions'], 'property': ['properties'], 'field': ['space weather']}
-True Tag: Sentence: Deducing the properties of CMEs from their
-progenitors in solar source regions is crucial for space weather forecasting.
-Deducing the properties of CMEs from their progenitors in solar source regions
-is crucial for space weather forecasting
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: The primary objective of this paper
+is to establish a connection between CMEs and their progenitors in solar source
+regions, enabling us to infer the magnetic structures of CMEs before their full
+development
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -300,14 +306,13 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'task': ['primary objective'], 'object': ['CMEs', 'progenitors', 'solar source regions', 'magnetic structures']}
-True Tag: Sentence: The primary objective of this paper
-is to establish a connection between CMEs and their progenitors in solar source
-regions, enabling us to infer the magnetic structures of CMEs before their full
-development
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: To this end, we create a dataset comprising a magnetic flux rope
+series with varying projection shapes, sizes and toroidal fluxes, using the
+Regularized Biot-Savart Laws (RBSL)
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -326,13 +331,13 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'dataset': ['dataset'], 'instrument': ['Regularized Biot-Savart Laws (RBSL)'], 'object': ['magnetic flux rope', 'series', 'projection shapes', 'sizes', 'toroidal fluxes']}
-True Tag: Sentence: To this end, we create a dataset comprising a magnetic flux rope
-series with varying projection shapes, sizes and toroidal fluxes, using the
-Regularized Biot-Savart Laws (RBSL)
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: Thereafter, we simulate the propagation of
+these flux ropes from the solar surface to a distance of 25$R_{\odot}$ with our
+global coronal MHD model which is named COCONUT
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -346,13 +351,12 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'model': ['global coronal MHD model', 'COCONUT'], 'object': ['flux ropes', 'solar surface']}
-True Tag: Sentence: Thereafter, we simulate the propagation of
-these flux ropes from the solar surface to a distance of 25$R_{\odot}$ with our
-global coronal MHD model which is named COCONUT
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: Our parametric survey reveals
+significant impacts of source flux ropes on the consequent CMEs
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -362,12 +366,13 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'object': ['flux ropes', 'CMEs']}
-True Tag: Sentence: Our parametric survey reveals
-significant impacts of source flux ropes on the consequent CMEs
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: We find that
+the projection shape can influence the magnetic structures of CMEs at
+20$R_{\odot}$, albeit with minimal impacts on the propagation speed
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -376,24 +381,24 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'object': ['CMEs']}
-True Tag: Sentence: We find that
-the projection shape can influence the magnetic structures of CMEs at
-20$R_{\odot}$, albeit with minimal impacts on the propagation speed
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: However,
+these impacts diminish as source flux ropes become fat
+Extractions:
+
 Predicted Response: assistant
 
 Extractions:
 {}
 Predicted Tag: {}
-True Tag: Sentence: However,
-these impacts diminish as source flux ropes become fat
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: In terms of toroidal
+flux, our simulation results demonstrate a pronounced correlation with the
+propagation speed of CMEs, as well as the successfulness in erupting
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -406,13 +411,13 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'object': ['CMEs'], 'property': ['toroidal flux', 'propagation speed']}
-True Tag: Sentence: In terms of toroidal
-flux, our simulation results demonstrate a pronounced correlation with the
-propagation speed of CMEs, as well as the successfulness in erupting
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: This work
+builds the bridge between the CMEs in the outer corona and their progenitors in
+solar source regions
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -423,13 +428,14 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'object': ['CMEs', 'outer corona', 'solar source regions']}
-True Tag: Sentence: This work
-builds the bridge between the CMEs in the outer corona and their progenitors in
-solar source regions
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: Our parametric survey suggests that the projection shape,
+cross-section radius and toroidal flux of source flux ropes are crucial
+parameters in predicting magnetic structures and propagation speed of CMEs,
+providing valuable insights for space weather prediction.
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -445,14 +451,11 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'object': ['source flux ropes', 'CMEs'], 'property': ['projection shape', 'cross-section radius', 'toroidal flux', 'propagation speed']}
-True Tag: Sentence: Our parametric survey suggests that the projection shape,
-cross-section radius and toroidal flux of source flux ropes are crucial
-parameters in predicting magnetic structures and propagation speed of CMEs,
-providing valuable insights for space weather prediction.
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: Seasonal variation of Saturn's Lyman-$α$ brightness
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -465,11 +468,13 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'object': ["Saturn's Lyman-α brightness", 'Saturn'], 'property': ['Lyman-α brightness']}
-True Tag: Sentence: Seasonal variation of Saturn's Lyman-$α$ brightness
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: We examine Saturn's non-auroral (dayglow) emissions at Lyman-$\alpha$
+observed by the {Cassini/UVIS} instrument from 2004 until 2016, to constrain
+meridional and seasonal trends in the upper atmosphere
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -487,13 +492,13 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'object': ['Saturn', 'emissions', 'atmosphere'], 'instrument': ['Cassini/UVIS'], 'property': ['meridional', 'seasonal']}
-True Tag: Sentence: We examine Saturn's non-auroral (dayglow) emissions at Lyman-$\alpha$
-observed by the {Cassini/UVIS} instrument from 2004 until 2016, to constrain
-meridional and seasonal trends in the upper atmosphere
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: We separate viewing
+geometry effects from trends driven by atmospheric properties, by applying a
+multi-variate regression to the observed emissions
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -505,13 +510,13 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'object': ['emissions'], 'property': ['atmospheric properties']}
-True Tag: Sentence: We separate viewing
-geometry effects from trends driven by atmospheric properties, by applying a
-multi-variate regression to the observed emissions
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: The Lyman-$\alpha$ dayglow
+brightnesses depend on the incident solar flux, solar incidence angle, emission
+angle, and observed latitude
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -528,13 +533,13 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'object': ['Lyman-alpha dayglow', 'solar flux', 'latitude'], 'property': ['brightnesses', 'incident', 'emission', 'observed']}
-True Tag: Sentence: The Lyman-$\alpha$ dayglow
-brightnesses depend on the incident solar flux, solar incidence angle, emission
-angle, and observed latitude
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: The emissions across latitudes and seasons show a
+strong dependence with solar incidence angle, typical of resonantly scattered
+solar flux and consistent with no significant internal source
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -546,13 +551,13 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'property': ['solar incidence angle'], 'instrument': ['solar flux']}
-True Tag: Sentence: The emissions across latitudes and seasons show a
-strong dependence with solar incidence angle, typical of resonantly scattered
-solar flux and consistent with no significant internal source
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: We observe a
+bulge in Ly-$\alpha$ brightness that shifts with the summer season from the
+southern to the northern hemisphere
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -564,13 +569,13 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'object': ['bulge', 'Ly-alpha brightness', 'southern hemisphere', 'northern hemisphere']}
-True Tag: Sentence: We observe a
-bulge in Ly-$\alpha$ brightness that shifts with the summer season from the
-southern to the northern hemisphere
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: We estimate atomic hydrogen optical depths
+above the methane homopause level for dayside disk observations (2004-2016) by
+comparing observed Lyman-$\alpha$ emissions to a radiative transfer model
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -585,13 +590,14 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'object': ['atomic hydrogen', 'methane homopause level', 'dayside disk', 'Lyman-alpha emissions'], 'model': ['radiative transfer model']}
-True Tag: Sentence: We estimate atomic hydrogen optical depths
-above the methane homopause level for dayside disk observations (2004-2016) by
-comparing observed Lyman-$\alpha$ emissions to a radiative transfer model
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: We
+model emissions from resonantly scattered solar flux and a smaller but
+significant contribution by scattered photons from the interplanetary hydrogen
+(IPH) background
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -605,14 +611,13 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'model': ['model emissions'], 'object': ['solar flux', 'interplanetary hydrogen', 'IPH background']}
-True Tag: Sentence: We
-model emissions from resonantly scattered solar flux and a smaller but
-significant contribution by scattered photons from the interplanetary hydrogen
-(IPH) background
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: During northern summer, inferred hydrogen optical depths
+steeply decrease with latitude towards the winter hemisphere from a northern
+hemisphere bulge, as predicted by a 2D seasonal photochemical model
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -626,24 +631,24 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'model': ['2D seasonal photochemical model'], 'object': ['hydrogen optical depths', 'northern hemisphere bulge', 'winter hemisphere']}
-True Tag: Sentence: During northern summer, inferred hydrogen optical depths
-steeply decrease with latitude towards the winter hemisphere from a northern
-hemisphere bulge, as predicted by a 2D seasonal photochemical model
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: The
+southern hemisphere mirrors this trend during its summer
+Extractions:
+
 Predicted Response: assistant
 
 Extractions:
 {}
 Predicted Tag: {}
-True Tag: Sentence: The
-southern hemisphere mirrors this trend during its summer
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: However, inferred
+optical depths show substantially more temporal variation between 2004 and 2016
+than predicted by the photochemical model.
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -655,13 +660,11 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'model': ['photochemical model'], 'property': ['optical depths']}
-True Tag: Sentence: However, inferred
-optical depths show substantially more temporal variation between 2004 and 2016
-than predicted by the photochemical model.
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: How coronal mass ejections are influenced by the morphology and toroidal flux of their source magnetic flux ropes?
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -675,11 +678,13 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'object': ['coronal mass ejections', 'magnetic flux ropes'], 'property': ['morphology', 'toroidal flux']}
-True Tag: Sentence: How coronal mass ejections are influenced by the morphology and toroidal flux of their source magnetic flux ropes?
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: Coronal mass ejections (CMEs) stand as intense eruptions of magnetized plasma
+from the Sun, playing a pivotal role in driving significant changes of the
+heliospheric environment
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -691,13 +696,14 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'object': ['coronal mass ejections', 'CMEs', 'Sun', 'heliospheric environment']}
-True Tag: Sentence: Coronal mass ejections (CMEs) stand as intense eruptions of magnetized plasma
-from the Sun, playing a pivotal role in driving significant changes of the
-heliospheric environment
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: Deducing the properties of CMEs from their
+progenitors in solar source regions is crucial for space weather forecasting.
+Deducing the properties of CMEs from their progenitors in solar source regions
+is crucial for space weather forecasting
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -714,14 +720,14 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'object': ['CMEs', 'progenitors', 'solar source regions'], 'property': ['properties'], 'field': ['space weather']}
-True Tag: Sentence: Deducing the properties of CMEs from their
-progenitors in solar source regions is crucial for space weather forecasting.
-Deducing the properties of CMEs from their progenitors in solar source regions
-is crucial for space weather forecasting
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: The primary objective of this paper
+is to establish a connection between CMEs and their progenitors in solar source
+regions, enabling us to infer the magnetic structures of CMEs before their full
+development
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -736,14 +742,13 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'task': ['primary objective'], 'object': ['CMEs', 'progenitors', 'solar source regions', 'magnetic structures']}
-True Tag: Sentence: The primary objective of this paper
-is to establish a connection between CMEs and their progenitors in solar source
-regions, enabling us to infer the magnetic structures of CMEs before their full
-development
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: To this end, we create a dataset comprising a magnetic flux rope
+series with varying projection shapes, sizes and toroidal fluxes, using the
+Regularized Biot-Savart Laws (RBSL)
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -762,13 +767,13 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'dataset': ['dataset'], 'instrument': ['Regularized Biot-Savart Laws (RBSL)'], 'object': ['magnetic flux rope', 'series', 'projection shapes', 'sizes', 'toroidal fluxes']}
-True Tag: Sentence: To this end, we create a dataset comprising a magnetic flux rope
-series with varying projection shapes, sizes and toroidal fluxes, using the
-Regularized Biot-Savart Laws (RBSL)
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: Thereafter, we simulate the propagation of
+these flux ropes from the solar surface to a distance of 25$R_{\odot}$ with our
+global coronal MHD model which is named COCONUT
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -782,13 +787,12 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'model': ['global coronal MHD model', 'COCONUT'], 'object': ['flux ropes', 'solar surface']}
-True Tag: Sentence: Thereafter, we simulate the propagation of
-these flux ropes from the solar surface to a distance of 25$R_{\odot}$ with our
-global coronal MHD model which is named COCONUT
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: Our parametric survey reveals
+significant impacts of source flux ropes on the consequent CMEs
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -798,12 +802,13 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'object': ['flux ropes', 'CMEs']}
-True Tag: Sentence: Our parametric survey reveals
-significant impacts of source flux ropes on the consequent CMEs
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: We find that
+the projection shape can influence the magnetic structures of CMEs at
+20$R_{\odot}$, albeit with minimal impacts on the propagation speed
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -812,24 +817,24 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'object': ['CMEs']}
-True Tag: Sentence: We find that
-the projection shape can influence the magnetic structures of CMEs at
-20$R_{\odot}$, albeit with minimal impacts on the propagation speed
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: However,
+these impacts diminish as source flux ropes become fat
+Extractions:
+
 Predicted Response: assistant
 
 Extractions:
 {}
 Predicted Tag: {}
-True Tag: Sentence: However,
-these impacts diminish as source flux ropes become fat
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: In terms of toroidal
+flux, our simulation results demonstrate a pronounced correlation with the
+propagation speed of CMEs, as well as the successfulness in erupting
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -842,13 +847,13 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'object': ['CMEs'], 'property': ['toroidal flux', 'propagation speed']}
-True Tag: Sentence: In terms of toroidal
-flux, our simulation results demonstrate a pronounced correlation with the
-propagation speed of CMEs, as well as the successfulness in erupting
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: This work
+builds the bridge between the CMEs in the outer corona and their progenitors in
+solar source regions
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -859,13 +864,14 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'object': ['CMEs', 'outer corona', 'solar source regions']}
-True Tag: Sentence: This work
-builds the bridge between the CMEs in the outer corona and their progenitors in
-solar source regions
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: Our parametric survey suggests that the projection shape,
+cross-section radius and toroidal flux of source flux ropes are crucial
+parameters in predicting magnetic structures and propagation speed of CMEs,
+providing valuable insights for space weather prediction.
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -881,14 +887,11 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'object': ['source flux ropes', 'CMEs'], 'property': ['projection shape', 'cross-section radius', 'toroidal flux', 'propagation speed']}
-True Tag: Sentence: Our parametric survey suggests that the projection shape,
-cross-section radius and toroidal flux of source flux ropes are crucial
-parameters in predicting magnetic structures and propagation speed of CMEs,
-providing valuable insights for space weather prediction.
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: Seasonal variation of Saturn's Lyman-$α$ brightness
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -901,11 +904,13 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'object': ["Saturn's Lyman-α brightness", 'Saturn'], 'property': ['Lyman-α brightness']}
-True Tag: Sentence: Seasonal variation of Saturn's Lyman-$α$ brightness
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: We examine Saturn's non-auroral (dayglow) emissions at Lyman-$\alpha$
+observed by the {Cassini/UVIS} instrument from 2004 until 2016, to constrain
+meridional and seasonal trends in the upper atmosphere
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -923,13 +928,13 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'object': ['Saturn', 'emissions', 'atmosphere'], 'instrument': ['Cassini/UVIS'], 'property': ['meridional', 'seasonal']}
-True Tag: Sentence: We examine Saturn's non-auroral (dayglow) emissions at Lyman-$\alpha$
-observed by the {Cassini/UVIS} instrument from 2004 until 2016, to constrain
-meridional and seasonal trends in the upper atmosphere
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: We separate viewing
+geometry effects from trends driven by atmospheric properties, by applying a
+multi-variate regression to the observed emissions
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -941,13 +946,13 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'object': ['emissions'], 'property': ['atmospheric properties']}
-True Tag: Sentence: We separate viewing
-geometry effects from trends driven by atmospheric properties, by applying a
-multi-variate regression to the observed emissions
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: The Lyman-$\alpha$ dayglow
+brightnesses depend on the incident solar flux, solar incidence angle, emission
+angle, and observed latitude
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -964,13 +969,13 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'object': ['Lyman-alpha dayglow', 'solar flux', 'latitude'], 'property': ['brightnesses', 'incident', 'emission', 'observed']}
-True Tag: Sentence: The Lyman-$\alpha$ dayglow
-brightnesses depend on the incident solar flux, solar incidence angle, emission
-angle, and observed latitude
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: The emissions across latitudes and seasons show a
+strong dependence with solar incidence angle, typical of resonantly scattered
+solar flux and consistent with no significant internal source
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -982,13 +987,13 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'property': ['solar incidence angle'], 'instrument': ['solar flux']}
-True Tag: Sentence: The emissions across latitudes and seasons show a
-strong dependence with solar incidence angle, typical of resonantly scattered
-solar flux and consistent with no significant internal source
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: We observe a
+bulge in Ly-$\alpha$ brightness that shifts with the summer season from the
+southern to the northern hemisphere
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -1000,13 +1005,13 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'object': ['bulge', 'Ly-alpha brightness', 'southern hemisphere', 'northern hemisphere']}
-True Tag: Sentence: We observe a
-bulge in Ly-$\alpha$ brightness that shifts with the summer season from the
-southern to the northern hemisphere
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: We estimate atomic hydrogen optical depths
+above the methane homopause level for dayside disk observations (2004-2016) by
+comparing observed Lyman-$\alpha$ emissions to a radiative transfer model
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -1021,13 +1026,14 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'object': ['atomic hydrogen', 'methane homopause level', 'dayside disk', 'Lyman-alpha emissions'], 'model': ['radiative transfer model']}
-True Tag: Sentence: We estimate atomic hydrogen optical depths
-above the methane homopause level for dayside disk observations (2004-2016) by
-comparing observed Lyman-$\alpha$ emissions to a radiative transfer model
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: We
+model emissions from resonantly scattered solar flux and a smaller but
+significant contribution by scattered photons from the interplanetary hydrogen
+(IPH) background
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -1041,14 +1047,13 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'model': ['model emissions'], 'object': ['solar flux', 'interplanetary hydrogen', 'IPH background']}
-True Tag: Sentence: We
-model emissions from resonantly scattered solar flux and a smaller but
-significant contribution by scattered photons from the interplanetary hydrogen
-(IPH) background
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: During northern summer, inferred hydrogen optical depths
+steeply decrease with latitude towards the winter hemisphere from a northern
+hemisphere bulge, as predicted by a 2D seasonal photochemical model
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -1062,24 +1067,24 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'model': ['2D seasonal photochemical model'], 'object': ['hydrogen optical depths', 'northern hemisphere bulge', 'winter hemisphere']}
-True Tag: Sentence: During northern summer, inferred hydrogen optical depths
-steeply decrease with latitude towards the winter hemisphere from a northern
-hemisphere bulge, as predicted by a 2D seasonal photochemical model
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: The
+southern hemisphere mirrors this trend during its summer
+Extractions:
+
 Predicted Response: assistant
 
 Extractions:
 {}
 Predicted Tag: {}
-True Tag: Sentence: The
-southern hemisphere mirrors this trend during its summer
-Extractions:
-
 ##################################################
 None
+True Tag: Sentence: However, inferred
+optical depths show substantially more temporal variation between 2004 and 2016
+than predicted by the photochemical model.
+Extractions:
+
 Predicted Response: assistant
 
 {
@@ -1091,9 +1096,4 @@ Predicted Response: assistant
   ]
 }
 Predicted Tag: {'model': ['photochemical model'], 'property': ['optical depths']}
-True Tag: Sentence: However, inferred
-optical depths show substantially more temporal variation between 2004 and 2016
-than predicted by the photochemical model.
-Extractions:
-
 ##################################################

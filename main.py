@@ -116,7 +116,7 @@ def main(kind, runtype, data):
                         seen.add(dict_line["title"])
                         valid.append(dict_line)
                     else:
-                        logging.info(f"Duplicate found: {dict_line}")
+                        logging.info(f"Duplicate found in {file}:\n{dict_line}\n\n")
     else:
         valid = examples[3:]
 
@@ -223,6 +223,7 @@ def main(kind, runtype, data):
                 predicted_responses,
                 predicted_tags,
                 metrics,
+                runtype,
                 append=(i > 0),
             )
 
@@ -244,6 +245,7 @@ def main(kind, runtype, data):
             predicted_responses,
             predicted_tags,
             metrics,
+            runtype,
             append=True,
         )
 

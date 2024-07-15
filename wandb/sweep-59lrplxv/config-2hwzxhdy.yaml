@@ -1,8 +1,0 @@
-wandb_version: 1
-
-kind:
-  value: readable
-max_results:
-  value: 1000
-model_id:
-  value: meta-llama/Meta-Llama-3-70B-Instruct
