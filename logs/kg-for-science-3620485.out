@@ -1,0 +1,43 @@
+Running on workergpu066 with 2 NVIDIA A100-SXM4-80GB  GPUs.
+no change     /mnt/home/adas1/miniconda3/condabin/conda
+no change     /mnt/home/adas1/miniconda3/bin/conda
+no change     /mnt/home/adas1/miniconda3/bin/conda-env
+no change     /mnt/home/adas1/miniconda3/bin/activate
+no change     /mnt/home/adas1/miniconda3/bin/deactivate
+no change     /mnt/home/adas1/miniconda3/etc/profile.d/conda.sh
+no change     /mnt/home/adas1/miniconda3/etc/fish/conf.d/conda.fish
+no change     /mnt/home/adas1/miniconda3/shell/condabin/Conda.psm1
+no change     /mnt/home/adas1/miniconda3/shell/condabin/conda-hook.ps1
+no change     /mnt/home/adas1/miniconda3/lib/python3.12/site-packages/xontrib/conda.xsh
+no change     /mnt/home/adas1/miniconda3/etc/profile.d/conda.csh
+no change     /mnt/home/adas1/.bashrc
+No action taken.
+Failed to parse JSON: {
+  "property": [
+    "NFW concentration parameter"
+  ],
+  "object": [
+    "c_{\rm vir}
+Error: Unterminated string starting at: line 6 column 5 (char 75)
+Failed to parse JSON: {
+  "model": [
+    "strong gravity" black holes
+  ],
+  "field": [
+    "gravity"
+  ],
+  "object": [
+    "hadrons",
+    "Einstein field equations",
+    "black holes"
+  ]
+}
+Error: Expecting ',' delimiter: line 3 column 22 (char 36)
+{'avg_pred_response_time_per_sentence': 5.3786,
+ 'f1': 0.352,
+ 'precision': 0.3823,
+ 'recall': 0.3261,
+ 'total_time': 618.5775,
+ 'union_f1': 0.5088,
+ 'union_precision': 0.5581,
+ 'union_recall': 0.4675}

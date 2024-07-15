@@ -1,0 +1,460 @@
+assistant
+
+{'object': ['Boltzmann equation', 'cosmological perturbations']}
+##################################################
+assistant
+
+{'object': ['polarized radiation', 'distribution function']}
+##################################################
+assistant
+
+{'object': ['Liouville operator', 'electrons', 'photons'], 'property': ['free streaming','scattering']}
+##################################################
+assistant
+
+{'property': ['photon momentum'],'modality': ['multipoles', 'normal modes']}
+##################################################
+assistant
+
+{'object': ['cosmic microwave background bispectrum', 'perturbations', 'non-Gaussianity'], 'property': ['non-Gaussianity']}
+##################################################
+assistant
+
+{'object': ['XO-5b', 'HATNet'], 'instrument': ['HATNet']}
+##################################################
+assistant
+
+{'property': ['spectral bisector variations', 'orbital phase']}
+##################################################
+assistant
+
+{'property': ['scatter'], 'object': ['spectral line bisectors']}
+##################################################
+assistant
+
+{'object': ['planet','stellar configurations', 'hierarchical triples', 'chance alignments']}
+##################################################
+assistant
+
+{'property': ['S activity index','stellar activity']}
+##################################################
+assistant
+
+{'object': ['planet parameters', 'planet']}
+##################################################
+assistant
+
+{'object': ['stellar parameters', 'planetary parameters']}
+##################################################
+assistant
+
+{'object': ['XO-5b','star'], 'property': ['mass', 'radius','metallicity']}
+##################################################
+assistant
+
+{'object': ['planetary mass', 'radius', 'M_Jup', 'R_Jup'], 'property': ['mean density']}
+##################################################
+assistant
+
+{'property': ['P', 'E', 'transit duration']}
+##################################################
+assistant
+
+{'property': ['transit timing variations']}
+##################################################
+assistant
+
+{'object': ['planet XO-5b', 'exoplanets'], 'property': ['Safronov number','surface gravity']}
+##################################################
+assistant
+
+{'object': ['W51', 'Sagitarius arm', 'Sun']}
+##################################################
+assistant
+
+{'object': ['W51A', 'W51B', 'W51C', 'HII regions','supernova remnant']}
+##################################################
+assistant
+
+{'dataset': ['continuum radio observations'], 'instrument': ['GMRT'],'modality': ['radio'], 'object': ['HII regions', 'W51 complex']}
+##################################################
+assistant
+
+{'object': ['spectra', 'W51', 'electron temperatures', 'emission measures'], 'property': ['electron temperatures', 'emission measures']}
+##################################################
+assistant
+
+{'property': ['electron temperatures'], 'object': ['continuum spectra', 'HII regions', 'radio recombination line (RRL)'],'modality': ['continuum spectra', 'radio recombination line (RRL)']}
+##################################################
+assistant
+
+{'model': ['multicomponent model'], 'property': ['brightness']}
+##################################################
+assistant
+
+{'object': ['dynamics structure', 'cluster A1689'], 'instrument': ['VLT/VIMOS', 'Subaru/Suprime-Cam'],'modality': ['spectroscopy', 'imaging']}
+##################################################
+assistant
+
+{'object': ['radial velocity distribution', 'cluster members','velocity caustics'], 'property': ['maximum amplitude', 'amplitude','velocity', 'limiting radius']}
+##################################################
+assistant
+
+{'model': ['model-independent method'],'method': ['Jeans equation'], 'property': ['3D velocity anisotropy', 'galaxy number density','velocity dispersion'], 'object': ['galaxy', 'cluster'], 'instrument': ['Subaru']}
+##################################################
+assistant
+
+{'property': ['velocity anisotropy', 'radius']}
+##################################################
+assistant
+
+{'method': ['solution of the Jeans equation','second method'], 'object': ['galaxy','mass distribution', 'caustic amplitude', 'escape velocity'], 'property': ['NFW form']}
+##################################################
+assistant
+
+{'object': ['cluster virial mass'], 'property': ['virial mass']}
+##################################################
+assistant
+
+{'property': ['NFW concentration parameter']}
+##################################################
+assistant
+
+{'object': ['virial radius', 'caustics', 'cluster members', 'A1689'], 'property': ['velocity']}
+##################################################
+assistant
+
+{'property': ['temperature dependence', 'nuclear symmetry energy'], 'object': ['stellar core']}
+##################################################
+assistant
+
+{'model': ['one-zone simulation'], 'property': ['lepton fraction', 'beta equilibrium']}
+##################################################
+assistant
+
+{'property': ['strength']}
+##################################################
+assistant
+
+{'property': ['temperature dependence','symmetry energy', 'deleptonization', 'dissociation energy','shock wave energetics'], 'object': ['shock']}
+##################################################
+assistant
+
+{'model': ['one-zone model'],'method': ['numerical simulations'], 'object': ['systematic effect','supernova explosions']}
+##################################################
+assistant
+
+{'model': ['Einstein field equations'], 'object': ['hadrons', 'black holes']}
+##################################################
+assistant
+
+{'object': ['proton', 'Kerr black hole'], 'property': ['mass', 'angular momentum']}
+##################################################
+assistant
+
+{'object': ['proton'], 'property': ['mass', 'radius']}
+##################################################
+assistant
+
+{'object': ['alpha particle'], 'property': ['radius']}
+##################################################
+assistant
+
+{'model': ['Kerr solution of General Relativity'], 'object': ['subatomic particle mass spectrum'], 'property': ['mass']}
+##################################################
+assistant
+
+{'property': ['particle masses', 'Kerr solution', 'Planck mass'], 'object': ['Kerr solution', 'Planck mass']}
+##################################################
+assistant
+
+{'property': ['accuracy']}
+##################################################
+assistant
+
+{'property': ['atomic scale gravitational coupling constant', 'fine structure constant'], 'object': ['Planck scale']}
+##################################################
+assistant
+
+{'model': ['theory'], 'property': ['large-scale','magnetic field', 'linear', 'low Rm', 'weak shear'], 'object': ['conducting fluid']}
+##################################################
+assistant
+
+{'object': ['dynamo', 'electromotive force']}
+##################################################
+assistant
+
+{'model': ['quasilinear calculation'], 'task': ['put the shear dynamo on a firm theoretical footing'], 'object': ['shear dynamo']}
+##################################################
+assistant
+
+{'property': ['wavenumber', 'growth rate']}
+##################################################
+assistant
+
+{'model': ['shear dynamo action'], 'property': ['simplicity', 'generic property'], 'object': ['magnetohydrodynamic turbulence']}
+##################################################
+assistant
+
+{'object': ['Sunyaev-Zel\'dovich effect (SZE)', 'Bullet cluster', 'APEX-SZ instrument'], 'instrument': ['APEX-SZ instrument']}
+##################################################
+assistant
+
+{'object': ['SZE', 'galaxy cluster']}
+##################################################
+assistant
+
+{'object': ['cluster','source position']}
+##################################################
+assistant
+
+{'object': ['SZE map', 'X-ray maps','system', 'SZE emission', 'radio sources', 'IR sources']}
+##################################################
+assistant
+
+{'model': ['isothermal elliptical beta model', 'cluster gas models'], 'object': ['data'],'modality': ['X-ray observations']}
+##################################################
+assistant
+
+{'property': ['power-law index', 'core radius', 'axial ratio', 'central temperature decrement', 'flux calibration uncertainty']}
+##################################################
+assistant
+
+{'property': ['mass-weighted temperature', 'X-ray spectroscopic temperatures'], 'instrument': ['APEX-SZ', 'Chandra X-ray'], 'object': ['cluster gas']}
+##################################################
+assistant
+
+{'object': ['cluster gas', 'prolate spheroidal geometries', 'oblate spheroidal geometries'], 'property': ['gas mass fraction']}
+##################################################
+assistant
+
+{'instrument': ['APEX-SZ experiment','superconducting transition-edge sensor bolometers']}
+##################################################
+assistant
+
+{'object': ['coordinate system','space-time', 'hypersurface', 'time coordinate']}
+##################################################
+assistant
+
+{'property': ['time coordinate']}
+##################################################
+assistant
+
+{'object': ['coordinate system'], 'property': ['physical laws', 'physical variables', 'geometrical meaning']}
+##################################################
+assistant
+
+{'object': ['natural coordinate system']}
+##################################################
+assistant
+
+{'method': ['constructing method']}
+##################################################
+assistant
+
+{'model': ['Newtonian mechanics'],'method': ['classical approximation', 'weak field approximation', 'low speed approximation'], 'object': ['spinor equation', 'Einstein\'s equation', 'particles','space-time']}
+##################################################
+assistant
+
+{'object': ['coordinate system','space-time']}
+##################################################
+assistant
+
+{'dataset': ['2MASS Redshift Survey (2MRS)', '2 Micron All-Sky Survey (2MASS) Tully-Fisher Survey (2MTF)'], 'task': ['measure Tully-Fisher (TF) distances'], 'object': ['spirals']}
+##################################################
+assistant
+
+{'object': ['TF relation', '2MASS J', 'H', 'K'],'modality': ['2MASS J', 'H', 'K'], 'property': ['universal calibration']}
+##################################################
+assistant
+
+{'object': ['template'], 'property': ['bias corrected', 'universal']}
+##################################################
+assistant
+
+{'property': ['slope', 'wavelength'], 'object': ['TF relation', 'K-band', 'J', 'H-bands']}
+##################################################
+assistant
+
+{'object': ['galaxy','spirals'], 'property': ['morphology', 'TF zeropoint']}
+##################################################
+assistant
+
+{'object': ['Sc galaxies']}
+##################################################
+assistant
+
+{'property': ['width', 'intrinsic scatter'], 'object': ['TF relation']}
+##################################################
+assistant
+
+{'object': ['Loop I magnetic superbubble', 'Sun', 'bubble']}
+##################################################
+assistant
+
+{'object': ['Loop I', 'Sun', 'S1 shell'],'modality': ['polarized radio continuum'],'model': ['magnetic shells']}
+##################################################
+assistant
+
+{'object': ['Sun', 'interstellar magnetic field', 'interstellar material']}
+##################################################
+assistant
+
+{'object': ['subshells', 'interstellar magnetic field (ISMF)', 'interstellar FeII', 'CaII', 'Sun'], 'property': ['optical polarization']}
+##################################################
+assistant
+
+{'model': ['model of Loop I'], 'object': ['Loop I', 'ISM']}
+##################################################
+assistant
+
+{'object': ['CaII', 'interstellar radiation field','star','magnetic subshells'], 'property': ['column densities','strength']}
+##################################################
+assistant
+
+{'property': ['symmetry', 'dipole moment'], 'object': ['cosmic microwave background', 'heliosphere', 'local ISMF']}
+##################################################
+assistant
+
+{'object': ['galaxies', 'elliptical galaxies', 'classical bulges', 'pseudo-bulges', 'central black holes'], 'property': ['mass','stellar masses', 'central stellar velocity dispersion sigma']}
+##################################################
+assistant
+
+{'object': ['elliptical galaxy', 'bulge', 'black holes', 'elliptical galaxies', 'classical bulges', 'pseudo-bulges'], 'property': ['mass', 'local universe']}
+##################################################
+assistant
+
+{'object': ['ellipticals', 'classical bulges', 'pseudo-bulges','stellar masses', 'barred galaxies']}
+##################################################
+assistant
+
+{'object': ['black hole masses', 'black hole', 'M_BH-M_Bulge', 'M_BH-sigma relations'], 'property': ['black hole masses']}
+##################################################
+assistant
+
+{'property': ['M_BH-sigma relation', 'M_BH-M_Bulge relation', 'total mass density'], 'object': ['black holes']}
+##################################################
+assistant
+
+{'property': ['density contrast', 'peculiar velocity', 'differential length scales', 'integral length scales'], 'object': ['field', 'fluctuations']}
+##################################################
+assistant
+
+{'object': ['halos', 'galaxies','structures', 'galaxy distribution'], 'property': ['length scales','mass scales']}
+##################################################
+assistant
+
+{'property': ['scales'], 'object': ['fields']}
+##################################################
+assistant
+
+{'object': ['gravitino dark matter', 'gravitino','supersymmetry'], 'property': ['branching ratios', 'R-violating couplings']}
+##################################################
+assistant
+
+{'property': ['decay modes', 'final state products', 'R-violating hierarchies']}
+##################################################
+assistant
+
+{'property': ['relative magnitude', 'phase space suppression'], 'object': ['heavy flavours']}
+##################################################
+assistant
+
+{'object': ['gravitino', 'Next-to-Lightest Supersymmetric Particle (NLSP)','superparticle']}
+##################################################
+assistant
+
+{'object': ['gravitational lensing observations', 'Jee et al']}
+##################################################
+assistant
+
+{'object': ['caustic ring', 'dark matter', 'galaxy cluster']}
+##################################################
+assistant
+
+{'object': ['caustic ring', 'flow', 'gravitational potential well']}
+##################################################
+assistant
+
+{'object': ['caustic rings', 'dark matter', 'Milky Way','spiral galaxies']}
+##################################################
+assistant
+
+{'object': ['galaxy clusters', 'caustic rings']}
+##################################################
+assistant
+
+{'object': ['caustic ring', 'cluster'], 'property': ['column density profile']}
+##################################################
+assistant
+
+{'model': ['4-component model'], 'object': ['Elliptical galaxies', 'Sersic stars', 'LCDM dark matter (DM)', 'hot gas', 'central black hole']}
+##################################################
+assistant
+
+{'object': ['DM','stars', 'central black hole']}
+##################################################
+assistant
+
+{'property': ['inner slope', 'DM density profile']}
+##################################################
+assistant
+
+{'property': ['gas fraction', 'baryon fraction'], 'object': ['radius', 'effective radii (R_e)']}
+##################################################
+assistant
+
+{'property': ['line-of-sight velocity dispersion','velocity anisotropy', 'total mass'], 'object': ['virial radius']}
+##################################################
+assistant
+
+{'object': ['DM distributions','stellar VD profiles', 'VDs'], 'property': ['low']}
+##################################################
+assistant
+
+{'object': ['planetary nebulae', 'baryon fraction'], 'property': ['M/Ls', 'baryon fraction']}
+##################################################
+assistant
+
+{'model': ['NFW DM model', 'new model of Navarro et al']}
+##################################################
+assistant
+
+{'property': ['VD']}
+##################################################
+assistant
+
+{'model': ['NFW model'], 'property': ['M/L']}
+##################################################
+assistant
+
+{'model': ['LCDM', 'Osipkov-Merritt formula', 'NFW model'], 'property': ['radial anisotropy', 'M/L']}
+##################################################
+assistant
+
+{'model': ['DM model'], 'property': ['radial anisotropy', 'PN VDs']}
+##################################################
+assistant
+
+{'model': ['radial', 'Osipkov-Merritt', 'anisotropic models'], 'property': ['tracer density', 'total mass profiles', 'luminosity density','mass']}
+##################################################
+assistant
+
+{'object': ['hyperon-nucleon potential', 'nucleonic matter'], 'property': ['equation of state']}
+##################################################
+assistant
+
+{'object': ['hyperon-nucleon potential'], 'property': ['low-momentum']}
+##################################################
+assistant
+
+{'object': ['hyperons', 'neutron stars'],'method': ['Hartree-Fock approximation']}
+##################################################
+assistant
+
+{'object': ['hyperons', 'neutron stars']}
+##################################################
+assistant
+
+{'object': ['neutron stars'], 'property': ['mass', 'radius']}
+##################################################

@@ -1,0 +1,700 @@
+assistant
+
+{
+  "object": [
+    "coronal mass ejections",
+    "magnetic flux ropes"
+  ],
+  "property": [
+    "morphology",
+    "toroidal flux"
+  ]
+}
+##################################################
+assistant
+
+{
+  "object": [
+    "coronal mass ejections",
+    "CMEs",
+    "Sun",
+    "heliospheric environment"
+  ]
+}
+##################################################
+assistant
+
+{
+  "object": [
+    "CMEs",
+    "progenitors",
+    "solar source regions"
+  ],
+  "property": [
+    "properties"
+  ],
+  "field": [
+    "space weather"
+  ]
+}
+##################################################
+assistant
+
+{
+  "task": [
+    "primary objective"
+  ],
+  "object": [
+    "CMEs",
+    "progenitors",
+    "solar source regions",
+    "magnetic structures"
+  ]
+}
+##################################################
+assistant
+
+{
+  "dataset": [
+    "dataset"
+  ],
+  "instrument": [
+    "Regularized Biot-Savart Laws (RBSL)"
+  ],
+  "object": [
+    "magnetic flux rope",
+    "series",
+    "projection shapes",
+    "sizes",
+    "toroidal fluxes"
+  ]
+}
+##################################################
+assistant
+
+{
+  "model": [
+    "global coronal MHD model",
+    "COCONUT"
+  ],
+  "object": [
+    "flux ropes",
+    "solar surface"
+  ]
+}
+##################################################
+assistant
+
+{
+  "object": [
+    "flux ropes",
+    "CMEs"
+  ]
+}
+##################################################
+assistant
+
+{
+  "object": [
+    "CMEs"
+  ]
+}
+##################################################
+assistant
+
+Extractions:
+{}
+##################################################
+assistant
+
+{
+  "object": [
+    "CMEs"
+  ],
+  "property": [
+    "toroidal flux",
+    "propagation speed"
+  ]
+}
+##################################################
+assistant
+
+{
+  "object": [
+    "CMEs",
+    "outer corona",
+    "solar source regions"
+  ]
+}
+##################################################
+assistant
+
+{
+  "object": [
+    "source flux ropes",
+    "CMEs"
+  ],
+  "property": [
+    "projection shape",
+    "cross-section radius",
+    "toroidal flux",
+    "propagation speed"
+  ]
+}
+##################################################
+assistant
+
+{
+  "object": [
+    "coronal mass ejections",
+    "magnetic flux ropes"
+  ],
+  "property": [
+    "morphology",
+    "toroidal flux"
+  ]
+}
+##################################################
+assistant
+
+{
+  "object": [
+    "coronal mass ejections",
+    "CMEs",
+    "Sun",
+    "heliospheric environment"
+  ]
+}
+##################################################
+assistant
+
+{
+  "object": [
+    "CMEs",
+    "progenitors",
+    "solar source regions"
+  ],
+  "property": [
+    "properties"
+  ],
+  "field": [
+    "space weather"
+  ]
+}
+##################################################
+assistant
+
+{
+  "task": [
+    "primary objective"
+  ],
+  "object": [
+    "CMEs",
+    "progenitors",
+    "solar source regions",
+    "magnetic structures"
+  ]
+}
+##################################################
+assistant
+
+{
+  "dataset": [
+    "dataset"
+  ],
+  "instrument": [
+    "Regularized Biot-Savart Laws (RBSL)"
+  ],
+  "object": [
+    "magnetic flux rope",
+    "series",
+    "projection shapes",
+    "sizes",
+    "toroidal fluxes"
+  ]
+}
+##################################################
+assistant
+
+{
+  "model": [
+    "global coronal MHD model",
+    "COCONUT"
+  ],
+  "object": [
+    "flux ropes",
+    "solar surface"
+  ]
+}
+##################################################
+assistant
+
+{
+  "object": [
+    "flux ropes",
+    "CMEs"
+  ]
+}
+##################################################
+assistant
+
+{
+  "object": [
+    "CMEs"
+  ]
+}
+##################################################
+assistant
+
+Extractions:
+{}
+##################################################
+assistant
+
+{
+  "object": [
+    "CMEs"
+  ],
+  "property": [
+    "toroidal flux",
+    "propagation speed"
+  ]
+}
+##################################################
+assistant
+
+{
+  "object": [
+    "CMEs",
+    "outer corona",
+    "solar source regions"
+  ]
+}
+##################################################
+assistant
+
+{
+  "object": [
+    "source flux ropes",
+    "CMEs"
+  ],
+  "property": [
+    "projection shape",
+    "cross-section radius",
+    "toroidal flux",
+    "propagation speed"
+  ]
+}
+##################################################
+assistant
+
+{
+  "object": [
+    "Saturn's Lyman-$α$ brightness",
+    "Saturn"
+  ],
+  "property": [
+    "Lyman-$α$ brightness"
+  ]
+}
+##################################################
+assistant
+
+{
+  "object": [
+    "Saturn",
+    "emissions",
+    "atmosphere"
+  ],
+  "instrument": [
+    "Cassini/UVIS"
+  ],
+  "property": [
+    "meridional",
+    "seasonal"
+  ]
+}
+##################################################
+assistant
+
+{
+  "object": [
+    "emissions"
+  ],
+  "property": [
+    "atmospheric properties"
+  ]
+}
+##################################################
+assistant
+
+{
+  "object": [
+    "Lyman-$\alpha$ dayglow",
+    "solar flux",
+    "latitude"
+  ],
+  "property": [
+    "brightnesses",
+    "incident",
+    "emission",
+    "observed"
+  ]
+}
+##################################################
+assistant
+
+{
+  "property": [
+    "solar incidence angle"
+  ],
+  "instrument": [
+    "solar flux"
+  ]
+}
+##################################################
+assistant
+
+{
+  "object": [
+    "bulge",
+    "Ly-$\alpha$ brightness",
+    "southern hemisphere",
+    "northern hemisphere"
+  ]
+}
+##################################################
+assistant
+
+{
+  "object": [
+    "atomic hydrogen",
+    "methane homopause level",
+    "dayside disk",
+    "Lyman-$\alpha$ emissions"
+  ],
+  "model": [
+    "radiative transfer model"
+  ]
+}
+##################################################
+assistant
+
+{
+  "model": [
+    "model emissions"
+  ],
+  "object": [
+    "solar flux",
+    "interplanetary hydrogen",
+    "IPH background"
+  ]
+}
+##################################################
+assistant
+
+{
+  "model": [
+    "2D seasonal photochemical model"
+  ],
+  "object": [
+    "hydrogen optical depths",
+    "northern hemisphere bulge",
+    "winter hemisphere"
+  ]
+}
+##################################################
+assistant
+
+Extractions:
+{}
+##################################################
+assistant
+
+{
+  "model": [
+    "photochemical model"
+  ],
+  "property": [
+    "optical depths"
+  ]
+}
+##################################################
+assistant
+
+{
+  "object": [
+    "coronal mass ejections",
+    "magnetic flux ropes"
+  ],
+  "property": [
+    "morphology",
+    "toroidal flux"
+  ]
+}
+##################################################
+assistant
+
+{
+  "object": [
+    "coronal mass ejections",
+    "CMEs",
+    "Sun",
+    "heliospheric environment"
+  ]
+}
+##################################################
+assistant
+
+{
+  "object": [
+    "CMEs",
+    "progenitors",
+    "solar source regions"
+  ],
+  "property": [
+    "properties"
+  ],
+  "field": [
+    "space weather"
+  ]
+}
+##################################################
+assistant
+
+{
+  "task": [
+    "primary objective"
+  ],
+  "object": [
+    "CMEs",
+    "progenitors",
+    "solar source regions",
+    "magnetic structures"
+  ]
+}
+##################################################
+assistant
+
+{
+  "dataset": [
+    "dataset"
+  ],
+  "instrument": [
+    "Regularized Biot-Savart Laws (RBSL)"
+  ],
+  "object": [
+    "magnetic flux rope",
+    "series",
+    "projection shapes",
+    "sizes",
+    "toroidal fluxes"
+  ]
+}
+##################################################
+assistant
+
+{
+  "model": [
+    "global coronal MHD model",
+    "COCONUT"
+  ],
+  "object": [
+    "flux ropes",
+    "solar surface"
+  ]
+}
+##################################################
+assistant
+
+{
+  "object": [
+    "flux ropes",
+    "CMEs"
+  ]
+}
+##################################################
+assistant
+
+{
+  "object": [
+    "CMEs"
+  ]
+}
+##################################################
+assistant
+
+Extractions:
+{}
+##################################################
+assistant
+
+{
+  "object": [
+    "CMEs"
+  ],
+  "property": [
+    "toroidal flux",
+    "propagation speed"
+  ]
+}
+##################################################
+assistant
+
+{
+  "object": [
+    "CMEs",
+    "outer corona",
+    "solar source regions"
+  ]
+}
+##################################################
+assistant
+
+{
+  "object": [
+    "source flux ropes",
+    "CMEs"
+  ],
+  "property": [
+    "projection shape",
+    "cross-section radius",
+    "toroidal flux",
+    "propagation speed"
+  ]
+}
+##################################################
+assistant
+
+{
+  "object": [
+    "Saturn's Lyman-$α$ brightness",
+    "Saturn"
+  ],
+  "property": [
+    "Lyman-$α$ brightness"
+  ]
+}
+##################################################
+assistant
+
+{
+  "object": [
+    "Saturn",
+    "emissions",
+    "atmosphere"
+  ],
+  "instrument": [
+    "Cassini/UVIS"
+  ],
+  "property": [
+    "meridional",
+    "seasonal"
+  ]
+}
+##################################################
+assistant
+
+{
+  "object": [
+    "emissions"
+  ],
+  "property": [
+    "atmospheric properties"
+  ]
+}
+##################################################
+assistant
+
+{
+  "object": [
+    "Lyman-$\alpha$ dayglow",
+    "solar flux",
+    "latitude"
+  ],
+  "property": [
+    "brightnesses",
+    "incident",
+    "emission",
+    "observed"
+  ]
+}
+##################################################
+assistant
+
+{
+  "property": [
+    "solar incidence angle"
+  ],
+  "instrument": [
+    "solar flux"
+  ]
+}
+##################################################
+assistant
+
+{
+  "object": [
+    "bulge",
+    "Ly-$\alpha$ brightness",
+    "southern hemisphere",
+    "northern hemisphere"
+  ]
+}
+##################################################
+assistant
+
+{
+  "object": [
+    "atomic hydrogen",
+    "methane homopause level",
+    "dayside disk",
+    "Lyman-$\alpha$ emissions"
+  ],
+  "model": [
+    "radiative transfer model"
+  ]
+}
+##################################################
+assistant
+
+{
+  "model": [
+    "model emissions"
+  ],
+  "object": [
+    "solar flux",
+    "interplanetary hydrogen",
+    "IPH background"
+  ]
+}
+##################################################
+assistant
+
+{
+  "model": [
+    "2D seasonal photochemical model"
+  ],
+  "object": [
+    "hydrogen optical depths",
+    "northern hemisphere bulge",
+    "winter hemisphere"
+  ]
+}
+##################################################
+assistant
+
+Extractions:
+{}
+##################################################
+assistant
+
+{
+  "model": [
+    "photochemical model"
+  ],
+  "property": [
+    "optical depths"
+  ]
+}
+##################################################

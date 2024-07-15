@@ -1,0 +1,172 @@
+{
+    "gold_tags": [
+        {
+            "object": [
+                "cosmic microwave background bispectrum",
+                "second order perturbations",
+                "non-linear evolution"
+            ],
+            "property": [
+                "bispectrum",
+                "primordial non-Gaussianity",
+                "non-linear"
+            ]
+        },
+        {
+            "object": [
+                "XO-5b",
+                "exoplanets"
+            ],
+            "property": [
+                "Safronov number",
+                "gravity"
+            ]
+        },
+        {
+            "property": [
+                "brightness"
+            ],
+            "model": [
+                "multicomponent model"
+            ]
+        },
+        {
+            "property": [
+                "virial radius",
+                "radius",
+                "caustics",
+                "velocity"
+            ],
+            "object": [
+                "cluster",
+                "A1689"
+            ]
+        },
+        {
+            "method": [
+                "one-zone model"
+            ],
+            "task": [
+                "numerical simulations"
+            ],
+            "object": [
+                "supernova explosions"
+            ]
+        },
+        {
+            "object": [
+                "gravitational coupling constant",
+                "Planck scale",
+                "fine structure constant"
+            ]
+        },
+        {
+            "property": [
+                "shear dynamo action"
+            ],
+            "object": [
+                "magnetohydrodynamic turbulence"
+            ]
+        },
+        {
+            "instrument": [
+                "APEX-SZ",
+                "multiplexed superconducting transition-edge sensor bolometers"
+            ]
+        },
+        {
+            "model": [
+                "coordinate system"
+            ],
+            "object": [
+                "curved space-time",
+                "space-time"
+            ]
+        },
+        {
+            "method": [
+                "TF relation"
+            ],
+            "object": [
+                "wavelength"
+            ]
+        },
+        {
+            "property": [
+                "the dipole moment"
+            ],
+            "object": [
+                "the cosmic microwave background",
+                "the heliosphere",
+                "local ISMF"
+            ]
+        },
+        {
+            "property": [
+                "total mass density"
+            ],
+            "object": [
+                "black holes"
+            ]
+        },
+        {
+            "property": [
+                "characteristic scales",
+                "initial fields"
+            ]
+        },
+        {
+            "property": [
+                "strength of different decay rates"
+            ],
+            "object": [
+                "gravitino",
+                "Next-to-Lightest Supersymmetric Particle",
+                "superparticle"
+            ]
+        },
+        {
+            "task": [
+                "calculate the column density profile",
+                "show that it is consistent with the observations of"
+            ],
+            "property": [
+                "column density profile"
+            ],
+            "object": [
+                "caustic ring",
+                "cluster"
+            ]
+        },
+        {
+            "task": [
+                "single integral expressions are derived"
+            ],
+            "method": [
+                "single integral expressions"
+            ],
+            "property": [
+                "tracer density",
+                "total mass",
+                "radial profiles",
+                "luminosity",
+                "density",
+                "mass"
+            ],
+            "model": [
+                "anisotropic models",
+                "radial",
+                "Osipkov-Merritt"
+            ]
+        },
+        {
+            "property": [
+                "mass",
+                "radius"
+            ],
+            "object": [
+                "neutron stars"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,46 @@
+Lmod has detected the following error: These module(s) or extension(s) exist
+but cannot be loaded as requested: "gcc/10.3.0", "cuda/12.1.1"
+   Try: "module spider gcc/10.3.0 cuda/12.1.1" to see how to load the
+module(s).
+
+
+
+
+CondaError: Run 'conda init' before 'conda activate'
+
+2024-07-15 04:31:22,822 - INFO - setting random seeds and environment variables...
+2024-07-15 04:31:23,211 - INFO - loading schema and data...
+2024-07-15 04:31:23,352 - INFO - Number of training examples: 3
+2024-07-15 04:31:23,352 - INFO - Number of validation examples: 10000
+2024-07-15 04:31:23,352 - INFO - loading model and tokenizer...
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Downloading shards:   0%|          | 0/30 [00:00<?, ?it/s]Downloading shards:   3%|▎         | 1/30 [00:20<09:57, 20.59s/it]Downloading shards:   7%|▋         | 2/30 [00:41<09:34, 20.52s/it]Downloading shards:  10%|█         | 3/30 [01:03<09:34, 21.28s/it]Downloading shards:  13%|█▎        | 4/30 [01:24<09:17, 21.44s/it]Downloading shards:  17%|█▋        | 5/30 [01:45<08:48, 21.13s/it]Downloading shards:  20%|██        | 6/30 [02:05<08:21, 20.88s/it]Downloading shards:  23%|██▎       | 7/30 [02:26<07:56, 20.71s/it]Downloading shards:  27%|██▋       | 8/30 [02:48<07:43, 21.08s/it]Downloading shards:  30%|███       | 9/30 [03:10<07:28, 21.34s/it]Downloading shards:  33%|███▎      | 10/30 [03:30<07:01, 21.06s/it]Downloading shards:  37%|███▋      | 11/30 [03:51<06:37, 20.92s/it]Downloading shards:  40%|████      | 12/30 [04:11<06:14, 20.79s/it]Downloading shards:  43%|████▎     | 13/30 [04:33<06:01, 21.24s/it]Downloading shards:  47%|████▋     | 14/30 [04:55<05:43, 21.45s/it]Downloading shards:  50%|█████     | 15/30 [05:15<05:16, 21.07s/it]Downloading shards:  53%|█████▎    | 16/30 [05:36<04:52, 20.93s/it]Downloading shards:  57%|█████▋    | 17/30 [05:57<04:32, 20.97s/it]Downloading shards:  60%|██████    | 18/30 [06:19<04:15, 21.32s/it]Downloading shards:  63%|██████▎   | 19/30 [06:41<03:56, 21.52s/it]Downloading shards:  67%|██████▋   | 20/30 [07:02<03:31, 21.18s/it]Downloading shards:  70%|███████   | 21/30 [07:22<03:08, 20.98s/it]Downloading shards:  73%|███████▎  | 22/30 [07:43<02:47, 20.88s/it]Downloading shards:  77%|███████▋  | 23/30 [08:05<02:28, 21.19s/it]Downloading shards:  80%|████████  | 24/30 [08:26<02:08, 21.33s/it]Downloading shards:  83%|████████▎ | 25/30 [08:47<01:45, 21.06s/it]Downloading shards:  87%|████████▋ | 26/30 [09:07<01:23, 20.85s/it]Downloading shards:  90%|█████████ | 27/30 [09:28<01:02, 20.71s/it]Downloading shards:  93%|█████████▎| 28/30 [09:50<00:42, 21.11s/it]Downloading shards:  97%|█████████▋| 29/30 [10:12<00:21, 21.35s/it]Downloading shards: 100%|██████████| 30/30 [10:21<00:00, 17.71s/it]Downloading shards: 100%|██████████| 30/30 [10:21<00:00, 20.71s/it]
+Loading checkpoint shards:   0%|          | 0/30 [00:00<?, ?it/s]Loading checkpoint shards:   3%|▎         | 1/30 [00:00<00:25,  1.15it/s]Loading checkpoint shards:   7%|▋         | 2/30 [00:01<00:24,  1.16it/s]Loading checkpoint shards:  10%|█         | 3/30 [00:02<00:24,  1.12it/s]Loading checkpoint shards:  13%|█▎        | 4/30 [00:03<00:23,  1.11it/s]Loading checkpoint shards:  17%|█▋        | 5/30 [00:04<00:22,  1.13it/s]Loading checkpoint shards:  20%|██        | 6/30 [00:05<00:21,  1.14it/s]Loading checkpoint shards:  23%|██▎       | 7/30 [00:06<00:20,  1.15it/s]Loading checkpoint shards:  27%|██▋       | 8/30 [00:07<00:19,  1.13it/s]Loading checkpoint shards:  30%|███       | 9/30 [00:07<00:18,  1.12it/s]Loading checkpoint shards:  33%|███▎      | 10/30 [00:08<00:17,  1.13it/s]Loading checkpoint shards:  37%|███▋      | 11/30 [00:09<00:16,  1.14it/s]Loading checkpoint shards:  40%|████      | 12/30 [00:10<00:15,  1.15it/s]Loading checkpoint shards:  43%|████▎     | 13/30 [00:11<00:15,  1.13it/s]Loading checkpoint shards:  47%|████▋     | 14/30 [00:12<00:14,  1.12it/s]Loading checkpoint shards:  50%|█████     | 15/30 [00:13<00:13,  1.13it/s]Loading checkpoint shards:  53%|█████▎    | 16/30 [00:14<00:12,  1.13it/s]Loading checkpoint shards:  57%|█████▋    | 17/30 [00:14<00:11,  1.14it/s]Loading checkpoint shards:  60%|██████    | 18/30 [00:15<00:10,  1.12it/s]Loading checkpoint shards:  63%|██████▎   | 19/30 [00:16<00:09,  1.12it/s]Loading checkpoint shards:  67%|██████▋   | 20/30 [00:17<00:08,  1.13it/s]Loading checkpoint shards:  70%|███████   | 21/30 [00:18<00:07,  1.14it/s]Loading checkpoint shards:  73%|███████▎  | 22/30 [00:19<00:06,  1.15it/s]Loading checkpoint shards:  77%|███████▋  | 23/30 [00:20<00:06,  1.13it/s]Loading checkpoint shards:  80%|████████  | 24/30 [00:22<00:07,  1.22s/it]Loading checkpoint shards:  83%|████████▎ | 25/30 [00:23<00:05,  1.12s/it]Loading checkpoint shards:  87%|████████▋ | 26/30 [00:24<00:04,  1.04s/it]Loading checkpoint shards:  90%|█████████ | 27/30 [00:24<00:02,  1.01it/s]Loading checkpoint shards:  93%|█████████▎| 28/30 [00:25<00:01,  1.03it/s]Loading checkpoint shards:  97%|█████████▋| 29/30 [00:26<00:00,  1.05it/s]Loading checkpoint shards: 100%|██████████| 30/30 [00:27<00:00,  1.27it/s]Loading checkpoint shards: 100%|██████████| 30/30 [00:27<00:00,  1.10it/s]
+2024-07-15 04:42:14,220 - INFO - generating base prompt...
+2024-07-15 04:42:14,228 - INFO - running the model...
+2024-07-15 04:42:14,228 - INFO - Run type: new
+2024-07-15 04:42:14,229 - INFO - Kind: json
+2024-07-15 04:42:14,229 - INFO - Data: data/valid
+2024-07-15 04:42:14,229 - INFO - Model: meta-llama/Meta-Llama-3-70B-Instruct
+  0%|          | 0/10000 [00:00<?, ?it/s]2024-07-15 04:42:14,230 - INFO - ##################################################
+  0%|          | 0/10000 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/mnt/home/adas1/projects/knowledge-graph/kg-for-science/main.py", line 314, in <module>
+    f.write(f"Predicted Tag: {pred_tag}\n")
+^^
+  File "/mnt/home/adas1/miniconda3/envs/kg4s/lib/python3.11/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/adas1/miniconda3/envs/kg4s/lib/python3.11/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/mnt/home/adas1/miniconda3/envs/kg4s/lib/python3.11/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/adas1/miniconda3/envs/kg4s/lib/python3.11/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/adas1/projects/knowledge-graph/kg-for-science/main.py", line 180, in main
+    )
+      
+KeyError: 'abstract'

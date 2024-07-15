@@ -1,4 +1,5 @@
 import json
+import logging
 import re
 from bs4 import BeautifulSoup
 from collections import defaultdict
@@ -52,19 +53,27 @@ def extract_all_tagged_phrases(text: str) -> Dict[str, List[str]]:
 def extract_prediction(schema: dict, prediction: str, kind: str = "json") -> dict:
     pred = {}
     if kind == "json":
-        json_match = re.search(r"\{[^}]+\}", prediction)
+        json_match = re.search(r"\{[\s\S]+\}", prediction)
         if json_match:
-            # TODO: Replace single quotes with double quotes in prompt and remove code below.
             json_str = json_match.group(0)
-            json_str = re.sub(r"(?<![\w'])'|'(?![\w'])", '"', json_str)
+            json_str = re.sub(r"(\w+)-\$?\\?(\w+)\$?", r"\1-\2", json_str)
+            json_str = json_str.replace('\\"', '"')
             json_str = re.sub(r'}\s*"', '}, "', json_str)
             json_str = re.sub(r']\s*"', '], "', json_str)
             try:
                 pred = json.loads(json_str)
             except json.JSONDecodeError as e:
-                # TODO: Use the warning module here.
-                print(f"Failed to parse JSON: {json_str}")
-                print(f"Error: {str(e)}")
+                logging.warning(f"Failed to parse JSON: {json_str}")
+                logging.warning(f"Error: {str(e)}")
+
+                try:
+                    json_str = re.sub(r",\s*([}\]])", r"\1", json_str)
+                    json_str = re.sub(r"(?<![\w'])'|'(?![\w'])", '"', json_str)
+                    pred = json.loads(json_str)
+                except json.JSONDecodeError:
+                    logging.error(
+                        f"Failed to parse JSON even after attempted fixes: {json_str}"
+                    )
     elif kind == "readable":
         match = re.findall(
             rf'^({"|".join(list(schema.keys()))}): (.+)$',

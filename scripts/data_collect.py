@@ -40,8 +40,11 @@ def main(search_query, max_results, sort_by, sort_order, out_file, annotations_f
     assert len(titles) == len(annotations)
 
     results = get_arxiv_papers(search_query, max_results, sort_by, sort_order, titles)
+    if len(results) == 0:
+        click.echo("No new results to save.")
+        return
 
-    data_dir = "data"
+    data_dir = "data/valid"
     os.makedirs(data_dir, exist_ok=True)
     if out_file is None:
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -72,7 +75,8 @@ def get_arxiv_papers(
         if sort_order == "desc"
         else arxiv.SortOrder.Ascending
     )
-
+    # TODO: add error handling for invalid search queries
+    # TODO: modify script to allow all the results for a given search query till exhaustion. max_results not specified
     search = arxiv.Search(
         query=search_query,
         max_results=None,
@@ -89,7 +93,7 @@ def get_arxiv_papers(
                     "id": result.entry_id,
                     "title": result.title,
                     "authors": [author.name for author in result.authors],
-                    "summary": result.summary,
+                    "abstract": result.summary,
                     "published": result.published.isoformat(),
                     "updated": result.updated.isoformat(),
                     "pdf_url": result.pdf_url,

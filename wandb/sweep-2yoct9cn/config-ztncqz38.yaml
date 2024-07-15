@@ -1,0 +1,12 @@
+wandb_version: 1
+
+few_shot:
+  value: last
+kind:
+  value: readable
+model_id:
+  value: meta-llama/Meta-Llama-3-70B-Instruct
+num_few_shot_size:
+  value: 1
+temperature:
+  value: 0.5
