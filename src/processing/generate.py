@@ -13,6 +13,7 @@ from .extractions import extract_all_tagged_phrases
 # nlp = spacy.load("en_core_web_sm")
 
 
+# TODO: review instruction and system level prompt (currently they are repetitive)
 def get_sentences(text: str) -> List[str]:
     # TODO: spacy splitting results in unequal lengths
     # doc = nlp(text)
@@ -56,15 +57,44 @@ def generate_instructions(schema: dict, kind: str = "json") -> str:
     return "".join(instruction_parts)
 
 
-def generate_demonstrations(examples: List[dict], kind: str = "json") -> str:
+def generate_demonstrations(
+    examples: List[dict],
+    kind: str = "json",
+    num_examples: int = 3,
+    selection: str = "random",
+) -> str:
     demonstration_parts = []
-    for example in random.sample(examples, k=3):
+    for example in examples:
         sentences = get_sentences(example["abstract"])
         tagged_sentences = get_sentences(example["tagged_abstract"])
+        paired_sentences = list(zip(sentences, tagged_sentences, strict=True))
 
-        for sentence, tagged_sentence in random.sample(
-            list(zip(sentences, tagged_sentences, strict=True)), k=3
-        ):
+        if selection == "random":
+            selected_pairs = random.sample(
+                paired_sentences, min(num_examples, len(paired_sentences))
+            )
+        elif selection == "first":
+            selected_pairs = paired_sentences[:num_examples]
+        elif selection == "last":
+            selected_pairs = paired_sentences[-num_examples:]
+        elif selection == "middle":
+            start = max(0, (len(paired_sentences) - num_examples) // 2)
+            selected_pairs = paired_sentences[start : start + num_examples]
+        elif selection == "distributed":
+            step = max(1, len(paired_sentences) // num_examples)
+            selected_pairs = paired_sentences[::step][:num_examples]
+        elif selection == "longest":
+            selected_pairs = sorted(
+                paired_sentences, key=lambda x: len(x[0]), reverse=True
+            )[:num_examples]
+        elif selection == "shortest":
+            selected_pairs = sorted(paired_sentences, key=lambda x: len(x[0]))[
+                :num_examples
+            ]
+        else:
+            raise ValueError(f"Invalid selection method: {selection}")
+
+        for sentence, tagged_sentence in selected_pairs:
             tag_to_phrase = extract_all_tagged_phrases(tagged_sentence)
             if kind == "json":
                 extractions = f"{json.dumps(tag_to_phrase, indent=2)}\n"
@@ -85,12 +115,22 @@ def generate_prefix(instructions: str, demonstrations: str) -> str:
     return f"{instructions}" f"{demonstrations}"
 
 
-def generate_prediction(model, tokenizer, prefix: str, input: str, kind: str) -> str:
+def generate_prediction(
+    model,
+    tokenizer,
+    prefix: str,
+    input: str,
+    kind: str,
+    temperature: float = 0.6,
+    top_p: float = 0.95,
+) -> str:
     prompt = prefix + input
     messages = [
         {
             "role": "system",
-            "content": "You are an assistant who tags papers according to given schema and only returns the tagged phrases in the format as provided in the examples without repeating anything else.",
+            "content": f"You are an assistant who tags papers according to given schema and "
+            "only returns the tagged phrases in the format as provided in the examples "
+            "without repeating anything else.",
         },
         {"role": "user", "content": prompt},
     ]
@@ -112,8 +152,8 @@ def generate_prediction(model, tokenizer, prefix: str, input: str, kind: str) ->
         eos_token_id=terminators,
         # num_beams=8,
         do_sample=True,
-        temperature=1.0,
-        top_p=0.9,
+        temperature=temperature,
+        top_p=top_p,
     )
     response = outputs[0][input_ids.shape[-1] :]
     prediction_response = tokenizer.decode(response, skip_special_tokens=True)

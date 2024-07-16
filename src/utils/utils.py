@@ -3,16 +3,16 @@ import logging
 import os
 import torch
 
+from config import DEFAULT_RES_DIR as RES_DIR
+
 from accelerate import infer_auto_device_map, init_empty_weights, Accelerator
 from transformers import AutoTokenizer, AutoModelForCausalLM, AutoConfig
-
-RES_DIR = "results"
 
 
 def save_results(
     out_dir_path,
-    gold_tags,
     all_inputs,
+    gold_tags,
     predicted_responses,
     predicted_tags,
     metrics,
@@ -22,8 +22,8 @@ def save_results(
     mode = "a" if append else "w"
 
     with open(os.path.join(RES_DIR, out_dir_path, "prompts.txt"), mode) as f:
-        for input, pred_response, pred_tag, gold_tag in zip(
-            all_inputs, predicted_responses, predicted_tags, gold_tags
+        for input, gold_tag, pred_response, pred_tag in zip(
+            all_inputs, gold_tags, predicted_responses, predicted_tags
         ):
             f.write(f"{input}\n")
             f.write(f"True Tag: {gold_tag}\n")
@@ -73,12 +73,31 @@ def save_results(
     logging.info(f"Results saved in: {os.path.join(RES_DIR, out_dir_path)}")
 
 
+def save_best_config(metrics, config, out_dir_path):
+    best_config_path = os.path.join(RES_DIR, out_dir_path, "best_config.json")
+    if os.path.exists(best_config_path):
+        with open(best_config_path, "r") as f:
+            best_config = json.load(f)
+        if metrics["precision"] > best_config["metrics"]["precision"]:
+            best_config = {"metrics": metrics, "config": config}
+    else:
+        best_config = {"metrics": metrics, "config": config}
+
+    with open(best_config_path, "w") as f:
+        json.dump(best_config, f, indent=4)
+
+
 def set_env_vars(fname="../access_keys.json"):
     with open(fname) as f:
         keys = json.load(f)
         for key in keys:
             if key not in os.environ.keys():
                 os.environ[key.upper()] = keys[key]
+
+
+def load_sweep_config(config_path="sweep_config.json"):
+    with open(config_path, "r") as f:
+        return json.load(f)
 
 
 def load_model_and_tokenizer(model_id: str):

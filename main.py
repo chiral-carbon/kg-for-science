@@ -8,10 +8,12 @@ import random
 import re
 import torch
 import string
-import torch.nn.functional as F
-
-# import wandb
+import sys
+import torch
+import wandb
 import warnings
+
+warnings.filterwarnings("ignore")
 
 from collections import defaultdict
 from datetime import datetime
@@ -23,6 +25,7 @@ from sklearn.metrics import accuracy_score, f1_score
 from torch.profiler import profile, record_function, ProfilerActivity
 from transformers import AutoTokenizer, AutoModelForCausalLM, AutoConfig
 
+from config import *
 from src.processing.generate import (
     format_instance,
     get_sentences,
@@ -33,14 +36,20 @@ from src.processing.generate import (
 )
 from src.processing.extractions import extract_all_tagged_phrases, extract_prediction
 from src.eval.metrics import classify_predictions, compute_metrics
-from src.utils.utils import load_model_and_tokenizer, save_results, set_env_vars
+from src.utils.utils import (
+    load_model_and_tokenizer,
+    save_results,
+    set_env_vars,
+    load_sweep_config,
+    save_best_config,
+)
 
 
 # TODO: add sweep configuration and run sweeps
 # TODO: add batching to run data parallely using DDP after committing single data run
-SAVE_INTERVAL = 10
-RES_DIR = "results"
-LOG_DIR = "logs"
+SAVE_INTERVAL = DEFAULT_SAVE_INTERVAL
+RES_DIR = DEFAULT_RES_DIR
+LOG_DIR = DEFAULT_LOG_DIR
 
 
 @click.command()
@@ -60,29 +69,75 @@ LOG_DIR = "logs"
     default=None,
     help="Specify the directory of the data if running on new data",
 )
-def main(kind, runtype, data):
-    # set up logging and save directories
+@click.option(
+    "--sweep",
+    is_flag=True,
+    help="Run sweeps",
+)
+@click.option(
+    "--sweep_config",
+    default="sweep_config.json",
+    help="Sweep configuration file",
+)
+@click.option(
+    "--load_best_config",
+    default=None,
+    help="Load the best configuration from a file",
+)
+def main(kind, runtype, data, sweep, sweep_config, load_best_config):
+    # set up wandb
+    with wandb.init() as run:
+        config = wandb.config
+
+        if sweep and runtype != "eval":
+            raise ValueError("Sweeps can only be run in eval mode")
+        if sweep:
+            kind = config.kind
+            temperature = config.temperature
+            top_p = config.top_p
+            few_shot_num = config.few_shot_num
+            few_shot_selection = config.few_shot_selection
+            # few_shot_type = config.few_shot_type
+        elif load_best_config:
+            with open(load_best_config, "r") as f:
+                best_config = json.load(f)
+            kind = best_config["kind"]
+            temperature = best_config["temperature"]
+            top_p = best_config["top_p"]
+            few_shot_num = best_config["few_shot_num"]
+            few_shot_selection = best_config["few_shot_selection"]
+        else:
+            temperature = DEFAULT_TEMPERATURE
+            top_p = DEFAULT_TOP_P
+            few_shot_num = DEFAULT_FEW_SHOT_NUM
+            few_shot_selection = DEFAULT_FEW_SHOT_SELECTION
+
+        wandb.run.name = f"run_{kind}_t{temperature:.2f}_p{top_p:.2f}_fs{few_shot_num}_{few_shot_selection}"
+
     logger = logging.getLogger(__name__)
 
-    few_shot = "random"
+    # set up logging and save directories
     uuid = "".join(
         random.choice(string.ascii_letters + string.digits) for _ in range(8)
     )
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    out_dir_path = f"{runtype}_{few_shot}_{kind}_{uuid}_{timestamp}"
+    out_dir_path = f"{runtype}_{few_shot_selection}_{kind}_{uuid}_{timestamp}"
     os.makedirs(os.path.join(RES_DIR, out_dir_path), exist_ok=True)
     os.makedirs(os.path.join(RES_DIR, out_dir_path, LOG_DIR), exist_ok=True)
 
-    log_file = os.path.join(RES_DIR, out_dir_path, LOG_DIR, f"log.txt")
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s - %(levelname)s - %(message)s",
-        handlers=[logging.FileHandler(log_file), logging.StreamHandler()],
+        handlers=[
+            logging.FileHandler(
+                os.path.join(RES_DIR, out_dir_path, LOG_DIR, f"log.txt")
+            ),
+            logging.StreamHandler(),
+        ],
     )
 
     # set random seeds and environment variables
     logging.info("setting random seeds and environment variables...")
-    warnings.filterwarnings("ignore")
     random.seed(0)
     np.random.seed(1)
     torch.manual_seed(2)
@@ -125,22 +180,26 @@ def main(kind, runtype, data):
 
     # load model and tokenizer
     logging.info("loading model and tokenizer...")
-    model_id = "meta-llama/Meta-Llama-3-70B-Instruct"
+    model_id = DEFAULT_MODEL_ID
     model, tokenizer = load_model_and_tokenizer(model_id)
 
     # generate the prefix
     logging.info("generating base prompt...")
     prefix = generate_prefix(
         instructions=generate_instructions(schema, kind),
-        demonstrations=generate_demonstrations(train, kind),
+        demonstrations=generate_demonstrations(
+            train, kind, num_examples=few_shot_num, selection=few_shot_selection
+        ),
     )
 
     # run/evaluate the model
     logging.info("running the model...")
     logging.info(f"Run type: {runtype}")
-    logging.info(f"Kind: {kind}")
     logging.info(f"Data: {data}")
     logging.info(f"Model: {model_id}")
+    logging.info(
+        f"Run parameters: kind={kind}, temperature={temperature}, top_p={top_p}, few_shot_num={few_shot_num}, few_shot_selection={few_shot_selection}"
+    )
 
     if runtype == "eval":
         n_tp = 0
@@ -173,7 +232,13 @@ def main(kind, runtype, data):
 
             s_time = time()
             predicted_response = generate_prediction(
-                model, tokenizer, prefix, input, kind
+                model,
+                tokenizer,
+                prefix,
+                input,
+                kind,
+                temperature=temperature,
+                top_p=top_p,
             )
             e_time = time()
             pred = extract_prediction(schema, predicted_response, kind=kind)
@@ -224,7 +289,7 @@ def main(kind, runtype, data):
                 predicted_tags,
                 metrics,
                 runtype,
-                append=(i > 0),
+                append=(i + 1) > SAVE_INTERVAL,
             )
 
     if i == len(valid) - 1:
@@ -248,11 +313,22 @@ def main(kind, runtype, data):
             runtype,
             append=True,
         )
+        all_inputs.clear()
+        gold_tags.clear()
+        predicted_responses.clear()
+        predicted_tags.clear()
 
     pprint.pprint(metrics)
+    if runtype == "eval" and sweep:
+        wandb.log(metrics)
+        save_best_config(metrics, config, out_dir_path)
 
     logger.info(f"Results saved in: {os.path.join(RES_DIR, out_dir_path)}")
 
 
 if __name__ == "__main__":
-    main()
+    if "--sweep" in sys.argv:
+        sweep_config = load_sweep_config()
+        wandb.agent(wandb.sweep(sweep_config, project="kg-runs"), function=main)
+    else:
+        main()
