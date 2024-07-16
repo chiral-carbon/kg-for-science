@@ -1,0 +1,12 @@
+wandb_version: 1
+
+few_shot_num:
+  value: 3
+few_shot_selection:
+  value: distributed
+kind:
+  value: json
+temperature:
+  value: 0.13704310889158913
+top_p:
+  value: 0.9

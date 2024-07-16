@@ -1,0 +1,257 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    python_version: 3.11.9
+    cli_version: 0.17.4
+    framework: huggingface
+    huggingface_version: 4.37.2
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1721117236
+    t:
+      1:
+      - 1
+      - 5
+      - 11
+      - 49
+      - 53
+      - 55
+      - 71
+      2:
+      - 1
+      - 5
+      - 11
+      - 49
+      - 53
+      - 55
+      - 71
+      3:
+      - 17
+      - 23
+      - 37
+      4: 3.11.9
+      5: 0.17.4
+      6: 4.37.2
+      8:
+      - 5
+      13: linux-x86_64
+kind:
+  desc: null
+  value: json
+temperature:
+  desc: null
+  value: 0.6
+top_p:
+  desc: null
+  value: 0.95
+few_shot_num:
+  desc: null
+  value: 3
+few_shot_selection:
+  desc: null
+  value: random
+_items:
+  desc: null
+  value:
+    _wandb: {}
+    kind: json
+    temperature: 0.6
+    top_p: 0.95
+    few_shot_num: 3
+    few_shot_selection: random
+_locked:
+  desc: null
+  value: {}
+_users:
+  desc: null
+  value: {}
+_users_inv:
+  desc: null
+  value: {}
+_users_cnt:
+  desc: null
+  value: 0
+_callback:
+  desc: null
+  value: wandb.sdk.wandb_run.Run._config_callback
+_settings:
+  desc: null
+  value:
+    _args:
+    - --runtype
+    - eval
+    _aws_lambda: false
+    _cli_only_mode: null
+    _code_path_local: main.py
+    _colab: false
+    _cuda: null
+    _disable_meta: false
+    _disable_service: false
+    _disable_setproctitle: false
+    _disable_stats: false
+    _disable_update_check: null
+    _disable_viewer: null
+    _disable_machine_info: false
+    _executable: /mnt/home/adas1/miniconda3/envs/kg4s/bin/python
+    _extra_http_headers: null
+    _file_stream_max_bytes: null
+    _file_stream_retry_max: null
+    _file_stream_retry_wait_min_seconds: null
+    _file_stream_retry_wait_max_seconds: null
+    _file_stream_timeout_seconds: null
+    _file_transfer_retry_max: null
+    _file_transfer_retry_wait_min_seconds: null
+    _file_transfer_retry_wait_max_seconds: null
+    _file_transfer_timeout_seconds: null
+    _flow_control_custom: false
+    _flow_control_disabled: false
+    _graphql_retry_max: null
+    _graphql_retry_wait_min_seconds: null
+    _graphql_retry_wait_max_seconds: null
+    _graphql_timeout_seconds: null
+    _internal_check_process: 8.0
+    _internal_queue_timeout: 2.0
+    _ipython: false
+    _jupyter: false
+    _jupyter_name: null
+    _jupyter_path: null
+    _jupyter_root: null
+    _kaggle: false
+    _live_policy_rate_limit: null
+    _live_policy_wait_time: null
+    _log_level: 10
+    _network_buffer: null
+    _noop: false
+    _notebook: false
+    _offline: false
+    _sync: false
+    _os: Linux-5.15.133.1.fi-x86_64-with-glibc2.28
+    _platform: linux
+    _proxies: null
+    _python: 3.11.9
+    _runqueue_item_id: null
+    _require_core: false
+    _save_requirements: true
+    _service_transport: null
+    _service_wait: 30.0
+    _shared: false
+    _start_datetime: '20240716_040716'
+    _start_time: 1721117236.0425565
+    _stats_pid: 1652465
+    _stats_sample_rate_seconds: 2.0
+    _stats_samples_to_average: 15
+    _stats_join_assets: true
+    _stats_neuron_monitor_config_path: null
+    _stats_open_metrics_endpoints: null
+    _stats_open_metrics_filters:
+    - .*
+    _stats_disk_paths:
+    - /
+    _stats_buffer_size: 0
+    _tmp_code_dir: /mnt/home/adas1/projects/knowledge-graph/kg-for-science/wandb/run-20240716_040716-7o2q38tw/tmp/code
+    _tracelog: null
+    _unsaved_keys: null
+    _windows: false
+    allow_val_change: null
+    anonymous: null
+    api_key: null
+    azure_account_url_to_access_key: null
+    base_url: https://api.wandb.ai
+    code_dir: null
+    colab_url: null
+    config_paths: null
+    console: wrap
+    console_multipart: false
+    credentials_file: /mnt/home/adas1/.config/wandb/credentials.json
+    deployment: cloud
+    disable_code: false
+    disable_git: false
+    disable_hints: null
+    disable_job_creation: false
+    disabled: false
+    docker: null
+    email: abhipsha.das16@gmail.com
+    entity: abhipsha-das16
+    files_dir: /mnt/home/adas1/projects/knowledge-graph/kg-for-science/wandb/run-20240716_040716-7o2q38tw/files
+    force: null
+    fork_from: null
+    resume_from: null
+    git_commit: 7ee0b0cf4ad938a8d4bf7969646105ab02025d09
+    git_remote: origin
+    git_remote_url: https://github.com/chiral-carbon/kg-for-science.git
+    git_root: null
+    heartbeat_seconds: 30
+    host: workergpu044
+    http_proxy: null
+    https_proxy: null
+    identity_token_file: null
+    ignore_globs: []
+    init_timeout: 90.0
+    is_local: false
+    job_name: null
+    job_source: null
+    label_disable: null
+    launch: null
+    launch_config_path: null
+    log_dir: /mnt/home/adas1/projects/knowledge-graph/kg-for-science/wandb/run-20240716_040716-7o2q38tw/logs
+    log_internal: /mnt/home/adas1/projects/knowledge-graph/kg-for-science/wandb/run-20240716_040716-7o2q38tw/logs/debug-internal.log
+    log_symlink_internal: /mnt/home/adas1/projects/knowledge-graph/kg-for-science/wandb/debug-internal.log
+    log_symlink_user: /mnt/home/adas1/projects/knowledge-graph/kg-for-science/wandb/debug.log
+    log_user: /mnt/home/adas1/projects/knowledge-graph/kg-for-science/wandb/run-20240716_040716-7o2q38tw/logs/debug.log
+    login_timeout: null
+    mode: online
+    notebook_name: null
+    program: /mnt/home/adas1/projects/knowledge-graph/kg-for-science/main.py
+    program_abspath: /mnt/home/adas1/projects/knowledge-graph/kg-for-science/main.py
+    program_relpath: main.py
+    project: kg-runs
+    project_url: https://wandb.ai/abhipsha-das16/kg-runs
+    quiet: null
+    reinit: null
+    relogin: null
+    resume: null
+    resume_fname: /mnt/home/adas1/projects/knowledge-graph/kg-for-science/wandb/wandb-resume.json
+    resumed: false
+    root_dir: /mnt/home/adas1/projects/knowledge-graph/kg-for-science
+    run_group: null
+    run_id: 7o2q38tw
+    run_job_type: null
+    run_mode: run
+    run_name: true-flower-41
+    run_notes: null
+    run_tags: null
+    run_url: https://wandb.ai/abhipsha-das16/kg-runs/runs/7o2q38tw
+    sagemaker_disable: null
+    save_code: null
+    settings_system: /mnt/home/adas1/.config/wandb/settings
+    settings_workspace: /mnt/home/adas1/projects/knowledge-graph/kg-for-science/wandb/settings
+    show_colors: null
+    show_emoji: null
+    show_errors: true
+    show_info: true
+    show_warnings: true
+    silent: false
+    start_method: null
+    strict: null
+    summary_errors: null
+    summary_timeout: 60
+    summary_warnings: 5
+    sweep_id: null
+    sweep_param_path: null
+    sweep_url: ''
+    symlink: true
+    sync_dir: /mnt/home/adas1/projects/knowledge-graph/kg-for-science/wandb/run-20240716_040716-7o2q38tw
+    sync_file: /mnt/home/adas1/projects/knowledge-graph/kg-for-science/wandb/run-20240716_040716-7o2q38tw/run-7o2q38tw.wandb
+    sync_symlink_latest: /mnt/home/adas1/projects/knowledge-graph/kg-for-science/wandb/latest-run
+    system_sample: 15
+    system_sample_seconds: 2
+    table_raise_on_max_row_limit_exceeded: false
+    timespec: '20240716_040716'
+    tmp_dir: /mnt/home/adas1/projects/knowledge-graph/kg-for-science/wandb/run-20240716_040716-7o2q38tw/tmp
+    username: adas1
+    wandb_dir: /mnt/home/adas1/projects/knowledge-graph/kg-for-science/wandb/
+_artifact_callback:
+  desc: null
+  value: wandb.sdk.wandb_run.Run._config_artifact_callback

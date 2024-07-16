@@ -1,0 +1,2468 @@
+{
+    "predicted_tags": [
+        {
+            "object": [
+                "radiative transfer",
+                "Boltzmann equation",
+                "polarization"
+            ],
+            "task": [
+                "treatment"
+            ]
+        },
+        {
+            "object": [
+                "Boltzmann equation",
+                "cosmological perturbations"
+            ],
+            "property": [
+                "second order"
+            ]
+        },
+        {
+            "object": [
+                "distribution function",
+                "polarized radiation"
+            ],
+            "property": [
+                "gauge dependence"
+            ]
+        },
+        {
+            "object": [
+                "Liouville operator",
+                "electrons",
+                "collision term",
+                "photons"
+            ],
+            "property": [
+                "free streaming",
+                "scattering"
+            ]
+        },
+        {
+            "object": [
+                "photon momentum"
+            ],
+            "modality": [
+                "projected symmetric trace-free multipoles",
+                "normal modes components"
+            ],
+            "property": [
+                "dependence"
+            ]
+        },
+        {
+            "property": [
+                "cosmic microwave background bispectrum",
+                "primordial non-Gaussianity",
+                "non-linear evolution"
+            ],
+            "object": [
+                "contribution",
+                "perturbations"
+            ]
+        },
+        {
+            "object": [
+                "hot Jupiter",
+                "XO-5b"
+            ]
+        },
+        {
+            "object": [
+                "XO-5b",
+                "HATNet"
+            ],
+            "instrument": [
+                "HATNet"
+            ]
+        },
+        {
+            "property": [
+                "spectral bisector variations",
+                "orbital phase"
+            ]
+        },
+        {
+            "object": [
+                "spectral line bisectors"
+            ],
+            "property": [
+                "scatter"
+            ]
+        },
+        {
+            "object": [
+                "stellar configurations",
+                "hierarchical triples",
+                "chance alignments",
+                "planet signals",
+                "data"
+            ]
+        },
+        {
+            "property": [
+                "S activity index",
+                "stellar activity"
+            ]
+        },
+        {
+            "object": [
+                "planet parameters",
+                "planet"
+            ]
+        },
+        {
+            "object": [
+                "stellar",
+                "planetary parameters"
+            ]
+        },
+        {
+            "object": [
+                "XO-5b",
+                "star"
+            ],
+            "property": [
+                "mass",
+                "radius",
+                "metallicity"
+            ]
+        },
+        {
+            "property": [
+                "mass",
+                "radius",
+                "mean density"
+            ],
+            "object": [
+                "planet"
+            ]
+        },
+        {
+            "property": [
+                "P",
+                "E",
+                "transit duration"
+            ]
+        },
+        {
+            "property": [
+                "transit timing variations"
+            ],
+            "object": [
+                "transit centers"
+            ]
+        },
+        {
+            "object": [
+                "planet XO-5b",
+                "exoplanets"
+            ],
+            "property": [
+                "Safronov number",
+                "surface gravity"
+            ]
+        },
+        {
+            "object": [
+                "Electron Temperatures",
+                "W51 Complex"
+            ],
+            "modality": [
+                "Radio Observations"
+            ],
+            "property": [
+                "Temperatures"
+            ]
+        },
+        {
+            "object": [
+                "W51",
+                "Sagitarius arm",
+                "Sun"
+            ],
+            "property": [
+                "distance"
+            ]
+        },
+        {
+            "object": [
+                "W51A",
+                "W51B",
+                "W51C",
+                "HII regions",
+                "supernova remnant"
+            ]
+        },
+        {
+            "instrument": [
+                "GMRT"
+            ],
+            "modality": [
+                "continuum radio"
+            ],
+            "object": [
+                "HII regions",
+                "W51 complex"
+            ],
+            "property": [
+                "resolution",
+                "frequency"
+            ]
+        },
+        {
+            "object": [
+                "spectra",
+                "W51",
+                "electron",
+                "emission"
+            ],
+            "property": [
+                "electron temperatures",
+                "emission measures"
+            ],
+            "modality": [
+                "spectra"
+            ]
+        },
+        {
+            "object": [
+                "electron temperatures",
+                "continuum spectra",
+                "temperatures",
+                "radio recombination line (RRL)",
+                "HII regions"
+            ],
+            "property": [
+                "filling factor"
+            ],
+            "modality": [
+                "continuum"
+            ]
+        },
+        {
+            "object": [
+                "brightness"
+            ],
+            "model": [
+                "multicomponent model"
+            ]
+        },
+        {
+            "object": [
+                "A1689"
+            ],
+            "instrument": [
+                "VLT/VIMOS"
+            ],
+            "property": [
+                "Mass Profile",
+                "Concentration Parameter",
+                "Velocity Anisotropy"
+            ]
+        },
+        {
+            "object": [
+                "cluster A1689"
+            ],
+            "instrument": [
+                "VLT/VIMOS",
+                "Subaru/Suprime-Cam"
+            ],
+            "modality": [
+                "spectroscopy",
+                "imaging"
+            ]
+        },
+        {
+            "property": [
+                "radial velocity distribution",
+                "amplitude",
+                "velocity"
+            ],
+            "object": [
+                "cluster members",
+                "velocity caustics"
+            ],
+            "modality": [
+                "velocity"
+            ]
+        },
+        {
+            "model": [
+                "model-independent method"
+            ],
+            "object": [
+                "galaxy",
+                "cluster"
+            ],
+            "property": [
+                "3D velocity anisotropy",
+                "galaxy number density",
+                "velocity dispersion"
+            ],
+            "instrument": [
+                "Subaru"
+            ],
+            "method": [
+                "Jeans equation",
+                "joint lensing and X-ray analysis"
+            ]
+        },
+        {
+            "property": [
+                "velocity anisotropy",
+                "radius"
+            ]
+        },
+        {
+            "method": [
+                "solution of the Jeans equation",
+                "caustic amplitude"
+            ],
+            "object": [
+                "galaxy"
+            ],
+            "property": [
+                "escape velocity"
+            ]
+        },
+        {
+            "property": [
+                "virial mass"
+            ],
+            "instrument": [
+                "lensing",
+                "X-ray"
+            ],
+            "object": [
+                "cluster"
+            ]
+        },
+        {
+            "property": [
+                "NFW concentration parameter"
+            ],
+            "object": [
+                "methods"
+            ]
+        },
+        {
+            "object": [
+                "virial radius",
+                "caustics",
+                "cluster members",
+                "A1689"
+            ],
+            "property": [
+                "velocity"
+            ]
+        },
+        {
+            "object": [
+                "neutronization",
+                "core-collapse supernovae"
+            ]
+        },
+        {
+            "object": [
+                "temperature",
+                "nuclear symmetry energy",
+                "stellar core"
+            ],
+            "property": [
+                "temperature dependence"
+            ]
+        },
+        {
+            "object": [
+                "simulation",
+                "collapse",
+                "equilibrium"
+            ],
+            "property": [
+                "lepton fraction"
+            ]
+        },
+        {
+            "property": [
+                "strength"
+            ],
+            "object": [
+                "electron capture",
+                "neutron-rich nuclei",
+                "supernova scenario"
+            ]
+        },
+        {
+            "property": [
+                "temperature dependence",
+                "symmetry energy",
+                "deleptonization",
+                "dissociation energy",
+                "strength"
+            ],
+            "object": [
+                "shock wave"
+            ]
+        },
+        {
+            "model": [
+                "one-zone model"
+            ],
+            "method": [
+                "numerical simulations"
+            ],
+            "object": [
+                "systematic effect",
+                "supernova explosions"
+            ]
+        },
+        {
+            "object": [
+                "Hadrons",
+                "Kerr-Newman Black Holes"
+            ]
+        },
+        {
+            "model": [
+                "strong gravity black holes"
+            ],
+            "object": [
+                "hadrons",
+                "Einstein field equations",
+                "black holes"
+            ],
+            "property": [
+                "scale invariance"
+            ]
+        },
+        {
+            "object": [
+                "hypothesis",
+                "proton",
+                "Kerr black hole"
+            ],
+            "property": [
+                "mass",
+                "angular momentum"
+            ]
+        },
+        {
+            "object": [
+                "proton"
+            ],
+            "property": [
+                "mass",
+                "radius"
+            ]
+        },
+        {
+            "object": [
+                "alpha particle"
+            ],
+            "property": [
+                "radius"
+            ]
+        },
+        {
+            "object": [
+                "subatomic particle mass spectrum"
+            ],
+            "modality": [
+                "mass spectrum"
+            ],
+            "model": [
+                "Kerr solution of General Relativity"
+            ],
+            "property": [
+                "mass"
+            ]
+        },
+        {
+            "property": [
+                "particle masses",
+                "quantized values"
+            ],
+            "object": [
+                "Kerr solution"
+            ]
+        },
+        {
+            "property": [
+                "accuracy"
+            ]
+        },
+        {
+            "property": [
+                "atomic scale",
+                "fine structure constant"
+            ],
+            "object": [
+                "gravitational coupling constant",
+                "Planck scale"
+            ]
+        },
+        {
+            "object": [
+                "Magnetic-Field"
+            ],
+            "property": [
+                "Large-Scale"
+            ]
+        },
+        {
+            "model": [
+                "rigorous theory"
+            ],
+            "method": [
+                "random non-helically forced motions"
+            ],
+            "object": [
+                "large-scale magnetic field",
+                "conducting fluid"
+            ],
+            "property": [
+                "linear",
+                "low Rm",
+                "weak"
+            ]
+        },
+        {
+            "object": [
+                "dynamo",
+                "fluctuations",
+                "electromotive force"
+            ],
+            "property": [
+                "kinematic",
+                "net"
+            ]
+        },
+        {
+            "method": [
+                "quasilinear calculation"
+            ],
+            "object": [
+                "shear dynamo"
+            ]
+        },
+        {
+            "property": [
+                "wavenumber",
+                "growth rate"
+            ],
+            "method": [
+                "numerically observed scalings",
+                "derived analytically"
+            ]
+        },
+        {
+            "model": [
+                "shear dynamo action"
+            ],
+            "property": [
+                "simplicity",
+                "generic property"
+            ],
+            "object": [
+                "magnetohydrodynamic turbulence"
+            ]
+        },
+        {
+            "object": [
+                "Sunyaev-Zel'dovich Effect",
+                "Bullet Cluster",
+                "APEX-SZ"
+            ]
+        },
+        {
+            "object": [
+                "Sunyaev-Zel'dovich effect",
+                "Bullet cluster",
+                "APEX-SZ instrument"
+            ],
+            "instrument": [
+                "APEX-SZ instrument"
+            ],
+            "property": [
+                "resolution"
+            ]
+        },
+        {
+            "object": [
+                "SZE",
+                "galaxy cluster"
+            ]
+        },
+        {
+            "property": [
+                "significance"
+            ],
+            "object": [
+                "cluster",
+                "source position"
+            ]
+        },
+        {
+            "object": [
+                "SZE map",
+                "X-ray maps",
+                "system",
+                "SZE emission",
+                "radio",
+                "IR sources"
+            ]
+        },
+        {
+            "model": [
+                "isothermal elliptical beta model",
+                "cluster gas models"
+            ],
+            "object": [
+                "data"
+            ],
+            "modality": [
+                "X-ray"
+            ]
+        },
+        {
+            "property": [
+                "power-law index",
+                "core radius",
+                "axial ratio",
+                "central temperature decrement",
+                "flux calibration uncertainty"
+            ],
+            "object": [
+                "X-ray"
+            ]
+        },
+        {
+            "property": [
+                "mass-weighted temperature"
+            ],
+            "instrument": [
+                "APEX-SZ",
+                "Chandra X-ray"
+            ],
+            "object": [
+                "cluster gas"
+            ]
+        },
+        {
+            "object": [
+                "cluster gas",
+                "gas"
+            ],
+            "property": [
+                "gas mass fraction"
+            ],
+            "instrument": [
+                "X-ray"
+            ],
+            "modality": [
+                "X-ray"
+            ]
+        },
+        {
+            "instrument": [
+                "APEX-SZ experiment",
+                "array of multiplexed superconducting transition-edge sensor bolometers"
+            ],
+            "object": [
+                "APEX-SZ experiment",
+                "result"
+            ]
+        },
+        {
+            "field": [
+                "Curved Space-time"
+            ]
+        },
+        {
+            "object": [
+                "coordinate system",
+                "space-time",
+                "hypersurface",
+                "time coordinate"
+            ],
+            "property": [
+                "globally valid"
+            ]
+        },
+        {
+            "property": [
+                "time"
+            ],
+            "object": [
+                "coordinate",
+                "process",
+                "world"
+            ]
+        },
+        {
+            "object": [
+                "coordinate system"
+            ],
+            "property": [
+                "physical laws",
+                "physical variables"
+            ]
+        },
+        {
+            "object": [
+                "natural coordinate system"
+            ]
+        },
+        {
+            "method": [
+                "constructing method"
+            ],
+            "object": [
+                "natural coordinate system"
+            ]
+        },
+        {
+            "model": [
+                "Newtonian mechanics",
+                "Einstein's equation"
+            ],
+            "method": [
+                "classical approximation",
+                "weak field approximation",
+                "low speed approximation"
+            ],
+            "object": [
+                "spinor equation",
+                "particles",
+                "space-time"
+            ]
+        },
+        {
+            "object": [
+                "coordinate system",
+                "space-time"
+            ],
+            "property": [
+                "curved",
+                "realistic",
+                "nature"
+            ]
+        },
+        {
+            "object": [
+                "2MTF"
+            ]
+        },
+        {
+            "object": [
+                "Tully-Fisher Relation"
+            ],
+            "modality": [
+                "J",
+                "H",
+                "K"
+            ]
+        },
+        {
+            "dataset": [
+                "2 Micron All-Sky Survey (2MASS) Tully-Fisher Survey (2MTF)",
+                "2MASS Redshift Survey (2MRS)"
+            ],
+            "object": [
+                "spirals"
+            ],
+            "instrument": [
+                "2 Micron All-Sky Survey (2MASS)"
+            ]
+        },
+        {
+            "object": [
+                "TF relation",
+                "2MASS J",
+                "H",
+                "K"
+            ],
+            "property": [
+                "universal calibration"
+            ],
+            "modality": [
+                "J",
+                "H",
+                "K"
+            ]
+        },
+        {
+            "object": [
+                "template"
+            ],
+            "property": [
+                "bias corrected",
+                "universal"
+            ]
+        },
+        {
+            "property": [
+                "slope",
+                "wavelength"
+            ],
+            "object": [
+                "TF relation"
+            ]
+        },
+        {
+            "object": [
+                "galaxy",
+                "spirals"
+            ],
+            "property": [
+                "morphology",
+                "type"
+            ]
+        },
+        {
+            "object": [
+                "Sc galaxies"
+            ]
+        },
+        {
+            "property": [
+                "scatter",
+                "width",
+                "intrinsic scatter"
+            ],
+            "object": [
+                "TF relation"
+            ]
+        },
+        {
+            "object": [
+                "S1 Shell",
+                "Interstellar Magnetic Field",
+                "Gas",
+                "Heliosphere"
+            ]
+        },
+        {
+            "object": [
+                "Loop I magnetic superbubble",
+                "Sun"
+            ]
+        },
+        {
+            "object": [
+                "Loop I",
+                "Sun",
+                "S1 shell"
+            ],
+            "model": [
+                "magnetic shells"
+            ],
+            "modality": [
+                "polarized radio continuum"
+            ]
+        },
+        {
+            "object": [
+                "Sun",
+                "local interstellar magnetic field",
+                "interstellar material"
+            ]
+        },
+        {
+            "object": [
+                "subshells",
+                "interstellar magnetic field (ISMF)",
+                "interstellar FeII",
+                "interstellar CaII",
+                "Sun"
+            ],
+            "property": [
+                "properties",
+                "optical polarization"
+            ]
+        },
+        {
+            "model": [
+                "model of Loop I as composed of two magnetic subshells"
+            ],
+            "object": [
+                "Loop I",
+                "ISM"
+            ],
+            "property": [
+                "low density"
+            ]
+        },
+        {
+            "object": [
+                "CaII",
+                "interstellar radiation field",
+                "star",
+                "magnetic subshells"
+            ],
+            "property": [
+                "column densities",
+                "strength"
+            ]
+        },
+        {
+            "object": [
+                "dipole moment",
+                "cosmic microwave background",
+                "heliosphere",
+                "local ISMF"
+            ],
+            "property": [
+                "symmetry"
+            ]
+        },
+        {
+            "object": [
+                "supermassive black holes",
+                "pseudo-bulges",
+                "classical bulges",
+                "elliptical galaxies"
+            ]
+        },
+        {
+            "object": [
+                "galaxies",
+                "elliptical galaxies",
+                "classical bulges",
+                "pseudo-bulges",
+                "central black holes"
+            ],
+            "dataset": [
+                "Sloan Digital Sky Survey"
+            ],
+            "property": [
+                "mass",
+                "stellar masses",
+                "central stellar velocity dispersion sigma"
+            ]
+        },
+        {
+            "object": [
+                "elliptical galaxy",
+                "bulge",
+                "black holes",
+                "local universe",
+                "classical bulges",
+                "pseudo-bulges"
+            ],
+            "property": [
+                "mass",
+                "per cent"
+            ]
+        },
+        {
+            "object": [
+                "ellipticals",
+                "classical bulges",
+                "pseudo-bulges",
+                "stellar masses",
+                "sigma",
+                "galaxies"
+            ],
+            "property": [
+                "stellar masses",
+                "sigma"
+            ]
+        },
+        {
+            "object": [
+                "black hole masses",
+                "black hole",
+                "M_BH-M_Bulge",
+                "M_BH-sigma"
+            ],
+            "property": [
+                "structural dissimilarity"
+            ]
+        },
+        {
+            "property": [
+                "total mass density"
+            ],
+            "object": [
+                "black holes"
+            ]
+        },
+        {
+            "property": [
+                "Characteristic Scales"
+            ],
+            "object": [
+                "Initial Density",
+                "Velocity Fields"
+            ]
+        },
+        {
+            "object": [
+                "density contrast",
+                "peculiar velocity",
+                "field",
+                "fluctuations"
+            ],
+            "property": [
+                "differential",
+                "integral",
+                "small-scale",
+                "large-scale"
+            ]
+        },
+        {
+            "object": [
+                "halos",
+                "galaxies",
+                "structures",
+                "galaxy distribution"
+            ],
+            "property": [
+                "length scales",
+                "mass scales"
+            ]
+        },
+        {
+            "property": [
+                "scales"
+            ],
+            "object": [
+                "fields"
+            ]
+        },
+        {
+            "object": [
+                "Gravitino Dark Matter",
+                "Flavour Structure",
+                "R-violating Operators"
+            ]
+        },
+        {
+            "object": [
+                "gravitino dark matter",
+                "gravitino",
+                "supersymmetry"
+            ],
+            "property": [
+                "flavour dependence",
+                "branching ratios"
+            ],
+            "model": [
+                "R-violating supersymmetry"
+            ]
+        },
+        {
+            "property": [
+                "decay modes",
+                "R-violating hierarchies"
+            ],
+            "object": [
+                "final state products"
+            ]
+        },
+        {
+            "object": [
+                "mixing effects"
+            ],
+            "property": [
+                "relative magnitude",
+                "phase space suppression"
+            ]
+        },
+        {
+            "object": [
+                "gravitino",
+                "Next-to-Lightest Supersymmetric Particle (NLSP)",
+                "superparticle"
+            ]
+        },
+        {
+            "object": [
+                "Dark Matter Caustics",
+                "Galaxy Clusters"
+            ]
+        },
+        {
+            "object": [
+                "gravitational lensing observations",
+                "Jee et al"
+            ]
+        },
+        {
+            "object": [
+                "caustic ring",
+                "dark matter",
+                "galaxy cluster"
+            ]
+        },
+        {
+            "object": [
+                "caustic ring",
+                "flow",
+                "gravitational potential well"
+            ],
+            "property": [
+                "cold",
+                "collisionless",
+                "net overall rotation"
+            ]
+        },
+        {
+            "object": [
+                "caustic rings",
+                "dark matter",
+                "Milky Way",
+                "galaxies"
+            ]
+        },
+        {
+            "object": [
+                "galaxy clusters",
+                "caustic rings"
+            ]
+        },
+        {
+            "object": [
+                "caustic ring",
+                "cluster"
+            ]
+        },
+        {
+            "object": [
+                "radiative transfer",
+                "Boltzmann equation",
+                "polarization"
+            ],
+            "task": [
+                "treatment"
+            ]
+        },
+        {
+            "object": [
+                "Boltzmann equation",
+                "cosmological perturbations"
+            ],
+            "property": [
+                "second order"
+            ]
+        },
+        {
+            "object": [
+                "distribution function",
+                "polarized radiation"
+            ],
+            "property": [
+                "gauge dependence"
+            ]
+        },
+        {
+            "object": [
+                "Liouville operator",
+                "electrons",
+                "collision term",
+                "photons"
+            ],
+            "property": [
+                "free streaming",
+                "scattering"
+            ]
+        },
+        {
+            "object": [
+                "photon momentum"
+            ],
+            "modality": [
+                "projected symmetric trace-free multipoles",
+                "normal modes components"
+            ],
+            "property": [
+                "dependence"
+            ]
+        },
+        {
+            "property": [
+                "cosmic microwave background bispectrum",
+                "primordial non-Gaussianity",
+                "non-linear evolution"
+            ],
+            "object": [
+                "contribution",
+                "perturbations"
+            ]
+        },
+        {
+            "object": [
+                "hot Jupiter",
+                "XO-5b"
+            ]
+        },
+        {
+            "object": [
+                "XO-5b",
+                "HATNet"
+            ],
+            "instrument": [
+                "HATNet"
+            ]
+        },
+        {
+            "property": [
+                "spectral bisector variations",
+                "orbital phase"
+            ]
+        },
+        {
+            "object": [
+                "spectral line bisectors"
+            ],
+            "property": [
+                "scatter"
+            ]
+        },
+        {
+            "object": [
+                "stellar configurations",
+                "hierarchical triples",
+                "chance alignments",
+                "planet signals",
+                "data"
+            ]
+        },
+        {
+            "property": [
+                "S activity index",
+                "stellar activity"
+            ]
+        },
+        {
+            "object": [
+                "planet parameters",
+                "planet"
+            ]
+        },
+        {
+            "object": [
+                "stellar",
+                "planetary parameters"
+            ]
+        },
+        {
+            "object": [
+                "XO-5b",
+                "star"
+            ],
+            "property": [
+                "mass",
+                "radius",
+                "metallicity"
+            ]
+        },
+        {
+            "property": [
+                "mass",
+                "radius",
+                "mean density"
+            ],
+            "object": [
+                "planet"
+            ]
+        },
+        {
+            "property": [
+                "P",
+                "E",
+                "transit duration"
+            ]
+        },
+        {
+            "property": [
+                "transit timing variations"
+            ],
+            "object": [
+                "transit centers"
+            ]
+        },
+        {
+            "object": [
+                "planet XO-5b",
+                "exoplanets"
+            ],
+            "property": [
+                "Safronov number",
+                "surface gravity"
+            ]
+        },
+        {
+            "object": [
+                "Electron Temperatures",
+                "W51 Complex"
+            ],
+            "modality": [
+                "Radio Observations"
+            ],
+            "property": [
+                "Temperatures"
+            ]
+        },
+        {
+            "object": [
+                "W51",
+                "Sagitarius arm",
+                "Sun"
+            ],
+            "property": [
+                "distance"
+            ]
+        },
+        {
+            "object": [
+                "W51A",
+                "W51B",
+                "W51C",
+                "HII regions",
+                "supernova remnant"
+            ]
+        },
+        {
+            "instrument": [
+                "GMRT"
+            ],
+            "modality": [
+                "continuum radio"
+            ],
+            "object": [
+                "HII regions",
+                "W51 complex"
+            ],
+            "property": [
+                "resolution",
+                "frequency"
+            ]
+        },
+        {
+            "object": [
+                "spectra",
+                "W51",
+                "electron",
+                "emission"
+            ],
+            "property": [
+                "electron temperatures",
+                "emission measures"
+            ],
+            "modality": [
+                "spectra"
+            ]
+        },
+        {
+            "object": [
+                "electron temperatures",
+                "continuum spectra",
+                "temperatures",
+                "radio recombination line (RRL)",
+                "HII regions"
+            ],
+            "property": [
+                "filling factor"
+            ],
+            "modality": [
+                "continuum"
+            ]
+        },
+        {
+            "object": [
+                "brightness"
+            ],
+            "model": [
+                "multicomponent model"
+            ]
+        },
+        {
+            "object": [
+                "A1689"
+            ],
+            "instrument": [
+                "VLT/VIMOS"
+            ],
+            "property": [
+                "Mass Profile",
+                "Concentration Parameter",
+                "Velocity Anisotropy"
+            ]
+        },
+        {
+            "object": [
+                "cluster A1689"
+            ],
+            "instrument": [
+                "VLT/VIMOS",
+                "Subaru/Suprime-Cam"
+            ],
+            "modality": [
+                "spectroscopy",
+                "imaging"
+            ]
+        },
+        {
+            "property": [
+                "radial velocity distribution",
+                "amplitude",
+                "velocity"
+            ],
+            "object": [
+                "cluster members",
+                "velocity caustics"
+            ],
+            "modality": [
+                "velocity"
+            ]
+        },
+        {
+            "model": [
+                "model-independent method"
+            ],
+            "object": [
+                "galaxy",
+                "cluster"
+            ],
+            "property": [
+                "3D velocity anisotropy",
+                "galaxy number density",
+                "velocity dispersion"
+            ],
+            "instrument": [
+                "Subaru"
+            ],
+            "method": [
+                "Jeans equation",
+                "joint lensing and X-ray analysis"
+            ]
+        },
+        {
+            "property": [
+                "velocity anisotropy",
+                "radius"
+            ]
+        },
+        {
+            "method": [
+                "solution of the Jeans equation",
+                "caustic amplitude"
+            ],
+            "object": [
+                "galaxy"
+            ],
+            "property": [
+                "escape velocity"
+            ]
+        },
+        {
+            "property": [
+                "virial mass"
+            ],
+            "instrument": [
+                "lensing",
+                "X-ray"
+            ],
+            "object": [
+                "cluster"
+            ]
+        },
+        {
+            "property": [
+                "NFW concentration parameter"
+            ],
+            "object": [
+                "methods"
+            ]
+        },
+        {
+            "object": [
+                "virial radius",
+                "caustics",
+                "cluster members",
+                "A1689"
+            ],
+            "property": [
+                "velocity"
+            ]
+        },
+        {
+            "object": [
+                "neutronization",
+                "core-collapse supernovae"
+            ]
+        },
+        {
+            "object": [
+                "temperature",
+                "nuclear symmetry energy",
+                "stellar core"
+            ],
+            "property": [
+                "temperature dependence"
+            ]
+        },
+        {
+            "object": [
+                "simulation",
+                "collapse",
+                "equilibrium"
+            ],
+            "property": [
+                "lepton fraction"
+            ]
+        },
+        {
+            "property": [
+                "strength"
+            ],
+            "object": [
+                "electron capture",
+                "neutron-rich nuclei",
+                "supernova scenario"
+            ]
+        },
+        {
+            "property": [
+                "temperature dependence",
+                "symmetry energy",
+                "deleptonization",
+                "dissociation energy",
+                "strength"
+            ],
+            "object": [
+                "shock wave"
+            ]
+        },
+        {
+            "model": [
+                "one-zone model"
+            ],
+            "method": [
+                "numerical simulations"
+            ],
+            "object": [
+                "systematic effect",
+                "supernova explosions"
+            ]
+        },
+        {
+            "object": [
+                "Hadrons",
+                "Kerr-Newman Black Holes"
+            ]
+        },
+        {
+            "model": [
+                "strong gravity black holes"
+            ],
+            "object": [
+                "hadrons",
+                "Einstein field equations",
+                "black holes"
+            ],
+            "property": [
+                "scale invariance"
+            ]
+        },
+        {
+            "object": [
+                "hypothesis",
+                "proton",
+                "Kerr black hole"
+            ],
+            "property": [
+                "mass",
+                "angular momentum"
+            ]
+        },
+        {
+            "object": [
+                "proton"
+            ],
+            "property": [
+                "mass",
+                "radius"
+            ]
+        },
+        {
+            "object": [
+                "alpha particle"
+            ],
+            "property": [
+                "radius"
+            ]
+        },
+        {
+            "object": [
+                "subatomic particle mass spectrum"
+            ],
+            "modality": [
+                "mass spectrum"
+            ],
+            "model": [
+                "Kerr solution of General Relativity"
+            ],
+            "property": [
+                "mass"
+            ]
+        },
+        {
+            "property": [
+                "particle masses",
+                "quantized values"
+            ],
+            "object": [
+                "Kerr solution"
+            ]
+        },
+        {
+            "property": [
+                "accuracy"
+            ]
+        },
+        {
+            "property": [
+                "atomic scale",
+                "fine structure constant"
+            ],
+            "object": [
+                "gravitational coupling constant",
+                "Planck scale"
+            ]
+        },
+        {
+            "object": [
+                "Magnetic-Field"
+            ],
+            "property": [
+                "Large-Scale"
+            ]
+        },
+        {
+            "model": [
+                "rigorous theory"
+            ],
+            "method": [
+                "random non-helically forced motions"
+            ],
+            "object": [
+                "large-scale magnetic field",
+                "conducting fluid"
+            ],
+            "property": [
+                "linear",
+                "low Rm",
+                "weak"
+            ]
+        },
+        {
+            "object": [
+                "dynamo",
+                "fluctuations",
+                "electromotive force"
+            ],
+            "property": [
+                "kinematic",
+                "net"
+            ]
+        },
+        {
+            "method": [
+                "quasilinear calculation"
+            ],
+            "object": [
+                "shear dynamo"
+            ]
+        },
+        {
+            "property": [
+                "wavenumber",
+                "growth rate"
+            ],
+            "method": [
+                "numerically observed scalings",
+                "derived analytically"
+            ]
+        },
+        {
+            "model": [
+                "shear dynamo action"
+            ],
+            "property": [
+                "simplicity",
+                "generic property"
+            ],
+            "object": [
+                "magnetohydrodynamic turbulence"
+            ]
+        },
+        {
+            "object": [
+                "Sunyaev-Zel'dovich Effect",
+                "Bullet Cluster",
+                "APEX-SZ"
+            ]
+        },
+        {
+            "object": [
+                "Sunyaev-Zel'dovich effect",
+                "Bullet cluster",
+                "APEX-SZ instrument"
+            ],
+            "instrument": [
+                "APEX-SZ instrument"
+            ],
+            "property": [
+                "resolution"
+            ]
+        },
+        {
+            "object": [
+                "SZE",
+                "galaxy cluster"
+            ]
+        },
+        {
+            "property": [
+                "significance"
+            ],
+            "object": [
+                "cluster",
+                "source position"
+            ]
+        },
+        {
+            "object": [
+                "SZE map",
+                "X-ray maps",
+                "system",
+                "SZE emission",
+                "radio",
+                "IR sources"
+            ]
+        },
+        {
+            "model": [
+                "isothermal elliptical beta model",
+                "cluster gas models"
+            ],
+            "object": [
+                "data"
+            ],
+            "modality": [
+                "X-ray"
+            ]
+        },
+        {
+            "property": [
+                "power-law index",
+                "core radius",
+                "axial ratio",
+                "central temperature decrement",
+                "flux calibration uncertainty"
+            ],
+            "object": [
+                "X-ray"
+            ]
+        },
+        {
+            "property": [
+                "mass-weighted temperature"
+            ],
+            "instrument": [
+                "APEX-SZ",
+                "Chandra X-ray"
+            ],
+            "object": [
+                "cluster gas"
+            ]
+        },
+        {
+            "object": [
+                "cluster gas",
+                "gas"
+            ],
+            "property": [
+                "gas mass fraction"
+            ],
+            "instrument": [
+                "X-ray"
+            ],
+            "modality": [
+                "X-ray"
+            ]
+        },
+        {
+            "instrument": [
+                "APEX-SZ experiment",
+                "array of multiplexed superconducting transition-edge sensor bolometers"
+            ],
+            "object": [
+                "APEX-SZ experiment",
+                "result"
+            ]
+        },
+        {
+            "field": [
+                "Curved Space-time"
+            ]
+        },
+        {
+            "object": [
+                "coordinate system",
+                "space-time",
+                "hypersurface",
+                "time coordinate"
+            ],
+            "property": [
+                "globally valid"
+            ]
+        },
+        {
+            "property": [
+                "time"
+            ],
+            "object": [
+                "coordinate",
+                "process",
+                "world"
+            ]
+        },
+        {
+            "object": [
+                "coordinate system"
+            ],
+            "property": [
+                "physical laws",
+                "physical variables"
+            ]
+        },
+        {
+            "object": [
+                "natural coordinate system"
+            ]
+        },
+        {
+            "method": [
+                "constructing method"
+            ],
+            "object": [
+                "natural coordinate system"
+            ]
+        },
+        {
+            "model": [
+                "Newtonian mechanics",
+                "Einstein's equation"
+            ],
+            "method": [
+                "classical approximation",
+                "weak field approximation",
+                "low speed approximation"
+            ],
+            "object": [
+                "spinor equation",
+                "particles",
+                "space-time"
+            ]
+        },
+        {
+            "object": [
+                "coordinate system",
+                "space-time"
+            ],
+            "property": [
+                "curved",
+                "realistic",
+                "nature"
+            ]
+        },
+        {
+            "object": [
+                "2MTF"
+            ]
+        },
+        {
+            "object": [
+                "Tully-Fisher Relation"
+            ],
+            "modality": [
+                "J",
+                "H",
+                "K"
+            ]
+        },
+        {
+            "dataset": [
+                "2 Micron All-Sky Survey (2MASS) Tully-Fisher Survey (2MTF)",
+                "2MASS Redshift Survey (2MRS)"
+            ],
+            "object": [
+                "spirals"
+            ],
+            "instrument": [
+                "2 Micron All-Sky Survey (2MASS)"
+            ]
+        },
+        {
+            "object": [
+                "TF relation",
+                "2MASS J",
+                "H",
+                "K"
+            ],
+            "property": [
+                "universal calibration"
+            ],
+            "modality": [
+                "J",
+                "H",
+                "K"
+            ]
+        },
+        {
+            "object": [
+                "template"
+            ],
+            "property": [
+                "bias corrected",
+                "universal"
+            ]
+        },
+        {
+            "property": [
+                "slope",
+                "wavelength"
+            ],
+            "object": [
+                "TF relation"
+            ]
+        },
+        {
+            "object": [
+                "galaxy",
+                "spirals"
+            ],
+            "property": [
+                "morphology",
+                "type"
+            ]
+        },
+        {
+            "object": [
+                "Sc galaxies"
+            ]
+        },
+        {
+            "property": [
+                "scatter",
+                "width",
+                "intrinsic scatter"
+            ],
+            "object": [
+                "TF relation"
+            ]
+        },
+        {
+            "object": [
+                "S1 Shell",
+                "Interstellar Magnetic Field",
+                "Gas",
+                "Heliosphere"
+            ]
+        },
+        {
+            "object": [
+                "Loop I magnetic superbubble",
+                "Sun"
+            ]
+        },
+        {
+            "object": [
+                "Loop I",
+                "Sun",
+                "S1 shell"
+            ],
+            "model": [
+                "magnetic shells"
+            ],
+            "modality": [
+                "polarized radio continuum"
+            ]
+        },
+        {
+            "object": [
+                "Sun",
+                "local interstellar magnetic field",
+                "interstellar material"
+            ]
+        },
+        {
+            "object": [
+                "subshells",
+                "interstellar magnetic field (ISMF)",
+                "interstellar FeII",
+                "interstellar CaII",
+                "Sun"
+            ],
+            "property": [
+                "properties",
+                "optical polarization"
+            ]
+        },
+        {
+            "model": [
+                "model of Loop I as composed of two magnetic subshells"
+            ],
+            "object": [
+                "Loop I",
+                "ISM"
+            ],
+            "property": [
+                "low density"
+            ]
+        },
+        {
+            "object": [
+                "CaII",
+                "interstellar radiation field",
+                "star",
+                "magnetic subshells"
+            ],
+            "property": [
+                "column densities",
+                "strength"
+            ]
+        },
+        {
+            "object": [
+                "dipole moment",
+                "cosmic microwave background",
+                "heliosphere",
+                "local ISMF"
+            ],
+            "property": [
+                "symmetry"
+            ]
+        },
+        {
+            "object": [
+                "supermassive black holes",
+                "pseudo-bulges",
+                "classical bulges",
+                "elliptical galaxies"
+            ]
+        },
+        {
+            "object": [
+                "galaxies",
+                "elliptical galaxies",
+                "classical bulges",
+                "pseudo-bulges",
+                "central black holes"
+            ],
+            "dataset": [
+                "Sloan Digital Sky Survey"
+            ],
+            "property": [
+                "mass",
+                "stellar masses",
+                "central stellar velocity dispersion sigma"
+            ]
+        },
+        {
+            "object": [
+                "elliptical galaxy",
+                "bulge",
+                "black holes",
+                "local universe",
+                "classical bulges",
+                "pseudo-bulges"
+            ],
+            "property": [
+                "mass",
+                "per cent"
+            ]
+        },
+        {
+            "object": [
+                "ellipticals",
+                "classical bulges",
+                "pseudo-bulges",
+                "stellar masses",
+                "sigma",
+                "galaxies"
+            ],
+            "property": [
+                "stellar masses",
+                "sigma"
+            ]
+        },
+        {
+            "object": [
+                "black hole masses",
+                "black hole",
+                "M_BH-M_Bulge",
+                "M_BH-sigma"
+            ],
+            "property": [
+                "structural dissimilarity"
+            ]
+        },
+        {
+            "property": [
+                "total mass density"
+            ],
+            "object": [
+                "black holes"
+            ]
+        },
+        {
+            "property": [
+                "Characteristic Scales"
+            ],
+            "object": [
+                "Initial Density",
+                "Velocity Fields"
+            ]
+        },
+        {
+            "object": [
+                "density contrast",
+                "peculiar velocity",
+                "field",
+                "fluctuations"
+            ],
+            "property": [
+                "differential",
+                "integral",
+                "small-scale",
+                "large-scale"
+            ]
+        },
+        {
+            "object": [
+                "halos",
+                "galaxies",
+                "structures",
+                "galaxy distribution"
+            ],
+            "property": [
+                "length scales",
+                "mass scales"
+            ]
+        },
+        {
+            "property": [
+                "scales"
+            ],
+            "object": [
+                "fields"
+            ]
+        },
+        {
+            "object": [
+                "Gravitino Dark Matter",
+                "Flavour Structure",
+                "R-violating Operators"
+            ]
+        },
+        {
+            "object": [
+                "gravitino dark matter",
+                "gravitino",
+                "supersymmetry"
+            ],
+            "property": [
+                "flavour dependence",
+                "branching ratios"
+            ],
+            "model": [
+                "R-violating supersymmetry"
+            ]
+        },
+        {
+            "property": [
+                "decay modes",
+                "R-violating hierarchies"
+            ],
+            "object": [
+                "final state products"
+            ]
+        },
+        {
+            "object": [
+                "mixing effects"
+            ],
+            "property": [
+                "relative magnitude",
+                "phase space suppression"
+            ]
+        },
+        {
+            "object": [
+                "gravitino",
+                "Next-to-Lightest Supersymmetric Particle (NLSP)",
+                "superparticle"
+            ]
+        },
+        {
+            "object": [
+                "Dark Matter Caustics",
+                "Galaxy Clusters"
+            ]
+        },
+        {
+            "object": [
+                "gravitational lensing observations",
+                "Jee et al"
+            ]
+        },
+        {
+            "object": [
+                "caustic ring",
+                "dark matter",
+                "galaxy cluster"
+            ]
+        },
+        {
+            "object": [
+                "caustic ring",
+                "flow",
+                "gravitational potential well"
+            ],
+            "property": [
+                "cold",
+                "collisionless",
+                "net overall rotation"
+            ]
+        },
+        {
+            "object": [
+                "caustic rings",
+                "dark matter",
+                "Milky Way",
+                "galaxies"
+            ]
+        },
+        {
+            "object": [
+                "galaxy clusters",
+                "caustic rings"
+            ]
+        },
+        {
+            "object": [
+                "caustic ring",
+                "cluster"
+            ]
+        },
+        {
+            "object": [
+                "dark matter",
+                "elliptical galaxies"
+            ]
+        },
+        {
+            "property": [
+                "mass"
+            ],
+            "object": [
+                "virial radius"
+            ]
+        },
+        {
+            "model": [
+                "4-component model"
+            ],
+            "object": [
+                "elliptical galaxies",
+                "stars",
+                "dark matter (DM)",
+                "hot gas",
+                "central black hole"
+            ]
+        },
+        {
+            "object": [
+                "DM",
+                "stars",
+                "central black hole",
+                "regions"
+            ]
+        },
+        {
+            "object": [
+                "DM density profile"
+            ],
+            "method": [
+                "Jeans analysis"
+            ],
+            "property": [
+                "inner slope"
+            ]
+        },
+        {
+            "property": [
+                "gas fraction",
+                "baryon fraction"
+            ],
+            "object": [
+                "radius"
+            ]
+        },
+        {
+            "property": [
+                "line-of-sight velocity dispersion",
+                "velocity anisotropy",
+                "accuracy"
+            ],
+            "object": [
+                "mass",
+                "virial radius"
+            ]
+        },
+        {
+            "object": [
+                "DM distributions",
+                "LCDM simulations",
+                "stellar VD profiles",
+                "VDs"
+            ],
+            "property": [
+                "low"
+            ]
+        },
+        {
+            "object": [
+                "planetary nebulae",
+                "baryon fraction"
+            ],
+            "property": [
+                "M/Ls",
+                "baryon fraction"
+            ]
+        },
+        {
+            "model": [
+                "NFW DM model",
+                "new model of Navarro et al"
+            ]
+        },
+        {
+            "property": [
+                "VD"
+            ]
+        },
+        {
+            "property": [
+                "M/L"
+            ],
+            "model": [
+                "NFW model"
+            ],
+            "object": [
+                "VD"
+            ]
+        },
+        {
+            "model": [
+                "LCDM",
+                "NFW",
+                "Osipkov-Merritt"
+            ],
+            "property": [
+                "radial anisotropy",
+                "M/L"
+            ],
+            "object": [
+                "simulations"
+            ]
+        },
+        {
+            "model": [
+                "DM model"
+            ],
+            "property": [
+                "radial anisotropy"
+            ],
+            "object": [
+                "PN VDs"
+            ]
+        },
+        {
+            "model": [
+                "anisotropic models",
+                "Osipkov-Merritt",
+                "radial"
+            ],
+            "object": [
+                "VDs",
+                "tracer density",
+                "total mass profiles",
+                "luminosity density",
+                "mass"
+            ],
+            "property": [
+                "radial"
+            ]
+        },
+        {
+            "object": [
+                "hyperons",
+                "neutron stars"
+            ]
+        },
+        {
+            "object": [
+                "hyperon-nucleon potential",
+                "nucleonic matter"
+            ],
+            "property": [
+                "equation of state"
+            ]
+        },
+        {
+            "object": [
+                "hyperon-nucleon potential"
+            ],
+            "property": [
+                "low-momentum"
+            ],
+            "method": [
+                "renormalization group framework"
+            ]
+        },
+        {
+            "object": [
+                "neutron stars",
+                "hyperons"
+            ],
+            "method": [
+                "Hartree-Fock approximation"
+            ],
+            "property": [
+                "temperature",
+                "densities"
+            ]
+        },
+        {
+            "object": [
+                "hyperons",
+                "neutron stars"
+            ]
+        },
+        {
+            "object": [
+                "neutron stars"
+            ]
+        }
+    ]
+}

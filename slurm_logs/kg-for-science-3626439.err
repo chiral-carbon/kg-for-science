@@ -1,34 +1,0 @@
-Lmod has detected the following error: These module(s) or extension(s) exist
-but cannot be loaded as requested: "cuda/12.1.1", "gcc/10.3.0"
-   Try: "module spider cuda/12.1.1 gcc/10.3.0" to see how to load the
-module(s).
-
-
-
-
-CondaError: Run 'conda init' before 'conda activate'
-
-wandb: Agent Starting Run: y0pcjunm with config:
-wandb: 	few_shot_num: 4
-wandb: 	few_shot_selection: shortest
-wandb: 	kind: json
-wandb: 	temperature: 0.5911184950309385
-wandb: 	top_p: 0.8
-wandb: Currently logged in as: abhipsha-das16. Use `wandb login --relogin` to force relogin
-wandb: WARNING Ignored wandb.init() arg project when running a sweep.
-cat: /sys/module/amdgpu/initstate: No such file or directory
-ERROR:root:Driver not initialized (amdgpu not found in modules)
-wandb: Tracking run with wandb version 0.17.4
-wandb: Run data is saved locally in /mnt/home/adas1/projects/knowledge-graph/kg-for-science/wandb/run-20240716_033217-y0pcjunm
-wandb: Run `wandb offline` to turn off syncing.
-wandb: Syncing run wise-sweep-1
-wandb: ⭐️ View project at https://wandb.ai/abhipsha-das16/kg-runs
-wandb: 🧹 View sweep at https://wandb.ai/abhipsha-das16/kg-runs/sweeps/6mdedy0z
-wandb: 🚀 View run at https://wandb.ai/abhipsha-das16/kg-runs/runs/y0pcjunm
-2024-07-16 03:32:20,871 - INFO - setting random seeds and environment variables...
-2024-07-16 03:32:21,209 - INFO - loading schema and data...
-2024-07-16 03:32:21,212 - INFO - Number of training examples: 3
-2024-07-16 03:32:21,212 - INFO - Number of validation examples: 17
-2024-07-16 03:32:21,212 - INFO - loading model and tokenizer...
-Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-Downloading shards:   0%|          | 0/30 [00:00<?, ?it/s]Downloading shards:   3%|▎         | 1/30 [00:22<10:40, 22.08s/it]Downloading shards:   7%|▋         | 2/30 [00:44<10:16, 22.03s/it]Downloading shards:  10%|█         | 3/30 [01:07<10:06, 22.46s/it]Downloading shards:  13%|█▎        | 4/30 [01:29<09:47, 22.58s/it]Downloading shards:  17%|█▋        | 5/30 [01:51<09:13, 22.16s/it]Downloading shards:  20%|██        | 6/30 [02:12<08:45, 21.90s/it]Downloading shards:  23%|██▎       | 7/30 [02:34<08:22, 21.86s/it]Downloading shards:  27%|██▋       | 8/30 [02:57<08:07, 22.17s/it]Downloading shards:  30%|███       | 9/30 [03:20<07:49, 22.38s/it]Downloading shards:  33%|███▎      | 10/30 [03:41<07:21, 22.08s/it]Downloading shards:  37%|███▋      | 11/30 [04:02<06:55, 21.86s/it]Downloading shards:  40%|████      | 12/30 [04:24<06:32, 21.81s/it]Downloading shards:  43%|████▎     | 13/30 [04:47<06:16, 22.14s/it]Downloading shards:  47%|████▋     | 14/30 [05:10<05:58, 22.39s/it]Downloading shards:  50%|█████     | 15/30 [05:31<05:31, 22.08s/it]Downloading shards:  53%|█████▎    | 16/30 [05:53<05:05, 21.83s/it]Downloading shards:  57%|█████▋    | 17/30 [06:14<04:41, 21.67s/it]Downloading shards:  60%|██████    | 18/30 [06:37<04:25, 22.13s/it]Downloading shards:  63%|██████▎   | 19/30 [07:00<04:05, 22.35s/it]Downloading shards:  67%|██████▋   | 20/30 [07:22<03:41, 22.16s/it]Downloading shards:  70%|███████   | 21/30 [07:43<03:18, 22.03s/it]Downloading shards:  73%|███████▎  | 22/30 [08:07<03:00, 22.56s/it]Downloading shards:  77%|███████▋  | 23/30 [08:32<02:41, 23.14s/it]

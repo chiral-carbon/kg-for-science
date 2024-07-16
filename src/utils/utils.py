@@ -21,7 +21,9 @@ def save_results(
 ):
     mode = "a" if append else "w"
 
-    with open(os.path.join(RES_DIR, out_dir_path, "prompts.txt"), mode) as f:
+    with open(
+        os.path.join(RES_DIR, out_dir_path, "prompts.txt"), mode, encoding="utf-8"
+    ) as f:
         for input, gold_tag, pred_response, pred_tag in zip(
             all_inputs, gold_tags, predicted_responses, predicted_tags
         ):

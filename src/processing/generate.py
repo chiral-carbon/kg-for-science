@@ -20,6 +20,7 @@ from .extractions import extract_all_tagged_phrases
 # nlp = spacy.load("en_core_web_sm")
 
 
+# TODO: run with constituency tests
 # TODO: review instruction and system level prompt (currently they are repetitive)
 def get_sentences(text: str) -> List[str]:
     # TODO: spacy splitting results in unequal lengths

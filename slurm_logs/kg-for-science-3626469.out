@@ -1,0 +1,24 @@
+Running on workergpu066 with 2 NVIDIA A100-SXM4-80GB  GPUs.
+no change     /mnt/home/adas1/miniconda3/condabin/conda
+no change     /mnt/home/adas1/miniconda3/bin/conda
+no change     /mnt/home/adas1/miniconda3/bin/conda-env
+no change     /mnt/home/adas1/miniconda3/bin/activate
+no change     /mnt/home/adas1/miniconda3/bin/deactivate
+no change     /mnt/home/adas1/miniconda3/etc/profile.d/conda.sh
+no change     /mnt/home/adas1/miniconda3/etc/fish/conf.d/conda.fish
+no change     /mnt/home/adas1/miniconda3/shell/condabin/Conda.psm1
+no change     /mnt/home/adas1/miniconda3/shell/condabin/conda-hook.ps1
+no change     /mnt/home/adas1/miniconda3/lib/python3.12/site-packages/xontrib/conda.xsh
+no change     /mnt/home/adas1/miniconda3/etc/profile.d/conda.csh
+no change     /mnt/home/adas1/.bashrc
+No action taken.
+Create sweep with ID: 57huu5zo
+Sweep URL: https://wandb.ai/abhipsha-das16/kg-runs/sweeps/57huu5zo
+{'avg_pred_response_time_per_sentence': 3.2144,
+ 'f1': 0.4055,
+ 'precision': 0.4414,
+ 'recall': 0.375,
+ 'total_time': 430.768,
+ 'union_f1': 0.5436,
+ 'union_precision': 0.594,
+ 'union_recall': 0.501}

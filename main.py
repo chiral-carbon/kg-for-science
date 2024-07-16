@@ -274,7 +274,7 @@ def main(kind, runtype, data, sweep, sweep_config, load_best_config):
             running_time += time() - s_time
             pred_times.append(e_time - s_time)
 
-            all_inputs.append(input)
+            all_inputs.append(prefix + input)
             gold_tags.append(gold)
             predicted_responses.append(predicted_response)
             predicted_tags.append(pred)

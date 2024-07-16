@@ -1,0 +1,1208 @@
+assistant
+
+method: radiative transfer
+##################################################
+assistant
+
+model: Boltzmann equation
+##################################################
+assistant
+
+model: tensor valued distribution function, gauge-invariant distribution function
+property: gauge dependence
+object: distribution function, polarized radiation
+##################################################
+assistant
+
+method: Liouville operator, collision term
+##################################################
+assistant
+
+method: expanding
+##################################################
+assistant
+
+model: 
+property: cosmic microwave background bispectrum, primordial non-Gaussianity
+object: perturbations
+##################################################
+assistant
+
+object: XO-5b, Jupiter
+##################################################
+assistant
+
+dataset: HATNet observations
+instrument: HATNet
+object: XO-5b, planetary
+##################################################
+assistant
+
+property: correlation, spectral bisector variations, orbital phase
+##################################################
+assistant
+
+method: spectroscopic measurements
+object: spectral line bisectors
+##################################################
+assistant
+
+object: planet signals, stellar configurations, triples, alignments, data
+##################################################
+assistant
+
+property: S activity index, stellar activity
+##################################################
+assistant
+
+object: planet parameters
+##################################################
+assistant
+
+object: data
+##################################################
+assistant
+
+object: XO-5b, star
+property: mass, radius, metallicity
+##################################################
+assistant
+
+property: planetary mass, radius, mean density
+object: M_Jup, R_Jup
+##################################################
+assistant
+
+property: P, E, transit duration
+##################################################
+assistant
+
+method: measuring
+property: transit timing variations
+object: transit centers
+##################################################
+assistant
+
+property: Safronov number, surface gravity
+object: XO-5b, exoplanets
+##################################################
+assistant
+
+object: Electron Temperatures, W51 Complex
+##################################################
+assistant
+
+object: W51, Sagitarius arm, Sun
+##################################################
+assistant
+
+object: W51A, W51B, W51C, HII regions, supernova remnant
+##################################################
+assistant
+
+dataset: continuum radio observations
+instrument: GMRT
+modality: radio
+object: HII regions, W51 complex
+##################################################
+assistant
+
+method: free-free emission spectrum
+property: electron temperatures, emission measures
+object: W51, thermal subcomponents
+##################################################
+assistant
+
+method: continuum spectra
+property: electron temperatures
+object: HII regions
+modality: spectra
+##################################################
+assistant
+
+model: multicomponent model
+property: brightness
+object: region
+##################################################
+assistant
+
+model: Dynamical Study
+task: Mass Profile, Concentration Parameter, Velocity Anisotropy
+object: A1689
+instrument: VLT/VIMOS
+##################################################
+assistant
+
+dataset: VLT/VIMOS spectroscopy, Subaru/Suprime-Cam imaging
+instrument: VLT/VIMOS, Subaru/Suprime-Cam
+object: cluster A1689
+##################################################
+assistant
+
+property: radial velocity distribution, amplitude, velocity
+object: cluster members, velocity caustics
+##################################################
+assistant
+
+model: model-independent method
+method: model-independent method
+object: galaxy, cluster
+property: 3D velocity anisotropy, velocity dispersion
+##################################################
+assistant
+
+property: velocity anisotropy
+object: radius, center
+##################################################
+assistant
+
+method: solution of the Jeans equation, caustic amplitude 
+object: galaxy
+##################################################
+assistant
+
+method: dynamical methods
+property: virial mass
+object: cluster
+##################################################
+assistant
+
+property: NFW concentration parameter
+object: methods
+##################################################
+assistant
+
+property: virial radius, velocity
+object: cluster members, A1689
+##################################################
+assistant
+
+object: core-collapse supernovae
+##################################################
+assistant
+
+property: temperature dependence, nuclear symmetry energy
+object: stellar core
+##################################################
+assistant
+
+model: one-zone simulation
+task: follow the collapse
+##################################################
+assistant
+
+property: strength
+object: electron capture, neutron-rich nuclei, supernova scenario
+##################################################
+assistant
+
+property: temperature dependence, symmetry energy, deleptonization, dissociation energy, shock wave energetics
+object: shock
+##################################################
+assistant
+
+model: one-zone model
+task: further investigations
+method: detailed numerical simulations
+##################################################
+assistant
+
+object: Hadrons, Kerr-Newman Black Holes
+##################################################
+assistant
+
+model: Einstein field equations
+property: scale invariance
+object: hadrons, black holes
+##################################################
+assistant
+
+model: equation
+property: angular momentum, mass
+object: proton, Kerr black hole
+##################################################
+assistant
+
+model: Kerr-Newman solution of the Einstein-Maxwell equations
+property: mass, radius
+object: proton
+##################################################
+assistant
+
+property: radius
+object: alpha particle
+##################################################
+assistant
+
+model: Kerr solution
+property: subatomic particle mass spectrum
+object: General Relativity
+##################################################
+assistant
+
+property: particle masses, Kerr solution, revised Planck mass
+object: integers
+##################################################
+assistant
+
+property: accuracy
+##################################################
+assistant
+
+property: atomic scale gravitational coupling constant, fine structure constant
+##################################################
+assistant
+
+model: Large-Scale Magnetic-Field Generation
+##################################################
+assistant
+
+model: theory
+method: random non-helically forced motions
+property: large-scale, magnetic field
+object: conducting fluid
+##################################################
+assistant
+
+model: dynamo
+property: kinematic, net, electromotive force
+##################################################
+assistant
+
+model: shear dynamo
+task: put the shear dynamo on a firm theoretical footing
+method: quasilinear calculation
+##################################################
+assistant
+
+method: analytically
+##################################################
+assistant
+
+model: shear dynamo action
+##################################################
+assistant
+
+instrument: APEX-SZ
+object: Bullet Cluster
+##################################################
+assistant
+
+instrument: APEX-SZ
+object: Sunyaev-Zel'dovich effect, Bullet cluster
+##################################################
+assistant
+
+object: galaxy cluster
+##################################################
+assistant
+
+property: significance
+##################################################
+assistant
+
+instrument: None
+modality: SZE, X-ray, radio, IR
+object: SZE map, system
+##################################################
+assistant
+
+model: isothermal elliptical beta model
+object: cluster gas, system
+##################################################
+assistant
+
+property: power-law index, beta, core radius, axial ratio, central temperature decrement, flux calibration uncertainty
+##################################################
+assistant
+
+dataset: APEX-SZ map, Chandra X-ray observations
+instrument: APEX-SZ, Chandra
+property: mass-weighted temperature, X-ray spectroscopic temperatures
+object: cluster gas
+##################################################
+assistant
+
+model: isothermal cluster gas distribution
+property: gas mass fraction
+object: cluster gas
+modality: X-ray
+##################################################
+assistant
+
+instrument: APEX-SZ experiment
+##################################################
+assistant
+
+field: Curved Space-time
+##################################################
+assistant
+
+method: coordinate system
+##################################################
+assistant
+
+property: time
+##################################################
+assistant
+
+field: coordinate system
+##################################################
+assistant
+
+object: natural coordinate system
+##################################################
+assistant
+
+method: constructing method
+object: natural coordinate system
+##################################################
+assistant
+
+model: classical approximation of spinor equation, weak field approximation of Einstein's equation
+method: classical approximation, weak field approximation, low speed approximation
+##################################################
+assistant
+
+model: coordinate system
+property: realistic, curved
+object: space-time
+##################################################
+assistant
+
+No extractions.
+##################################################
+assistant
+
+field: astronomy
+##################################################
+assistant
+
+dataset: 2MASS Redshift Survey (2MRS)
+instrument: 2 Micron All-Sky Survey (2MASS)
+##################################################
+assistant
+
+method: TF relation
+modality: 2MASS J, H, K bands
+##################################################
+assistant
+
+method: bias corrected, universal TF template
+##################################################
+assistant
+
+property: slope, wavelength
+object: TF relation, K-band, J, H-bands
+##################################################
+assistant
+
+field: galaxy morphology
+object: spirals
+property: TF zeropoint
+##################################################
+assistant
+
+object: Sc galaxies
+##################################################
+assistant
+
+property: scatter, width, intrinsic scatter
+##################################################
+assistant
+
+object: S1 Shell, Heliosphere, Interstellar Magnetic Field, Gas
+##################################################
+assistant
+
+object: Sun, Loop I magnetic superbubble
+##################################################
+assistant
+
+model: magnetic shells
+object: Loop I, Sun, S1 shell
+property: polarized radio continuum
+##################################################
+assistant
+
+object: Sun, interstellar magnetic field, interstellar material
+##################################################
+assistant
+
+object: subshells, interstellar magnetic field (ISMF), Sun, FeII, CaII
+##################################################
+assistant
+
+model: Loop I
+object: ISM, Loop I
+property: low density
+##################################################
+assistant
+
+property: column densities, strength, interstellar radiation field, star distance, total pathlength
+object: CaII, magnetic subshells
+##################################################
+assistant
+
+property: symmetry, dipole moment
+object: cosmic microwave background, heliosphere, ISMF
+##################################################
+assistant
+
+object: supermassive black holes, pseudo-bulges, classical bulges, elliptical galaxies
+##################################################
+assistant
+
+dataset: Sloan Digital Sky Survey
+object: galaxies, elliptical galaxies, classical bulges, pseudo-bulges, black holes
+property: mass, stellar masses, central stellar velocity dispersion
+##################################################
+assistant
+
+object: elliptical galaxy, bulge, black hole, local universe, classical bulges, pseudo-bulges
+##################################################
+assistant
+
+object: ellipticals, classical bulges, pseudo-bulges, stellar masses, barred galaxies
+##################################################
+assistant
+
+property: black hole masses, M_BH-M_Bulge, M_BH-sigma
+object: black hole
+##################################################
+assistant
+
+model: M_BH-sigma relation, M_BH-M_Bulge relation
+property: total mass density
+object: black holes
+##################################################
+assistant
+
+property: Initial Density, Velocity Fields
+##################################################
+assistant
+
+model: density contrast
+property: differential, integral length scales
+object: field, peculiar velocity, fluctuations
+##################################################
+assistant
+
+property: length scales, mass scales
+object: halos, galaxies, galaxy distribution
+##################################################
+assistant
+
+property: characteristic scales
+object: initial fields
+##################################################
+assistant
+
+field: Dark Matter
+##################################################
+assistant
+
+model: R-violating supersymmetry
+object: gravitino dark matter, gravitino
+property: flavour dependence, branching ratios, R-violating couplings
+##################################################
+assistant
+
+property: decay modes, final state products
+object: R-violating hierarchies
+##################################################
+assistant
+
+property: relative magnitude, heavy flavours, phase space suppression
+##################################################
+assistant
+
+model: Next-to-Lightest Supersymmetric Particle (NLSP)
+object: gravitino, NLSP, superparticle
+##################################################
+assistant
+
+object: Dark Matter, Galaxy Clusters
+##################################################
+assistant
+
+object: Jee et al
+##################################################
+assistant
+
+object: galaxy cluster, dark matter, ring
+##################################################
+assistant
+
+model: gravitational potential well
+object: caustic ring, flow
+##################################################
+assistant
+
+object: Milky Way, spiral galaxies
+##################################################
+assistant
+
+object: galaxy clusters, caustic rings
+##################################################
+assistant
+
+model: caustic ring
+object: cluster, caustic ring
+property: column density
+##################################################
+assistant
+
+method: radiative transfer
+##################################################
+assistant
+
+model: Boltzmann equation
+##################################################
+assistant
+
+model: tensor valued distribution function, gauge-invariant distribution function
+property: gauge dependence
+object: distribution function, polarized radiation
+##################################################
+assistant
+
+method: Liouville operator, collision term
+##################################################
+assistant
+
+method: expanding
+##################################################
+assistant
+
+model: 
+property: cosmic microwave background bispectrum, primordial non-Gaussianity
+object: perturbations
+##################################################
+assistant
+
+object: XO-5b, Jupiter
+##################################################
+assistant
+
+dataset: HATNet observations
+instrument: HATNet
+object: XO-5b, planetary
+##################################################
+assistant
+
+property: correlation, spectral bisector variations, orbital phase
+##################################################
+assistant
+
+method: spectroscopic measurements
+object: spectral line bisectors
+##################################################
+assistant
+
+object: planet signals, stellar configurations, triples, alignments, data
+##################################################
+assistant
+
+property: S activity index, stellar activity
+##################################################
+assistant
+
+object: planet parameters
+##################################################
+assistant
+
+object: data
+##################################################
+assistant
+
+object: XO-5b, star
+property: mass, radius, metallicity
+##################################################
+assistant
+
+property: planetary mass, radius, mean density
+object: M_Jup, R_Jup
+##################################################
+assistant
+
+property: P, E, transit duration
+##################################################
+assistant
+
+method: measuring
+property: transit timing variations
+object: transit centers
+##################################################
+assistant
+
+property: Safronov number, surface gravity
+object: XO-5b, exoplanets
+##################################################
+assistant
+
+object: Electron Temperatures, W51 Complex
+##################################################
+assistant
+
+object: W51, Sagitarius arm, Sun
+##################################################
+assistant
+
+object: W51A, W51B, W51C, HII regions, supernova remnant
+##################################################
+assistant
+
+dataset: continuum radio observations
+instrument: GMRT
+modality: radio
+object: HII regions, W51 complex
+##################################################
+assistant
+
+method: free-free emission spectrum
+property: electron temperatures, emission measures
+object: W51, thermal subcomponents
+##################################################
+assistant
+
+method: continuum spectra
+property: electron temperatures
+object: HII regions
+modality: spectra
+##################################################
+assistant
+
+model: multicomponent model
+property: brightness
+object: region
+##################################################
+assistant
+
+model: Dynamical Study
+task: Mass Profile, Concentration Parameter, Velocity Anisotropy
+object: A1689
+instrument: VLT/VIMOS
+##################################################
+assistant
+
+dataset: VLT/VIMOS spectroscopy, Subaru/Suprime-Cam imaging
+instrument: VLT/VIMOS, Subaru/Suprime-Cam
+object: cluster A1689
+##################################################
+assistant
+
+property: radial velocity distribution, amplitude, velocity
+object: cluster members, velocity caustics
+##################################################
+assistant
+
+model: model-independent method
+method: model-independent method
+object: galaxy, cluster
+property: 3D velocity anisotropy, velocity dispersion
+##################################################
+assistant
+
+property: velocity anisotropy
+object: radius, center
+##################################################
+assistant
+
+method: solution of the Jeans equation, caustic amplitude 
+object: galaxy
+##################################################
+assistant
+
+method: dynamical methods
+property: virial mass
+object: cluster
+##################################################
+assistant
+
+property: NFW concentration parameter
+object: methods
+##################################################
+assistant
+
+property: virial radius, velocity
+object: cluster members, A1689
+##################################################
+assistant
+
+object: core-collapse supernovae
+##################################################
+assistant
+
+property: temperature dependence, nuclear symmetry energy
+object: stellar core
+##################################################
+assistant
+
+model: one-zone simulation
+task: follow the collapse
+##################################################
+assistant
+
+property: strength
+object: electron capture, neutron-rich nuclei, supernova scenario
+##################################################
+assistant
+
+property: temperature dependence, symmetry energy, deleptonization, dissociation energy, shock wave energetics
+object: shock
+##################################################
+assistant
+
+model: one-zone model
+task: further investigations
+method: detailed numerical simulations
+##################################################
+assistant
+
+object: Hadrons, Kerr-Newman Black Holes
+##################################################
+assistant
+
+model: Einstein field equations
+property: scale invariance
+object: hadrons, black holes
+##################################################
+assistant
+
+model: equation
+property: angular momentum, mass
+object: proton, Kerr black hole
+##################################################
+assistant
+
+model: Kerr-Newman solution of the Einstein-Maxwell equations
+property: mass, radius
+object: proton
+##################################################
+assistant
+
+property: radius
+object: alpha particle
+##################################################
+assistant
+
+model: Kerr solution
+property: subatomic particle mass spectrum
+object: General Relativity
+##################################################
+assistant
+
+property: particle masses, Kerr solution, revised Planck mass
+object: integers
+##################################################
+assistant
+
+property: accuracy
+##################################################
+assistant
+
+property: atomic scale gravitational coupling constant, fine structure constant
+##################################################
+assistant
+
+model: Large-Scale Magnetic-Field Generation
+##################################################
+assistant
+
+model: theory
+method: random non-helically forced motions
+property: large-scale, magnetic field
+object: conducting fluid
+##################################################
+assistant
+
+model: dynamo
+property: kinematic, net, electromotive force
+##################################################
+assistant
+
+model: shear dynamo
+task: put the shear dynamo on a firm theoretical footing
+method: quasilinear calculation
+##################################################
+assistant
+
+method: analytically
+##################################################
+assistant
+
+model: shear dynamo action
+##################################################
+assistant
+
+instrument: APEX-SZ
+object: Bullet Cluster
+##################################################
+assistant
+
+instrument: APEX-SZ
+object: Sunyaev-Zel'dovich effect, Bullet cluster
+##################################################
+assistant
+
+object: galaxy cluster
+##################################################
+assistant
+
+property: significance
+##################################################
+assistant
+
+instrument: None
+modality: SZE, X-ray, radio, IR
+object: SZE map, system
+##################################################
+assistant
+
+model: isothermal elliptical beta model
+object: cluster gas, system
+##################################################
+assistant
+
+property: power-law index, beta, core radius, axial ratio, central temperature decrement, flux calibration uncertainty
+##################################################
+assistant
+
+dataset: APEX-SZ map, Chandra X-ray observations
+instrument: APEX-SZ, Chandra
+property: mass-weighted temperature, X-ray spectroscopic temperatures
+object: cluster gas
+##################################################
+assistant
+
+model: isothermal cluster gas distribution
+property: gas mass fraction
+object: cluster gas
+modality: X-ray
+##################################################
+assistant
+
+instrument: APEX-SZ experiment
+##################################################
+assistant
+
+field: Curved Space-time
+##################################################
+assistant
+
+method: coordinate system
+##################################################
+assistant
+
+property: time
+##################################################
+assistant
+
+field: coordinate system
+##################################################
+assistant
+
+object: natural coordinate system
+##################################################
+assistant
+
+method: constructing method
+object: natural coordinate system
+##################################################
+assistant
+
+model: classical approximation of spinor equation, weak field approximation of Einstein's equation
+method: classical approximation, weak field approximation, low speed approximation
+##################################################
+assistant
+
+model: coordinate system
+property: realistic, curved
+object: space-time
+##################################################
+assistant
+
+No extractions.
+##################################################
+assistant
+
+field: astronomy
+##################################################
+assistant
+
+dataset: 2MASS Redshift Survey (2MRS)
+instrument: 2 Micron All-Sky Survey (2MASS)
+##################################################
+assistant
+
+method: TF relation
+modality: 2MASS J, H, K bands
+##################################################
+assistant
+
+method: bias corrected, universal TF template
+##################################################
+assistant
+
+property: slope, wavelength
+object: TF relation, K-band, J, H-bands
+##################################################
+assistant
+
+field: galaxy morphology
+object: spirals
+property: TF zeropoint
+##################################################
+assistant
+
+object: Sc galaxies
+##################################################
+assistant
+
+property: scatter, width, intrinsic scatter
+##################################################
+assistant
+
+object: S1 Shell, Heliosphere, Interstellar Magnetic Field, Gas
+##################################################
+assistant
+
+object: Sun, Loop I magnetic superbubble
+##################################################
+assistant
+
+model: magnetic shells
+object: Loop I, Sun, S1 shell
+property: polarized radio continuum
+##################################################
+assistant
+
+object: Sun, interstellar magnetic field, interstellar material
+##################################################
+assistant
+
+object: subshells, interstellar magnetic field (ISMF), Sun, FeII, CaII
+##################################################
+assistant
+
+model: Loop I
+object: ISM, Loop I
+property: low density
+##################################################
+assistant
+
+property: column densities, strength, interstellar radiation field, star distance, total pathlength
+object: CaII, magnetic subshells
+##################################################
+assistant
+
+property: symmetry, dipole moment
+object: cosmic microwave background, heliosphere, ISMF
+##################################################
+assistant
+
+object: supermassive black holes, pseudo-bulges, classical bulges, elliptical galaxies
+##################################################
+assistant
+
+dataset: Sloan Digital Sky Survey
+object: galaxies, elliptical galaxies, classical bulges, pseudo-bulges, black holes
+property: mass, stellar masses, central stellar velocity dispersion
+##################################################
+assistant
+
+object: elliptical galaxy, bulge, black hole, local universe, classical bulges, pseudo-bulges
+##################################################
+assistant
+
+object: ellipticals, classical bulges, pseudo-bulges, stellar masses, barred galaxies
+##################################################
+assistant
+
+property: black hole masses, M_BH-M_Bulge, M_BH-sigma
+object: black hole
+##################################################
+assistant
+
+model: M_BH-sigma relation, M_BH-M_Bulge relation
+property: total mass density
+object: black holes
+##################################################
+assistant
+
+property: Initial Density, Velocity Fields
+##################################################
+assistant
+
+model: density contrast
+property: differential, integral length scales
+object: field, peculiar velocity, fluctuations
+##################################################
+assistant
+
+property: length scales, mass scales
+object: halos, galaxies, galaxy distribution
+##################################################
+assistant
+
+property: characteristic scales
+object: initial fields
+##################################################
+assistant
+
+field: Dark Matter
+##################################################
+assistant
+
+model: R-violating supersymmetry
+object: gravitino dark matter, gravitino
+property: flavour dependence, branching ratios, R-violating couplings
+##################################################
+assistant
+
+property: decay modes, final state products
+object: R-violating hierarchies
+##################################################
+assistant
+
+property: relative magnitude, heavy flavours, phase space suppression
+##################################################
+assistant
+
+model: Next-to-Lightest Supersymmetric Particle (NLSP)
+object: gravitino, NLSP, superparticle
+##################################################
+assistant
+
+object: Dark Matter, Galaxy Clusters
+##################################################
+assistant
+
+object: Jee et al
+##################################################
+assistant
+
+object: galaxy cluster, dark matter, ring
+##################################################
+assistant
+
+model: gravitational potential well
+object: caustic ring, flow
+##################################################
+assistant
+
+object: Milky Way, spiral galaxies
+##################################################
+assistant
+
+object: galaxy clusters, caustic rings
+##################################################
+assistant
+
+model: caustic ring
+object: cluster, caustic ring
+property: column density
+##################################################
+assistant
+
+field: elliptical galaxies
+##################################################
+assistant
+
+task: estimating the mass
+##################################################
+assistant
+
+model: 4-component model
+object: Elliptical galaxies, Sersic stars, LCDM dark matter (DM), hot gas, central black hole
+##################################################
+assistant
+
+object: DM, stars, black hole
+##################################################
+assistant
+
+method: Jeans analysis
+object: DM density profile
+##################################################
+assistant
+
+property: gas fraction, baryon fraction
+object: radius, effective radii (R_e)
+##################################################
+assistant
+
+property: line-of-sight velocity dispersion, velocity anisotropy, total mass
+object: virial radius
+##################################################
+assistant
+
+model: LCDM simulations
+object: DM distributions, stellar VD profiles, VDs
+property: low
+##################################################
+assistant
+
+object: planetary nebulae, baryon fraction
+##################################################
+assistant
+
+model: NFW DM model, Navarro et al
+##################################################
+assistant
+
+property: VD
+##################################################
+assistant
+
+model: NFW model
+property: M/L, VD
+##################################################
+assistant
+
+model: NFW model
+property: radial anisotropy, M/L
+method: Osipkov-Merritt formula
+##################################################
+assistant
+
+model: DM model
+property: radial anisotropy, low PN VDs
+##################################################
+assistant
+
+model: anisotropic models, radial, Osipkov-Merritt
+object: VDs, tracer density, total mass profiles, luminosity density, mass
+##################################################
+assistant
+
+object: neutron stars, hyperons
+##################################################
+assistant
+
+model: hyperon-nucleon potential
+property: equation of state, beta-equilibrated, charge neutral
+object: nucleonic matter
+##################################################
+assistant
+
+model: renormalization group framework
+property: low-momentum
+object: hyperon-nucleon potential
+##################################################
+assistant
+
+model: Hartree-Fock approximation
+method: Hartree-Fock approximation
+property: temperature, densities
+object: neutron stars, hyperons
+##################################################
+assistant
+
+object: neutron stars, hyperons
+##################################################
+assistant
+
+object: neutron stars
+##################################################

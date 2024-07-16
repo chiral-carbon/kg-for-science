@@ -1,0 +1,12 @@
+wandb_version: 1
+
+few_shot_num:
+  value: 2
+few_shot_selection:
+  value: first
+kind:
+  value: readable
+temperature:
+  value: 0.5973686927636164
+top_p:
+  value: 0.8
