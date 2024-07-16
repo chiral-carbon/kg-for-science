@@ -1,0 +1,26 @@
+Lmod has detected the following error: These module(s) or extension(s) exist
+but cannot be loaded as requested: "gcc/10.3.0", "cuda/12.1.1"
+   Try: "module spider gcc/10.3.0 cuda/12.1.1" to see how to load the
+module(s).
+
+
+
+
+CondaError: Run 'conda init' before 'conda activate'
+
+wandb: Currently logged in as: abhipsha-das16. Use `wandb login --relogin` to force relogin
+cat: /sys/module/amdgpu/initstate: No such file or directory
+ERROR:root:Driver not initialized (amdgpu not found in modules)
+wandb: Tracking run with wandb version 0.17.4
+wandb: Run data is saved locally in /mnt/home/adas1/projects/knowledge-graph/kg-for-science/wandb/run-20240716_033922-dfqyjo4k
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run feasible-mountain-33
+wandb: ⭐️ View project at https://wandb.ai/abhipsha-das16/kg-runs
+wandb: 🚀 View run at https://wandb.ai/abhipsha-das16/kg-runs/runs/dfqyjo4k
+2024-07-16 03:39:27,565 - INFO - setting random seeds and environment variables...
+2024-07-16 03:39:27,968 - INFO - loading schema and data...
+2024-07-16 03:39:27,980 - INFO - Number of training examples: 3
+2024-07-16 03:39:27,980 - INFO - Number of validation examples: 17
+2024-07-16 03:39:27,980 - INFO - loading model and tokenizer...
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Downloading shards:   0%|          | 0/30 [00:00<?, ?it/s]Downloading shards:   3%|▎         | 1/30 [00:22<11:01, 22.80s/it]Downloading shards:   7%|▋         | 2/30 [00:44<10:25, 22.33s/it]Downloading shards:  10%|█         | 3/30 [01:08<10:16, 22.82s/it]Downloading shards:  13%|█▎        | 4/30 [01:31<09:56, 22.94s/it]

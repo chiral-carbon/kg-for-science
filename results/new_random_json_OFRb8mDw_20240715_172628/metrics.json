@@ -1,7 +1,0 @@
-{
-    "metrics": {
-        "avg_pred_response_time_per_sentence": 5.6186,
-        "total_time": 129.229
-    },
-    "prompt_file": "prompts.txt"
-}##################################################

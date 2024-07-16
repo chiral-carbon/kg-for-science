@@ -5,6 +5,13 @@ import re
 # import spacy
 import torch
 
+from config import (
+    DEFAULT_FEW_SHOT_NUM,
+    DEFAULT_FEW_SHOT_SELECTION,
+    DEFAULT_TEMPERATURE,
+    DEFAULT_TOP_P,
+    DEFAULT_KIND,
+)
 from typing import List, Dict, Tuple, Union
 from transformers import AutoTokenizer, AutoModelForCausalLM, AutoConfig
 
@@ -40,7 +47,7 @@ def format_instance(sentence: str, extraction: Union[str, None]) -> str:
     )
 
 
-def generate_instructions(schema: dict, kind: str = "json") -> str:
+def generate_instructions(schema: dict, kind: str = DEFAULT_KIND) -> str:
     instruction_parts = [
         "The following schema is provided to tag the title and abstract of a given scientific paper as shown in the examples:\n"
     ]
@@ -59,9 +66,9 @@ def generate_instructions(schema: dict, kind: str = "json") -> str:
 
 def generate_demonstrations(
     examples: List[dict],
-    kind: str = "json",
-    num_examples: int = 3,
-    selection: str = "random",
+    kind: str = DEFAULT_KIND,
+    num_examples: int = DEFAULT_FEW_SHOT_NUM,
+    selection: str = DEFAULT_FEW_SHOT_SELECTION,
 ) -> str:
     demonstration_parts = []
     for example in examples:
@@ -121,8 +128,8 @@ def generate_prediction(
     prefix: str,
     input: str,
     kind: str,
-    temperature: float = 0.6,
-    top_p: float = 0.95,
+    temperature: float = DEFAULT_TEMPERATURE,
+    top_p: float = DEFAULT_TOP_P,
 ) -> str:
     prompt = prefix + input
     messages = [

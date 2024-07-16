@@ -45,8 +45,8 @@ from src.utils.utils import (
 )
 
 
-# TODO: add sweep configuration and run sweeps
 # TODO: add batching to run data parallely using DDP after committing single data run
+# TODO: run new data also with sweeps -> save data from all the different sweeps and compare
 SAVE_INTERVAL = DEFAULT_SAVE_INTERVAL
 RES_DIR = DEFAULT_RES_DIR
 LOG_DIR = DEFAULT_LOG_DIR
@@ -55,7 +55,7 @@ LOG_DIR = DEFAULT_LOG_DIR
 @click.command()
 @click.option(
     "--kind",
-    default="json",
+    default=DEFAULT_KIND,
     help="Specify the kind of prompt input: json (default) or readable",
 )
 @click.option(
@@ -86,33 +86,47 @@ LOG_DIR = DEFAULT_LOG_DIR
 )
 def main(kind, runtype, data, sweep, sweep_config, load_best_config):
     # set up wandb
-    with wandb.init() as run:
-        config = wandb.config
+    run = wandb.init(project="kg-runs")
+    config = wandb.config
 
-        if sweep and runtype != "eval":
+    run_flag = "run"
+    if sweep:
+        if runtype != "eval":
             raise ValueError("Sweeps can only be run in eval mode")
-        if sweep:
-            kind = config.kind
-            temperature = config.temperature
-            top_p = config.top_p
-            few_shot_num = config.few_shot_num
-            few_shot_selection = config.few_shot_selection
-            # few_shot_type = config.few_shot_type
-        elif load_best_config:
-            with open(load_best_config, "r") as f:
-                best_config = json.load(f)
-            kind = best_config["kind"]
-            temperature = best_config["temperature"]
-            top_p = best_config["top_p"]
-            few_shot_num = best_config["few_shot_num"]
-            few_shot_selection = best_config["few_shot_selection"]
-        else:
-            temperature = DEFAULT_TEMPERATURE
-            top_p = DEFAULT_TOP_P
-            few_shot_num = DEFAULT_FEW_SHOT_NUM
-            few_shot_selection = DEFAULT_FEW_SHOT_SELECTION
+        run_flag = "sweep"
+        kind = config.kind
+        temperature = config.temperature
+        top_p = config.top_p
+        few_shot_num = config.few_shot_num
+        few_shot_selection = config.few_shot_selection
+    # few_shot_type = config.few_shot_type
+    elif load_best_config:
+        with open(load_best_config, "r") as f:
+            best_config = json.load(f)
+        kind = best_config["kind"]
+        temperature = best_config["temperature"]
+        top_p = best_config["top_p"]
+        few_shot_num = best_config["few_shot_num"]
+        few_shot_selection = best_config["few_shot_selection"]
+    else:
+        temperature = DEFAULT_TEMPERATURE
+        top_p = DEFAULT_TOP_P
+        few_shot_num = DEFAULT_FEW_SHOT_NUM
+        few_shot_selection = DEFAULT_FEW_SHOT_SELECTION
 
-        wandb.run.name = f"run_{kind}_t{temperature:.2f}_p{top_p:.2f}_fs{few_shot_num}_{few_shot_selection}"
+        config.update(
+            {
+                "kind": kind,
+                "temperature": temperature,
+                "top_p": top_p,
+                "few_shot_num": few_shot_num,
+                "few_shot_selection": few_shot_selection,
+            }
+        )
+
+        wandb.config.update(config)
+
+    wandb.run.name = f"{run_flag}_{kind}_t{temperature:.2f}_p{top_p:.2f}_fs{few_shot_num}_{few_shot_selection}"
 
     logger = logging.getLogger(__name__)
 
@@ -278,6 +292,7 @@ def main(kind, runtype, data, sweep, sweep_config, load_best_config):
                     runtype,
                     eval_metrics=(n_tp, n_fp, n_fn, n_tp_union, n_fp_union, n_fn_union),
                 )
+                wandb.log(metrics)
             else:
                 metrics = compute_metrics(running_time, pred_times, runtype)
 
@@ -289,7 +304,6 @@ def main(kind, runtype, data, sweep, sweep_config, load_best_config):
                 predicted_tags,
                 metrics,
                 runtype,
-                append=(i + 1) > SAVE_INTERVAL,
             )
 
     if i == len(valid) - 1:
@@ -320,7 +334,17 @@ def main(kind, runtype, data, sweep, sweep_config, load_best_config):
 
     pprint.pprint(metrics)
     if runtype == "eval" and sweep:
-        wandb.log(metrics)
+        wandb.log(
+            {
+                "prediction_time": e_time - s_time,
+                "true_positives": tp,
+                "false_positives": fp,
+                "false_negatives": fn,
+                "union_true_positives": utp,
+                "union_false_positives": ufp,
+                "union_false_negatives": ufn,
+            }
+        )
         save_best_config(metrics, config, out_dir_path)
 
     logger.info(f"Results saved in: {os.path.join(RES_DIR, out_dir_path)}")
