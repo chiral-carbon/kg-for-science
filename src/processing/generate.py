@@ -28,9 +28,6 @@ def get_sentences(text: str) -> List[str]:
     # sentences = [sent.text.strip() for sent in doc.sents]
     # sentences = [s for s in sentences if s]
     # return sentences
-    # return sentences
-
-    # return sentences
 
     return text.split(". ")
 

@@ -75,8 +75,8 @@ def save_results(
     logging.info(f"Results saved in: {os.path.join(RES_DIR, out_dir_path)}")
 
 
-def save_best_config(metrics, config, out_dir_path):
-    best_config_path = os.path.join(RES_DIR, out_dir_path, "best_config.json")
+def save_best_config(metrics, config):
+    best_config_path = os.path.join(RES_DIR, "best_config.json")
     if os.path.exists(best_config_path):
         with open(best_config_path, "r") as f:
             best_config = json.load(f)

@@ -47,6 +47,7 @@ from src.utils.utils import (
 
 # TODO: add batching to run data parallely using DDP after committing single data run
 # TODO: run new data also with sweeps -> save data from all the different sweeps and compare
+# TODO: save predictions at abstract + sentence level (not just sentence level)
 SAVE_INTERVAL = DEFAULT_SAVE_INTERVAL
 RES_DIR = DEFAULT_RES_DIR
 LOG_DIR = DEFAULT_LOG_DIR
@@ -345,7 +346,7 @@ def main(kind, runtype, data, sweep, sweep_config, load_best_config):
                 "union_false_negatives": ufn,
             }
         )
-        save_best_config(metrics, config, out_dir_path)
+        save_best_config(metrics, config)
 
     logger.info(f"Results saved in: {os.path.join(RES_DIR, out_dir_path)}")
 
