@@ -1,1 +1,0 @@
-{"avg_pred_response_time_per_sentence": 5.9619, "total_time": 673.7307, "precision": 0.42, "recall": 0.4355, "f1": 0.4276, "union_precision": 0.5568, "union_recall": 0.5658, "union_f1": 0.5613, "_timestamp": 1721118648.9498317, "_runtime": 1412.8668377399445, "_step": 4, "_wandb": {"runtime": 1531}}
