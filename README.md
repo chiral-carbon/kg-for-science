@@ -36,7 +36,7 @@ pre-commit install
 
 ## Running the tool
 
-Then, run `scripts/data_collect.py` to download papers for arXiv:
+Then, run `scripts/collect_data.py` to download papers for arXiv:
 ```
 python scripts/data_collect.py --max_results 1000 --search_query astro-ph --sort_by 'last_updated_date' --sort_order desc 
 ```

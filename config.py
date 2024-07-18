@@ -1,4 +1,5 @@
 DEFAULT_MODEL_ID = "meta-llama/Meta-Llama-3-70B-Instruct"
+DEFAULT_INTERFACE_MODEL_ID = "meta-llama/Meta-Llama-3-8B-Instruct"
 DEFAULT_KIND = "json"
 DEFAULT_TEMPERATURE = 0.6
 DEFAULT_TOP_P = 0.95
@@ -7,3 +8,4 @@ DEFAULT_FEW_SHOT_SELECTION = "random"
 DEFAULT_SAVE_INTERVAL = 3
 DEFAULT_RES_DIR = "results"
 DEFAULT_LOG_DIR = "logs"
+DEFAULT_TABLES_DIR = "tables"

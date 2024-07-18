@@ -126,6 +126,9 @@ def generate_prediction(
     prefix: str,
     input: str,
     kind: str,
+    system_prompt: str = f"You are an assistant who tags papers according to given schema and "
+    "only returns the tagged phrases in the format as provided in the examples "
+    "without repeating anything else.",
     temperature: float = DEFAULT_TEMPERATURE,
     top_p: float = DEFAULT_TOP_P,
 ) -> str:
@@ -133,9 +136,7 @@ def generate_prediction(
     messages = [
         {
             "role": "system",
-            "content": f"You are an assistant who tags papers according to given schema and "
-            "only returns the tagged phrases in the format as provided in the examples "
-            "without repeating anything else.",
+            "content": system_prompt,
         },
         {"role": "user", "content": prompt},
     ]
