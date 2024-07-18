@@ -36,14 +36,14 @@ pre-commit install
 
 ## Running the tool
 
-Then, run `scripts/collect_data.py` to download papers for arXiv:
+1. Run `scripts/collect_data.py` to download papers for arXiv:
 ```
 python scripts/data_collect.py --max_results 1000 --search_query astro-ph --sort_by 'last_updated_date' --sort_order desc 
 ```
 
 These are the default arguments, you can modify them to specify the arxiv channel, number of papers and order of search. The data is stored in the `data` directory.
 
-Then run `main.py` to call Llama-3 70B and perform extractions on the downloaded papers using Slurm jobs:
+2. Then run `main.py` to call Llama-3 70B and perform extractions on the downloaded papers using Slurm jobs:
 ```
 sbatch run.sh
 ```
@@ -54,12 +54,15 @@ You can view the options by running `python main.py --help`:
 Usage: main.py [OPTIONS]
 
 Options:
-  --kind TEXT           Specify the kind of prompt input: json (default) or
-                        readable
-  --runtype [new|eval]  Specify the type of run: new or eval (default)
-  --data TEXT           Specify the directory of the data if running on new
-                        data
-  --help                Show this message and exit.
+  --kind TEXT              Specify the kind of prompt input: json (default) or
+                           readable
+  --runtype [new|eval]     Specify the type of run: new or eval (default)
+  --data TEXT              Specify the directory of the data if running on new
+                           data
+  --sweep                  Run sweeps
+  --sweep_config TEXT      Sweep configuration file
+  --load_best_config TEXT  Load the best configuration from a file
+  --help                   Show this message and exit.
 ```
 
 We use 2 A100 80GB GPUs to perform extractions with Llama-3 70B. You can choose a different model if limited by memory and GPU. 
@@ -77,6 +80,27 @@ The current best performance on the dev set:
 | avg_time_per_sentence | 4.0315 | 2.7584 |
 | total_time | 463.6508 | 317.2468 |
 
+3. To create a SQLite database of the predictions, run:
+```
+python scripts/create_db.py --data_path <path to the jsonl file with data> --predictions_path <path to the predictions.json file>
+```
+this creates a database in the `tables` directory.
+```
+Usage: create_db.py [OPTIONS]
+
+Options:
+  --data_path TEXT         Path to the data file containing the papers
+                           information.
+  --predictions_path TEXT  Path to the predictions file.
+  --db_name TEXT           Name of the database to create.
+  --force                  Force overwrite if database already exists
+  --help                   Show this message and exit.
+  ```
+
+4. To run a SQL query search over the created database as a Gradio interface, run:
+```
+python scripts/run_db_interface.py
+```
 
 ## Relevant Resources for Reference
 ### Tools
