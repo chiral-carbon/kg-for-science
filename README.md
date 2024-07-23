@@ -80,7 +80,7 @@ The current best performance on the dev set:
 | avg_time_per_sentence | 4.0315 | 2.7584 |
 | total_time | 463.6508 | 317.2468 |
 
-3. To create a SQLite database of the predictions, run:
+3. To create a SQLite3 database of the predictions, run:
 ```
 python scripts/create_db.py --data_path <path to the jsonl file with data> --predictions_path <path to the predictions.json file>
 ```

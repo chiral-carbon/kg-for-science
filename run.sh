@@ -2,7 +2,7 @@
 #SBATCH --partition=gpu
 #SBATCH --constraint=icelake,ib
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=1
+#SBATCH --ntasks-per-node=2
 #SBATCH --cpus-per-task=32
 #SBATCH --gpus=2
 #SBATCH -C a100-80gb&ib-a100
@@ -21,4 +21,4 @@ echo "$(nvidia-smi --query-gpu=gpu_name --format=csv,noheader | sort | uniq -c |
 cd /mnt/home/adas1/projects/knowledge-graph/kg-for-science
 conda init
 conda activate kg4s
-python main.py --runtype new --data data/valid 
+torchrun --nproc_per_node=2 main.py --runtype new --data data/valid
