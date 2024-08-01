@@ -164,3 +164,6 @@ wandb/
 results/
 slurm_logs/
 notebooks/
+Meta-Llama-3-70B-Instruct/
+notes
+test.ipynb

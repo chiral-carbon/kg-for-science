@@ -5,7 +5,12 @@ import torch
 
 from config import DEFAULT_RES_DIR as RES_DIR
 
-from accelerate import infer_auto_device_map, init_empty_weights, Accelerator
+from accelerate import (
+    infer_auto_device_map,
+    init_empty_weights,
+    Accelerator,
+    load_checkpoint_and_dispatch,
+)
 from transformers import AutoTokenizer, AutoModelForCausalLM, AutoConfig
 
 
@@ -102,22 +107,57 @@ def load_sweep_config(config_path="sweep_config.json"):
         return json.load(f)
 
 
-def load_model_and_tokenizer(model_id: str):
-    accelerator = Accelerator()
+# def load_model_and_tokenizer(model_id: str):
+#     accelerator = Accelerator()
 
-    tokenizer = AutoTokenizer.from_pretrained(model_id, padding_side="left")
-    # device_map = infer_auto_device_map(model, max_memory=max_memory)
+#     tokenizer = AutoTokenizer.from_pretrained(model_id, padding_side="left")
+#     # device_map = infer_auto_device_map(model, max_memory=max_memory)
 
+#     if tokenizer.pad_token_id is None:
+#         tokenizer.pad_token_id = tokenizer.eos_token_id
+
+#     model = AutoModelForCausalLM.from_pretrained(
+#         model_id,
+#         torch_dtype=torch.bfloat16,
+#         device_map="auto",
+#         token=os.getenv("HF_TOKEN"),
+#     )
+
+#     model, tokenizer = accelerator.prepare(model, tokenizer)
+
+#     return model, tokenizer
+
+
+def clear_cuda_cache():
+    if torch.cuda.is_available():
+        torch.cuda.empty_cache()
+        torch.cuda.memory.reset_max_memory_allocated()
+        torch.cuda.memory.reset_max_memory_cached()
+
+
+def load_model_and_tokenizer(model_id):
+    # Set up memory-saving options
+    torch.cuda.empty_cache()
+    torch.backends.cuda.matmul.allow_tf32 = True
+    torch.backends.cudnn.allow_tf32 = True
+
+    # Initialize tokenizer
+    tokenizer = AutoTokenizer.from_pretrained(
+        model_id, padding_side="left", use_auth_token=os.getenv("HF_TOKEN")
+    )
     if tokenizer.pad_token_id is None:
         tokenizer.pad_token_id = tokenizer.eos_token_id
 
+    # Load configuration
+    config = AutoConfig.from_pretrained(model_id, use_auth_token=os.getenv("HF_TOKEN"))
+
+    # Load model
     model = AutoModelForCausalLM.from_pretrained(
         model_id,
-        torch_dtype=torch.bfloat16,
+        config=config,
+        torch_dtype=torch.float16,
+        use_auth_token=os.getenv("HF_TOKEN"),
         device_map="auto",
-        token=os.getenv("HF_TOKEN"),
     )
-
-    model, tokenizer = accelerator.prepare(model, tokenizer)
 
     return model, tokenizer

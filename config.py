@@ -1,5 +1,5 @@
-DEFAULT_MODEL_ID = "meta-llama/Meta-Llama-3-70B-Instruct"
-DEFAULT_INTERFACE_MODEL_ID = "meta-llama/Meta-Llama-3-8B-Instruct"
+DEFAULT_MODEL_ID = "Meta-Llama-3-70B-Instruct"
+DEFAULT_INTERFACE_MODEL_ID = "NumbersStation/nsql-llama-2-7B"
 DEFAULT_KIND = "json"
 DEFAULT_TEMPERATURE = 0.6
 DEFAULT_TOP_P = 0.95

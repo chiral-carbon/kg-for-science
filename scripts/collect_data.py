@@ -13,7 +13,7 @@ from tqdm import tqdm
 @click.option(
     "--search_query", default="astro-ph", help="Search query for arXiv papers"
 )
-@click.option("--max_results", default=1000, help="Maximum number of results to fetch")
+@click.option("--max_results", default=None, help="Maximum number of results to fetch")
 @click.option(
     "--sort_by",
     type=click.Choice(["relevance", "last_updated_date", "submitted_date"]),
@@ -46,7 +46,7 @@ def main(search_query, max_results, sort_by, sort_order, out_file, annotations_f
         click.echo("No new results to save.")
         return
 
-    data_dir = "data/valid"
+    data_dir = "data/physics"
     os.makedirs(data_dir, exist_ok=True)
     if out_file is None:
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")

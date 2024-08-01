@@ -45,7 +45,6 @@ from src.utils.utils import (
 )
 
 
-# TODO: add batching to run data parallely using DDP after committing single data run
 # TODO: run new data also with sweeps -> save data from all the different sweeps and compare
 # TODO: save predictions at abstract + sentence level (not just sentence level)
 SAVE_INTERVAL = DEFAULT_SAVE_INTERVAL
@@ -157,6 +156,11 @@ def main(kind, runtype, data, sweep, sweep_config, load_best_config):
     np.random.seed(1)
     torch.manual_seed(2)
     if torch.cuda.is_available():
+        logging.info(
+            "Using {} {} GPUs".format(
+                torch.cuda.device_count(), torch.cuda.get_device_name()
+            )
+        )
         torch.cuda.empty_cache()
         torch.cuda.manual_seed_all(3)
         torch.backends.cudnn.deterministic = True

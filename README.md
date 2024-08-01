@@ -15,15 +15,11 @@ cd kg-for-science
 ```
 Create a conda or virtual environment:
 ```
-conda create --name kg4s python=3.11
+conda env create -f environment.yml
 ```
 Activate the environment:
 ```
 conda activate kg4s
-```
-Install the dependencies:
-```
-pip install -r requirements.txt
 ```
 ~~Download the spacy model for paragraph splitting:~~
 ~~python -m spacy download en_core_web_sm~~

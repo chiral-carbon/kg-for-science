@@ -165,3 +165,62 @@ def generate_prediction(
     prediction_response = tokenizer.decode(response, skip_special_tokens=True)
 
     return prediction_response
+
+
+def batch_generate_prediction(
+    model,
+    tokenizer,
+    prefix: str,
+    input_ids: torch.Tensor,
+    kind: str,
+    system_prompt: str = "You are an assistant who tags papers according to given schema and "
+    "only returns the tagged phrases in the format as provided in the examples "
+    "without repeating anything else.",
+    temperature: float = DEFAULT_TEMPERATURE,
+    top_p: float = DEFAULT_TOP_P,
+    max_new_tokens: int = 1200,
+    batch_size: int = 1,
+    device: torch.device = torch.device("cuda" if torch.cuda.is_available() else "cpu"),
+) -> List[str]:
+    all_predictions = []
+
+    # Prepare system message
+    system_message = {"role": "system", "content": system_prompt}
+
+    for i in range(0, input_ids.size(0), batch_size):
+        batch_input_ids = input_ids[i : i + batch_size]
+
+        batch_messages = [
+            [
+                system_message,
+                {
+                    "role": "user",
+                    "content": prefix + tokenizer.decode(ids, skip_special_tokens=True),
+                },
+            ]
+            for ids in batch_input_ids
+        ]
+
+        batch_input_ids = tokenizer.apply_chat_template(
+            batch_messages, return_tensors="pt", padding=True, truncation=True
+        ).to(device)
+
+        with torch.no_grad():
+            outputs = model.generate(
+                batch_input_ids,
+                max_new_tokens=max_new_tokens,
+                do_sample=True,
+                temperature=temperature,
+                top_p=top_p,
+                pad_token_id=tokenizer.pad_token_id,
+                attention_mask=batch_input_ids.ne(tokenizer.pad_token_id),
+            )
+
+        for output in outputs:
+            response = output[batch_input_ids.size(1) :]
+            prediction_response = tokenizer.decode(response, skip_special_tokens=True)
+            all_predictions.append(prediction_response)
+
+        torch.cuda.empty_cache()
+
+    return all_predictions
