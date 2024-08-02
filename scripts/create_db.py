@@ -20,7 +20,7 @@ class ArxivDatabase:
         self.is_db_empty = True
         self.paper_table = """CREATE TABLE IF NOT EXISTS papers
                         (paper_id TEXT PRIMARY KEY, abstract TEXT, authors TEXT, 
-                        primary_category TEXT, url TEXT, sentence_count INTEGER)"""
+                        primary_category TEXT, url TEXT, updated_on TEXT, sentence_count INTEGER)"""
         self.pred_table = """CREATE TABLE IF NOT EXISTS predictions
                         (id INTEGER PRIMARY KEY AUTOINCREMENT, paper_id TEXT, sentence_index INTEGER, 
                         tag_type TEXT, concept TEXT,
@@ -61,13 +61,14 @@ class ArxivDatabase:
                 )
                 papers_info.append((paper["id"], sentence_count))
                 self.cursor.execute(
-                    """INSERT OR REPLACE INTO papers VALUES (?, ?, ?, ?, ?, ?)""",
+                    """INSERT OR REPLACE INTO papers VALUES (?, ?, ?, ?, ?, ?, ?)""",
                     (
                         paper["id"],
                         paper["abstract"],
                         json.dumps(paper["authors"]),
                         json.dumps(paper["primary_category"]),
                         json.dumps(paper["url"]),
+                        json.dumps(paper["updated"]),
                         sentence_count,
                     ),
                 )
