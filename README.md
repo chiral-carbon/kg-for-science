@@ -1,10 +1,12 @@
-# KG For Science
+# Mapping the Data Landscape For Generalizable Scientific Models
 
-This is a WIP that builds knowledge graphs to extract structured information from scientific publications, datasets and articles. 
+This is a WIP that builds a knowledge base to store structured information extracted from scientific publications, datasets and articles using LLMs. 
 
-We want to cover all of "science", and perform semantic search and interact with the tool, and be able to perform RAG. 
+We want to cover all of "science", and perform semantic search and interact with the tool. 
 
-We use Llama-3 70B for structured information extraction. 
+This tool helps us identify the gaps where current foundation models lack coverage and where they can generalize well. It also helps us discover overlaps of methods used across different fields, that can help facilitate in building more unified foundation models for science. 
+
+We use the Llama-3-70B-Instruct model for structured information extraction. 
 
 ## Installation 
 
@@ -26,11 +28,12 @@ conda activate kg4s
 
 Set up code formatting and pre-commit hooks:
 ```
-black .
 pre-commit install
 ```
 
 ## Running the tool
+
+### Downloading new data from arXiv on which to run LLM-based extractions: 
 
 1. Run `scripts/collect_data.py` to download papers for arXiv:
 ```
@@ -76,24 +79,29 @@ The current best performance on the dev set:
 | avg_time_per_sentence | 4.0315 | 2.7584 |
 | total_time | 463.6508 | 317.2468 |
 
-3. To create a SQLite3 database of the predictions, run:
+### To create a SQLite3 database of the predictions, run:
 ```
 python scripts/create_db.py --data_path <path to the jsonl file with data> --predictions_path <path to the predictions.json file>
 ```
-this creates a database in the `tables` directory.
+This creates a database in the `tables` directory. 
 ```
 Usage: create_db.py [OPTIONS]
 
 Options:
   --data_path TEXT         Path to the data file containing the papers
                            information.
-  --predictions_path TEXT  Path to the predictions file.
+  --pred_path TEXT         Path to the predictions file.
   --db_name TEXT           Name of the database to create.
   --force                  Force overwrite if database already exists
   --help                   Show this message and exit.
   ```
 
-4. To run a SQL query search over the created database as a Gradio interface, run:
+All current databases are in the ```tables``` directory which can be downloaded and loaded with ```sqlite3``` to run queries on your own terminal. 
+```
+sqlite3 tables/<table_name>
+```
+
+### To run a Gradio interface for SQL query search over the created database, run:
 ```
 python scripts/run_db_interface.py
 ```
@@ -103,7 +111,9 @@ python scripts/run_db_interface.py
 - Nomic AI's Atlas has beautiful and interactive visualizations and also provides an embedding API for visualizing knowledge graphs | [Site](https://atlas.nomic.ai/) | [GitHub](https://github.com/nomic-ai/nomic)
 - Instagraph is a good starting point for KG viz. They generate the knowldge graph (nodes and edges) given a knowledge base using GPT 3.5 | [Site](https://instagraph.ai) | [GitHub](https://github.com/yoheinakajima/instagraph)
 - The Monarch Initiative has a neat interface for phenotype/gene/disease knowledge discovery | [Site](https://next.monarchinitiative.org) | [GitHub](https://github.com/monarch-initiative)
+- PaperQA: LLM Chain for answering questions from documents with citations | [GitHub](https://github.com/whitead/paper-qa)
 
 ### Research Papers
 - Knowledge Graph in Astronomical Research with Large Language Models: Quantifying Driving Forces in Interdisciplinary Scientific Discovery | [arXiv](https://arxiv.org/pdf/2406.01391)
 - Graph of Thoughts: Solving Elaborate Problems with Large Language Models | [arXiv](https://arxiv.org/pdf/2308.09687)
+- Bring Your Own KG: Self-Supervised Program Synthesis for Zero-Shot KGQA | [arXiv](https://arxiv.org/pdf/2311.07850)
