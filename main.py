@@ -45,8 +45,6 @@ from src.utils.utils import (
 )
 
 
-# TODO: run new data also with sweeps -> save data from all the different sweeps and compare
-# TODO: save predictions at abstract + sentence level (not just sentence level)
 SAVE_INTERVAL = DEFAULT_SAVE_INTERVAL
 RES_DIR = DEFAULT_RES_DIR
 LOG_DIR = DEFAULT_LOG_DIR
