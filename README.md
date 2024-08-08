@@ -1,9 +1,3 @@
----
-title: git_config_-global_credential.helper_store
-app_file: scripts/run_db_interface.py
-sdk: gradio
-sdk_version: 4.40.0
----
 # Mapping the Data Landscape For Generalizable Scientific Models
 
 This is a WIP that builds a knowledge base to store structured information extracted from scientific publications, datasets and articles using LLMs. 
