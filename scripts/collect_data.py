@@ -13,7 +13,7 @@ from tqdm import tqdm
 @click.option(
     "--search_query", default="astro-ph", help="Search query for arXiv papers"
 )
-@click.option("--max_results", default=None, help="Maximum number of results to fetch")
+@click.option("--max_results", default=1000, help="Maximum number of results to fetch")
 @click.option(
     "--sort_by",
     type=click.Choice(["relevance", "last_updated_date", "submitted_date"]),
@@ -26,13 +26,20 @@ from tqdm import tqdm
     default="desc",
     help="Sort order (ascending or descending)",
 )
+@click.option(
+    "--out_dir",
+    default=None,
+    help="Output directory for the fetched data",
+)
 @click.option("--out_file", default=None, help="Output file name")
 @click.option(
     "--annotations_file",
-    default="data/human_annotations.jsonl",
+    default="data/manual/human_annotations.jsonl",
     help="File with manual annotations that is reserved",
 )
-def main(search_query, max_results, sort_by, sort_order, out_file, annotations_file):
+def main(
+    search_query, max_results, sort_by, sort_order, out_dir, out_file, annotations_file
+):
     annotations = []
     with open(annotations_file, "r") as f:
         for line in f:
@@ -46,7 +53,7 @@ def main(search_query, max_results, sort_by, sort_order, out_file, annotations_f
         click.echo("No new results to save.")
         return
 
-    data_dir = "data/physics"
+    data_dir = os.path.join("data", "raw", out_dir)
     os.makedirs(data_dir, exist_ok=True)
     if out_file is None:
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")

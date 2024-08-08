@@ -6,9 +6,10 @@ DEFAULT_TOP_P = 0.95
 DEFAULT_FEW_SHOT_NUM = 3
 DEFAULT_FEW_SHOT_SELECTION = "random"
 DEFAULT_SAVE_INTERVAL = 3
-DEFAULT_RES_DIR = "results"
+DEFAULT_RES_DIR = "data/results"
 DEFAULT_LOG_DIR = "logs"
-DEFAULT_TABLES_DIR = "tables"
+DEFAULT_TABLES_DIR = "data/databases"
+
 canned_queries = [
     (
         "Modalities in Physics and Astronomy papers",

@@ -45,11 +45,6 @@ from src.utils.utils import (
 )
 
 
-SAVE_INTERVAL = DEFAULT_SAVE_INTERVAL
-RES_DIR = DEFAULT_RES_DIR
-LOG_DIR = DEFAULT_LOG_DIR
-
-
 @click.command()
 @click.option(
     "--kind",
@@ -134,15 +129,17 @@ def main(kind, runtype, data, sweep, sweep_config, load_best_config):
     )
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     out_dir_path = f"{runtype}_{few_shot_selection}_{kind}_{uuid}_{timestamp}"
-    os.makedirs(os.path.join(RES_DIR, out_dir_path), exist_ok=True)
-    os.makedirs(os.path.join(RES_DIR, out_dir_path, LOG_DIR), exist_ok=True)
+    os.makedirs(os.path.join(DEFAULT_RES_DIR, out_dir_path), exist_ok=True)
+    os.makedirs(
+        os.path.join(DEFAULT_RES_DIR, out_dir_path, DEFAULT_LOG_DIR), exist_ok=True
+    )
 
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s - %(levelname)s - %(message)s",
         handlers=[
             logging.FileHandler(
-                os.path.join(RES_DIR, out_dir_path, LOG_DIR, f"log.txt")
+                os.path.join(DEFAULT_RES_DIR, out_dir_path, DEFAULT_LOG_DIR, f"log.txt")
             ),
             logging.StreamHandler(),
         ],
@@ -167,12 +164,12 @@ def main(kind, runtype, data, sweep, sweep_config, load_best_config):
 
     # load the schema
     logging.info("loading schema and data...")
-    with open("src/schema.json", "r") as f:
+    with open("data/manual/schema.json", "r") as f:
         schema = json.load(f)
 
     # load the data
     examples = []
-    with open("data/human_annotations.jsonl", "r") as f:
+    with open("data/manual/human_annotations.jsonl", "r") as f:
         for line in f:
             examples.append(json.loads(line))
 
@@ -287,7 +284,7 @@ def main(kind, runtype, data, sweep, sweep_config, load_best_config):
             logging.info(f"Predicted Response:\n{predicted_response}\n")
             logging.info(f"Predicted Tag:\n{pred}\n")
 
-        if (i + 1) % SAVE_INTERVAL == 0:
+        if (i + 1) % DEFAULT_SAVE_INTERVAL == 0:
             if runtype == "eval":
                 metrics = compute_metrics(
                     running_time,
@@ -350,7 +347,7 @@ def main(kind, runtype, data, sweep, sweep_config, load_best_config):
         )
         save_best_config(metrics, config)
 
-    logger.info(f"Results saved in: {os.path.join(RES_DIR, out_dir_path)}")
+    logger.info(f"Results saved in: {os.path.join(DEFAULT_RES_DIR, out_dir_path)}")
 
 
 if __name__ == "__main__":
