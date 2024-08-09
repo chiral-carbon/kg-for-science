@@ -1,4 +1,4 @@
-name: Run Python script
+name: Deploy to Hugging Face Spaces
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,12 +18,31 @@ jobs:
       with:
         python-version: '3.11'
 
-    - name: Install Gradio
-      run: python -m pip install gradio
-
-    - name: Deploy to Spaces
-      env:
-        HF_TOKEN: ${{ secrets.hf_token }}
+    - name: Install dependencies
       run: |
-        python -c "import huggingface_hub; huggingface_hub.login(token='$HF_TOKEN', add_to_git_credential=True)"
-        gradio deploy
+        python -m pip install --upgrade pip
+        pip install gradio huggingface_hub
+
+    - name: Deploy to Hugging Face Spaces
+      env:
+        HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      run: |
+        python - <<EOF
+        from huggingface_hub import HfApi
+        import sys
+        sys.path.append('scripts')
+        from run_db_interface import demo
+        
+        api = HfApi()
+        api.create_repo(
+            repo_id="your-username/your-space-name",
+            repo_type="space",
+            space_sdk="gradio",
+            token="$HF_TOKEN"
+        )
+        
+        demo.deploy(
+            repo_id="abby101/xurveyor-0",
+            hf_token="$HF_TOKEN",
+        )
+        EOF
