@@ -1,9 +1,3 @@
----
-title: git_config_-global_credential.helper_store
-app_file: scripts/run_db_interface.py
-sdk: gradio
-sdk_version: 4.40.0
----
 # Mapping the Data Landscape For Generalizable Scientific Models
 
 This is a WIP that builds a knowledge base to store structured information extracted from scientific publications, datasets and articles using LLMs. 
@@ -14,25 +8,29 @@ This tool helps us identify the gaps where current foundation models lack covera
 
 We use the Llama-3-70B-Instruct model for structured information extraction. 
 
-<div style="display: flex; justify-content: space-between; gap: 20px;">
-    <figure style="margin: 0; width: 48%;">
-        <img src="misc/eval_pipeline.png" alt="Fig 1" style="width: 100%; height: 300px; object-fit: contain;">
-        <figcaption style="font-size: 0.9em; text-align: center; margin-top: 10px;">
-            Prompt optimization pipeline to maximize precision of the model annotated 
-            predictions by running on manually annotated subset of scientific corpora. 
-            The tagged outputs can be generated as JSON or in a readable format, and be 
-            generated using temperature and nucleus sampling (sweep hyperparams).
-        </figcaption>
-    </figure>
-    <figure style="margin: 0; width: 48%;">
-        <img src="misc/pipeline.png" alt="Fig 2" style="width: 100%; height: 300px; object-fit: contain;">
-        <figcaption style="font-size: 0.9em; text-align: center; margin-top: 10px;">
-            Illustration of the structured prediction pipeline on the full corpus of 
-            scientific papers, which runs optimized prompts and stores the model's 
-            outputs in a SQL db.
-        </figcaption>
-    </figure>
-</div>
+## Workflow
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <img src="misc/eval_pipeline.png" alt="Fig 1" width="100%">
+      <p align="center">
+        <em>Fig 1: Prompt optimization pipeline to maximize precision of the model annotated 
+        predictions by running on manually annotated subset of scientific corpora. The 
+        tagged outputs can be generated as JSON or in a readable format, and be 
+        generated using temperature and nucleus sampling (sweep hyperparams).</em>
+      </p>
+    </td>
+    <td width="50%" valign="top">
+      <img src="misc/pipeline.png" alt="Fig 2" width="100%">
+      <p align="center">
+        <em>Fig 2: Illustration of the structured prediction pipeline on the full corpus of 
+        scientific papers, which runs optimized prompts and stores the model's outputs in 
+        a SQL db.</em>
+      </p>
+    </td>
+  </tr>
+</table>
 
 ## Installation 
 

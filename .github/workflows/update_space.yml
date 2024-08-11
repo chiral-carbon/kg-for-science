@@ -1,4 +1,4 @@
-name: Run Python script
+name: Deploy to Hugging Face Spaces
 
 on:
   push:
@@ -6,23 +6,77 @@ on:
       - main
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v2
+    - name: Set up Conda
+      uses: conda-incubator/setup-miniconda@v2
       with:
-        python-version: '3.9'
+        activate-environment: kg4s
+        environment-file: environment.yml
+        auto-activate-base: false
+        use-mamba: true
 
-    - name: Install Gradio
-      run: python -m pip install gradio
+    - name: Verify Conda installation
+      shell: bash -l {0}
+      run: |
+        conda info
+        conda list
 
-    - name: Log in to Hugging Face
-      run: python -c 'import huggingface_hub; huggingface_hub.login(token="${{ secrets.hf_token }}")'
+    - name: Install huggingface_hub
+      shell: bash -l {0}
+      run: |
+        pip install huggingface_hub
+        pip list
 
-    - name: Deploy to Spaces
-      run: gradio deploy
+    - name: Deploy to Hugging Face Spaces
+      env:
+        HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      shell: bash -l {0}
+      run: |
+        python - <<EOF
+        import os
+        import sys
+        from huggingface_hub import HfApi
+        
+        print("Python script started")
+        print(f"Python version: {sys.version}")
+        print(f"Current working directory: {os.getcwd()}")
+        print(f"Contents of current directory: {os.listdir('.')}")
+        
+        sys.path.append('scripts')
+        print(f"Updated sys.path: {sys.path}")
+        print(f"Contents of scripts directory: {os.listdir('scripts')}")
+        
+        print("Importing demo from run_db_interface")
+        from run_db_interface import demo
+        print("Demo imported successfully")
+        
+        api = HfApi()
+        print("HfApi initialized")
+        
+        print("Creating/verifying repository")
+        api.create_repo(
+            repo_id="abby101/xurveyor-0",
+            repo_type="space",
+            space_sdk="gradio",
+            token="$HF_TOKEN"
+        )
+        print("Repository created or verified")
+        
+        print("Starting deployment")
+        demo.deploy(
+            repo_id="abby101/xurveyor-0",
+            hf_token="$HF_TOKEN",
+        )
+        print("Deployment completed")
+        EOF
+
+    - name: Check Hugging Face Space
+      run: |
+        echo "Deployment process completed. Please check your Hugging Face Space at https://huggingface.co/spaces/abby101/xurveyor-0"
+        echo "If the space is not updated, please check the logs above for any errors."
