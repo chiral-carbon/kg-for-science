@@ -1,12 +1,20 @@
 # Mapping the Data Landscape For Generalizable Scientific Models
 
-This is a WIP that builds a knowledge base to store structured information extracted from scientific publications, datasets and articles using LLMs. 
+We introduce a method to build a knowledge base to store structured information extracted from scientific publications, datasets and articles by leveraging large language models!
 
-We want to cover all of "science", and perform semantic search and interact with the tool. 
+We want to cover all of "science", and perform semantic search over scientific literature for highly specific knowledge discovery. 
 
-This tool helps us identify the gaps where current foundation models lack coverage and where they can generalize well. It also helps us discover overlaps of methods used across different fields, that can help facilitate in building more unified foundation models for science. 
+This tool helps us to find aggregate information and statistics pertaining to current state of scientific research, identify the gaps where current foundation models lack coverage and where they can generalize well, and helps discover overlaps of methods used across different fields, which can help facilitate in building more unified foundation models for science. 
 
-We use the Llama-3-70B-Instruct model for structured information extraction. 
+### Example Preview: Concept Co-occurrence Connectivity Graph for Astrophysics!
+
+
+
+https://github.com/user-attachments/assets/d0c2c4ac-924d-4ba8-80d5-5c665d910652
+
+
+
+We use the Llama-3-70B-Instruct model with 2 A100 80GB GPUs for structured information extraction. 
 
 ## Workflow
 
@@ -54,7 +62,7 @@ pre-commit install
 
 ## Running the tool
 
-### 1. Download raw data from arXiv
+### On new data: Download raw data from arXiv
 
 Run `scripts/collect_data.py` to download papers for arXiv:
 ```
@@ -66,7 +74,7 @@ These are the default arguments, you can modify them to specify the arxiv channe
 The data is stored in the `data/raw/<out_dir>` directory.
 The `out_dir` is a required argument that creates a new directory in `data/raw` and stores the scraped data in a jsonl file inside `data/raw/<out_dir>`. Refer to the [raw data README](data/raw/README.md) to see how the files are named. 
 
-### 2. Schema and Annotations
+### Schema and Annotations
 
 A schema was prepared by the authors of this project who were also the annotators for a small subset of the downloaded papers. 
 This schema defined tags to extract concepts from the downloaded scientific papers. They were used as reference by the annotators when manually creating a small subset of annotated papers. They were also passed as instructions to the language model to tag the papers. A set of consituency tests were also defined to resolve ambiguity and guide the annotation process. 
@@ -74,7 +82,7 @@ This schema defined tags to extract concepts from the downloaded scientific pape
 The schema, tests and manual_annotations are stored in the `data/manual` directory. Refer to the [README on manual work](data/manual/README.md) done for the extraction process.
 
 
-### 3. Run the model on downloaded arXiv raw data
+### Run the model on downloaded arXiv raw data
 
 Run `main.py` to call Llama-3 70B Instruct and perform extractions on the downloaded papers from any of the `data/raw` folders using Slurm jobs:
 ```
@@ -100,7 +108,7 @@ Options:
   --help                   Show this message and exit.
 ```
 
-We use 2 A100 80GB GPUs to perform extractions with Llama-3 70B. You can choose a different model if limited by memory and GPU.  Since we ust the Huggingface transformers API and the model hosted on Huggingface, any new model you want to load should be hosted there as well. 
+If bound by compute resources and unable to use the Llama-3-70B-Instruct model, you can choose a different model if limited by memory and GPU.  Since we use the Huggingface transformers library and the model hosted on Huggingface, any new model you want to load should be hosted there as well. 
 
 **Note:** In the eval mode when running on the dev set, the model was run for different sweeps for prompt optimization. The sweep details are stored in `sweep_config.json`.
 
@@ -123,7 +131,7 @@ The current best performance on the dev set:
 
 The processed data gets stored in `data/raw/results` under new directories named with arguments passed to `main.py`. Refer to the [results README](data/results/README.md) for inspecting the files that each directory stores and the naming convention.
 
-### 4. To create a SQLite3 database of the predictions, run:
+### Create a SQLite3 database of the predictions
 ```
 python scripts/create_db.py --data_path <path to the jsonl file with data> --pred_path <path to the predictions.json file>
 ```
@@ -141,11 +149,16 @@ Options:
   ```
 
 All current databases are in the ```data/databases``` directory which can be downloaded and loaded with ```sqlite3``` to run queries on your own terminal. Refer to the [databases README](data/databases/README.md) for information on the tables that constitute each of the databases.
+
+## Run an existing DB
+
+To run an existing database in the `databases` directory:
+
 ```
 sqlite3 databases/<table_name>
 ```
 
-### 5. To launch a Gradio interface for SQL query search over the created databases, run:
+## Launch a Gradio interface for SQL query search over the created databases
 ```
 gradio scripts/run_db_interface.py
 ```
