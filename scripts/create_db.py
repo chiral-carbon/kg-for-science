@@ -198,8 +198,6 @@ def check_db_exists(db_path):
     "--force", is_flag=True, help="Force overwrite if database already exists"
 )
 def main(data_path, pred_path, db_name, force):
-    set_env_vars()
-
     ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
     tables_dir = os.path.join(ROOT, DEFAULT_TABLES_DIR)
     os.makedirs(tables_dir, exist_ok=True)

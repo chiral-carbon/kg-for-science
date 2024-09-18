@@ -165,7 +165,7 @@ requirements.txt
 wandb/
 slurm_logs/
 notebooks/
-misc/polymathic_data_files
-misc/notes
-misc/test.ipynb
+assets/polymathic_data_files
+assets/notes
+assets/test.ipynb
 Meta-Llama-3-70B-Instruct/

@@ -21,7 +21,7 @@ We use the Llama-3-70B-Instruct model with 2 A100 80GB GPUs for structured infor
 <table>
   <tr>
     <td width="50%" valign="top">
-      <img src="misc/eval_pipeline.png" alt="Fig 1" width="100%">
+      <img src="assets/eval_pipeline.png" alt="Fig 1" width="100%">
       <p align="center">
         <em>Fig 1: Prompt optimization pipeline to maximize precision of the model annotated 
         predictions by running on manually annotated subset of scientific corpora. The 
@@ -30,7 +30,7 @@ We use the Llama-3-70B-Instruct model with 2 A100 80GB GPUs for structured infor
       </p>
     </td>
     <td width="50%" valign="top">
-      <img src="misc/pipeline.png" alt="Fig 2" width="100%">
+      <img src="assets/pipeline.png" alt="Fig 2" width="100%">
       <p align="center">
         <em>Fig 2: Illustration of the structured prediction pipeline on the full corpus of 
         scientific papers, which runs optimized prompts and stores the model's outputs in 
@@ -59,10 +59,26 @@ Set up code formatting and pre-commit hooks:
 ```
 pre-commit install
 ```
+## Quickstart
 
-## Running the tool
+### Run an existing DB
 
-### On new data: Download raw data from arXiv
+To run an existing database in the `databases` directory, run SQLite in your terminal in the project root:
+
+```
+sqlite3 databases/<table_name>
+```
+
+### Launch a Gradio interface for SQL query search over the created databases
+```
+gradio scripts/run_db_interface.py
+```
+The interface shows all the created databases in the `data/databases` directory which can be loaded and queried.
+
+
+## Running the tool on new data 
+
+### Download raw data from arXiv
 
 Run `scripts/collect_data.py` to download papers for arXiv:
 ```
@@ -149,20 +165,6 @@ Options:
   ```
 
 All current databases are in the ```data/databases``` directory which can be downloaded and loaded with ```sqlite3``` to run queries on your own terminal. Refer to the [databases README](data/databases/README.md) for information on the tables that constitute each of the databases.
-
-## Run an existing DB
-
-To run an existing database in the `databases` directory:
-
-```
-sqlite3 databases/<table_name>
-```
-
-## Launch a Gradio interface for SQL query search over the created databases
-```
-gradio scripts/run_db_interface.py
-```
-The interface shows all the created databases in the `data/databases` directory which can be loaded and queried.
 
 
 ## Relevant Resources for Reference

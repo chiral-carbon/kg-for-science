@@ -281,7 +281,6 @@ with gr.Blocks(css=css) as demo:
     )
 
 if __name__ == "__main__":
-    set_env_vars()
     demo.launch(share=True)
 
 demo.launch()
