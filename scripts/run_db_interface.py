@@ -7,13 +7,14 @@ import plotly.graph_objects as go
 import re
 import sys
 import sqlite3
+import time
 
 from plotly.subplots import make_subplots
 from tabulate import tabulate
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from create_db import ArxivDatabase
 from config import DEFAULT_TABLES_DIR, DEFAULT_INTERFACE_MODEL_ID, canned_queries
+from scripts.create_db import ArxivDatabase
 from src.utils.utils import set_env_vars
 
 db = None
@@ -216,71 +217,85 @@ css = """
 }
 """
 
-with gr.Blocks(css=css) as demo:
-    gr.Markdown("# ArXiv Database Query Interface")
 
-    with gr.Row():
-        db_dropdown = gr.Dropdown(
-            choices=get_available_databases(), label="Select Database"
+def launch():
+    with gr.Blocks(css=css) as demo:
+        gr.Markdown("# ArXiv Database Query Interface")
+
+        with gr.Row():
+            db_dropdown = gr.Dropdown(
+                choices=get_available_databases(), label="Select Database"
+            )
+            load_db_btn = gr.Button("Load Database", size="sm")
+            status = gr.Textbox(label="Status")
+
+        with gr.Row():
+            graph_output = gr.Plot(label="Concept Co-occurrence Graph")
+
+        with gr.Row():
+            wrap_checkbox = gr.Checkbox(label="Wrap long text", value=False)
+            canned_query_dropdown = gr.Dropdown(
+                choices=[q[0] for q in canned_queries], label="Select Query", scale=3
+            )
+            limit_input = gr.Number(
+                label="Limit", value=10000, step=1, minimum=1, scale=1
+            )
+            selected_query = gr.Textbox(
+                label="Selected Query",
+                interactive=False,
+                scale=2,
+                show_label=True,
+                show_copy_button=True,
+                elem_id="selected-query",
+            )
+            canned_query_submit = gr.Button("Submit Query", size="sm", scale=1)
+
+        with gr.Row():
+            sql_input = gr.Textbox(label="Custom SQL Query", lines=3, scale=4)
+            sql_submit = gr.Button("Submit Custom SQL", size="sm", scale=1)
+
+        output = gr.DataFrame(label="Results", wrap=True)
+
+        def update_selected_query(query_description):
+            for desc, sql in canned_queries:
+                if desc == query_description:
+                    return sql
+            return ""
+
+        def submit_canned_query(query_description, limit, wrap):
+            for desc, sql in canned_queries:
+                if desc == query_description:
+                    return query_db(sql, True, limit, wrap)
+            return pd.DataFrame({"Error": ["Selected query not found."]})
+
+        load_db_btn.click(
+            load_database_with_graphs,
+            inputs=[db_dropdown],
+            outputs=[status, graph_output],
         )
-        load_db_btn = gr.Button("Load Database", size="sm")
-        status = gr.Textbox(label="Status")
-
-    with gr.Row():
-        graph_output = gr.Plot(label="Concept Co-occurrence Graph")
-
-    with gr.Row():
-        wrap_checkbox = gr.Checkbox(label="Wrap long text", value=False)
-        canned_query_dropdown = gr.Dropdown(
-            choices=[q[0] for q in canned_queries], label="Select Query", scale=3
+        canned_query_dropdown.change(
+            update_selected_query,
+            inputs=[canned_query_dropdown],
+            outputs=[selected_query],
         )
-        limit_input = gr.Number(label="Limit", value=10000, step=1, minimum=1, scale=1)
-        selected_query = gr.Textbox(
-            label="Selected Query",
-            interactive=False,
-            scale=2,
-            show_label=True,
-            show_copy_button=True,
-            elem_id="selected-query",
+        canned_query_submit.click(
+            submit_canned_query,
+            inputs=[canned_query_dropdown, limit_input, wrap_checkbox],
+            outputs=output,
         )
-        canned_query_submit = gr.Button("Submit Query", size="sm", scale=1)
+        sql_submit.click(
+            query_db,
+            inputs=[sql_input, gr.Checkbox(value=True), limit_input, wrap_checkbox],
+            outputs=output,
+        )
 
-    with gr.Row():
-        sql_input = gr.Textbox(label="Custom SQL Query", lines=3, scale=4)
-        sql_submit = gr.Button("Submit Custom SQL", size="sm", scale=1)
-
-    output = gr.DataFrame(label="Results", wrap=True)
-
-    def update_selected_query(query_description):
-        for desc, sql in canned_queries:
-            if desc == query_description:
-                return sql
-        return ""
-
-    def submit_canned_query(query_description, limit, wrap):
-        for desc, sql in canned_queries:
-            if desc == query_description:
-                return query_db(sql, True, limit, wrap)
-        return pd.DataFrame({"Error": ["Selected query not found."]})
-
-    load_db_btn.click(
-        load_database_with_graphs, inputs=[db_dropdown], outputs=[status, graph_output]
+    print("Launching Gradio app...", flush=True)
+    demo.launch(share=True)
+    print(
+        "Gradio app launched. If you don't see a URL above, there might be network restrictions.",
+        flush=True,
     )
-    canned_query_dropdown.change(
-        update_selected_query, inputs=[canned_query_dropdown], outputs=[selected_query]
-    )
-    canned_query_submit.click(
-        submit_canned_query,
-        inputs=[canned_query_dropdown, limit_input, wrap_checkbox],
-        outputs=output,
-    )
-    sql_submit.click(
-        query_db,
-        inputs=[sql_input, gr.Checkbox(value=True), limit_input, wrap_checkbox],
-        outputs=output,
-    )
+
 
 if __name__ == "__main__":
-    demo.launch(share=True)
-
-demo.launch()
+    launch()
