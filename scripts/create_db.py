@@ -12,8 +12,9 @@ from src.utils.utils import load_model_and_tokenizer, set_env_vars
 
 class ArxivDatabase:
     def __init__(self, db_path, model_id=None):
-        self.conn = sqlite3.connect(db_path)
-        self.cursor = self.conn.cursor()
+        self.conn = None
+        self.cursor = None
+        self.db_path = db_path
         self.model_id = model_id if model_id else DEFAULT_INTERFACE_MODEL_ID
         self.model = None
         self.tokenizer = None
@@ -26,13 +27,24 @@ class ArxivDatabase:
                         tag_type TEXT, concept TEXT,
                         FOREIGN KEY (paper_id) REFERENCES papers(paper_id))"""
 
+    # def init_db(self):
+    #     self.cursor.execute(self.paper_table)
+    #     self.cursor.execute(self.pred_table)
+
+    #     print("Database and tables created successfully.")
+    #     self.is_db_empty = self.is_empty()
+
     def init_db(self):
+        self.conn = sqlite3.connect(self.db_path)
+        self.cursor = self.conn.cursor()
         self.cursor.execute(self.paper_table)
-
         self.cursor.execute(self.pred_table)
-
-        print("Database and tables created successfully.")
+        self.conn.commit()
         self.is_db_empty = self.is_empty()
+        if not self.is_db_empty:
+            print("Database already contains data.")
+        else:
+            print("Database and tables created successfully.")
 
     def is_empty(self):
         try:
@@ -41,6 +53,9 @@ class ArxivDatabase:
             return count == 0
         except sqlite3.OperationalError:
             return True
+
+    def get_connection(self):
+        return sqlite3.connect(self.conn.path)
 
     def populate_db(self, data_path, pred_path):
         papers_info = self._insert_papers(data_path)

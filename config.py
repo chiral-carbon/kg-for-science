@@ -10,6 +10,20 @@ DEFAULT_RES_DIR = "data/results"
 DEFAULT_LOG_DIR = "logs"
 DEFAULT_TABLES_DIR = "data/databases"
 
+COOCCURRENCE_QUERY = """
+    WITH concept_pairs AS (
+    SELECT p1.concept AS concept1, p2.concept AS concept2, p1.paper_id, p1.tag_type
+    FROM predictions p1
+    JOIN predictions p2 ON p1.paper_id = p2.paper_id AND p1.concept < p2.concept
+    WHERE p1.tag_type = p2.tag_type
+    )
+    SELECT concept1, concept2, tag_type, COUNT(DISTINCT paper_id) AS co_occurrences
+    FROM concept_pairs
+    GROUP BY concept1, concept2, tag_type
+    HAVING co_occurrences > 5
+    ORDER BY co_occurrences DESC;
+    """
+
 canned_queries = [
     (
         "Modalities in Physics and Astronomy papers",
@@ -56,22 +70,21 @@ canned_queries = [
         "Trends in objects of study in Cosmology since 2019",
         """
     
-    SELECT 
-        substr(papers.updated_on, 2, 7) as year_month, 
-        predictions.concept as object, 
-        COUNT(DISTINCT papers.paper_id) as paper_count 
-    FROM 
-        papers 
-    JOIN 
-        predictions ON papers.paper_id = predictions.paper_id 
-    WHERE 
-        papers.primary_category LIKE '%astro-ph.CO%' 
-        AND predictions.tag_type = 'object' 
-        AND CAST(SUBSTR(papers.updated_on, 2, 4) AS INTEGER) >= 2019
-    GROUP BY 
-        year_month, object 
-    ORDER BY 
-        year_month DESC, paper_count DESC
+        SELECT 
+            substr(papers.updated_on, 2, 4) as year,  
+            predictions.concept as object, 
+            COUNT(DISTINCT papers.paper_id) as paper_count 
+        FROM 
+            papers 
+        JOIN 
+            predictions ON papers.paper_id = predictions.paper_id 
+        WHERE 
+            predictions.tag_type = 'object' 
+            AND CAST(SUBSTR(papers.updated_on, 2, 4) AS INTEGER) >= 2019
+        GROUP BY 
+            year, object
+        ORDER BY 
+            year DESC, paper_count DESC;  
     """,
     ),
     (

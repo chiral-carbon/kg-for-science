@@ -8,16 +8,39 @@ import re
 import sys
 import sqlite3
 import time
+import uvicorn
 
+from fastapi import FastAPI, Request
+from fastapi.middleware.cors import CORSMiddleware
+from gradio.routes import mount_gradio_app
 from plotly.subplots import make_subplots
 from tabulate import tabulate
+from typing import Optional
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from config import DEFAULT_TABLES_DIR, DEFAULT_INTERFACE_MODEL_ID, canned_queries
+from config import (
+    DEFAULT_TABLES_DIR,
+    DEFAULT_INTERFACE_MODEL_ID,
+    COOCCURRENCE_QUERY,
+    canned_queries,
+)
 from scripts.create_db import ArxivDatabase
 from src.utils.utils import set_env_vars
 
-db = None
+set_env_vars()
+
+app = FastAPI()
+
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+db: Optional[ArxivDatabase] = None
 
 
 def truncate_or_wrap_text(text, max_length=50, wrap=False):
@@ -38,19 +61,6 @@ def get_available_databases():
     ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
     tables_dir = os.path.join(ROOT, DEFAULT_TABLES_DIR)
     return [f for f in os.listdir(tables_dir) if f.endswith(".db")]
-
-
-# def load_database(db_name, model_id=None):
-#     global db
-#     ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-#     db_path = os.path.join(ROOT, DEFAULT_TABLES_DIR, db_name)
-#     if not os.path.exists(db_path):
-#         return f"Database {db_name} does not exist."
-#     db = ArxivDatabase(db_path, model_id)
-#     db.init_db()  # Ensure tables are created
-#     if db.is_db_empty:
-#         return f"Database loaded from {db_path}, but it is empty. Please populate it with data."
-#     return f"Database loaded from {db_path}"
 
 
 def query_db(query, is_sql, limit=None, wrap=False):
@@ -93,25 +103,14 @@ def query_db(query, is_sql, limit=None, wrap=False):
         return df
 
     except sqlite3.Error as e:
-        return pd.DataFrame({"Error": [str(e)]})
+        return pd.DataFrame({"Error": [f"Database error: {str(e)}"]})
+    except Exception as e:
+        return pd.DataFrame({"Error": [f"An unexpected error occurred: {str(e)}"]})
 
 
 def generate_concept_cooccurrence_graph(db_path):
     conn = sqlite3.connect(db_path)
-    query = """
-    WITH concept_pairs AS (
-        SELECT p1.concept AS concept1, p2.concept AS concept2, p1.paper_id
-        FROM predictions p1
-        JOIN predictions p2 ON p1.paper_id = p2.paper_id AND p1.concept < p2.concept
-        WHERE p1.tag_type = 'object' AND p2.tag_type = 'object'
-    )
-    SELECT concept1, concept2, COUNT(DISTINCT paper_id) AS co_occurrences
-    FROM concept_pairs
-    GROUP BY concept1, concept2
-    HAVING co_occurrences > 5
-    ORDER BY co_occurrences DESC;
-    """
-    df = pd.read_sql_query(query, conn)
+    df = pd.read_sql_query(COOCCURRENCE_QUERY, conn)
     conn.close()
 
     G = nx.from_pandas_edgelist(df, "concept1", "concept2", "co_occurrences")
@@ -188,23 +187,44 @@ def generate_concept_cooccurrence_graph(db_path):
     return fig
 
 
+# def load_database_with_graphs(db_name):
+#     global db
+#     ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+#     db_path = os.path.join(ROOT, DEFAULT_TABLES_DIR, db_name)
+#     if not os.path.exists(db_path):
+#         return f"Database {db_name} does not exist.", None
+#     db = ArxivDatabase(db_path)
+#     db.init_db()
+#     if db.is_db_empty:
+#         return (
+#             f"Database loaded from {db_path}, but it is empty. Please populate it with data.",
+#             None,
+#         )
+
+#     # Generate graph
+#     graph = generate_concept_cooccurrence_graph(db_path)
+
+#     return f"Database loaded from {db_path}", graph
+
+
 def load_database_with_graphs(db_name):
     global db
     ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
     db_path = os.path.join(ROOT, DEFAULT_TABLES_DIR, db_name)
     if not os.path.exists(db_path):
         return f"Database {db_name} does not exist.", None
-    db = ArxivDatabase(db_path)
-    db.init_db()
+
+    if db is None or db.db_path != db_path:
+        db = ArxivDatabase(db_path)
+        db.init_db()
+
     if db.is_db_empty:
         return (
             f"Database loaded from {db_path}, but it is empty. Please populate it with data.",
             None,
         )
 
-    # Generate graph
     graph = generate_concept_cooccurrence_graph(db_path)
-
     return f"Database loaded from {db_path}", graph
 
 
@@ -218,7 +238,7 @@ css = """
 """
 
 
-def launch():
+def create_demo():
     with gr.Blocks(css=css) as demo:
         gr.Markdown("# ArXiv Database Query Interface")
 
@@ -289,13 +309,52 @@ def launch():
             outputs=output,
         )
 
-    print("Launching Gradio app...", flush=True)
-    demo.launch(share=True)
-    print(
-        "Gradio app launched. If you don't see a URL above, there might be network restrictions.",
-        flush=True,
-    )
+    return demo
+
+
+demo = create_demo()
+
+
+def close_db():
+    global db
+    if db is not None:
+        db.close()
+        db = None
+
+
+# def launch():
+#     print("Launching Gradio app...", flush=True)
+#     demo.launch(share=True)
+#     print(
+#         "Gradio app launched. If you don't see a URL above, there might be network restrictions.",
+#         flush=True,
+#     )
+
+#     close_db()
+
+# if __name__ == "__main__":
+#     launch()
+
+# Mount the Gradio app
+app = mount_gradio_app(app, demo, path="/")
+
+
+@app.exception_handler(Exception)
+async def exception_handler(request: Request, exc: Exception):
+    print(f"An error occurred: {str(exc)}")
+    return {"error": str(exc)}
+
+
+@app.on_event("startup")
+async def startup_event():
+    # You can initialize the database here if needed
+    pass
+
+
+@app.on_event("shutdown")
+async def shutdown_event():
+    close_db()
 
 
 if __name__ == "__main__":
-    launch()
+    uvicorn.run(app, host="0.0.0.0", port=7860)

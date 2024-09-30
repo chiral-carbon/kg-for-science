@@ -1,9 +1,3 @@
----
-title: surveyor-0
-app_file: scripts/run_db_interface.py
-sdk: gradio
-sdk_version: 4.40.0
----
 # Mapping the Data Landscape For Generalizable Scientific Models
 
 We introduce a method to build a knowledge base to store structured information extracted from scientific publications, datasets and articles by leveraging large language models!
@@ -77,8 +71,10 @@ sqlite3 databases/<table_name>
 
 ### Launch a Gradio interface for SQL query search over the created databases
 ```
-python app.py
+python scripts/run_db_interface.py
 ```
+Note: An improved version of the graph interface was created in the file `scripts/run_db_interface_improved.py`
+
 The interface shows all the created databases in the `data/databases` directory which can be loaded and queried.
 
 
