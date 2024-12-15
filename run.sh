@@ -20,5 +20,5 @@ echo "$(nvidia-smi --query-gpu=gpu_name --format=csv,noheader | sort | uniq -c |
 
 cd /mnt/home/adas1/projects/knowledge-graph/kg-for-science
 conda init
-conda activate kg4s
+conda activate kg4s_env
 python main.py --runtype new --data data/the_well --kind readable

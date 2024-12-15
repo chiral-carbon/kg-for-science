@@ -39,7 +39,6 @@ from src.eval.metrics import classify_predictions, compute_metrics
 from src.utils.utils import (
     load_model_and_tokenizer,
     save_results,
-    set_env_vars,
     load_sweep_config,
     save_best_config,
 )
@@ -159,8 +158,6 @@ def main(kind, runtype, data, sweep, sweep_config, load_best_config):
         torch.cuda.empty_cache()
         torch.cuda.manual_seed_all(3)
         torch.backends.cudnn.deterministic = True
-
-    set_env_vars()
 
     # load the schema
     logging.info("loading schema and data...")

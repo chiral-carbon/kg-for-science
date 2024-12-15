@@ -7,7 +7,7 @@ import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from config import DEFAULT_TABLES_DIR, DEFAULT_MODEL_ID, DEFAULT_INTERFACE_MODEL_ID
 from src.processing.generate import get_sentences, generate_prediction
-from src.utils.utils import load_model_and_tokenizer, set_env_vars
+from src.utils.utils import load_model_and_tokenizer
 
 
 class ArxivDatabase:

@@ -20,4 +20,4 @@ singularity exec \
 	--overlay $overlay:ro \
 	$img \
        	/bin/bash -c \
-	"source /ext3/env.sh; cd /scratch/ad6489/kg-for-science; conda activate kg4s; python scripts/run_db_interface_func.py"
+	"source /ext3/env.sh; cd /scratch/ad6489/kg-for-science; conda activate kg4s_env; python scripts/run_db_interface_func.py"

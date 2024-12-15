@@ -1,3 +1,9 @@
+---
+title: surveyor-0
+app_file: app.py
+sdk: gradio
+sdk_version: 4.40.0
+---
 # Mapping the Data Landscape For Generalizable Scientific Models
 
 We introduce a method to build a knowledge base to store structured information extracted from scientific publications, datasets and articles by leveraging large language models!
@@ -53,7 +59,7 @@ conda env create -f environment.yml
 ```
 Activate the environment:
 ```
-conda activate kg4s
+conda activate kg4s_env
 ```
 Set up code formatting and pre-commit hooks:
 ```
@@ -61,19 +67,28 @@ pre-commit install
 ```
 ## Quickstart
 
-### Run an existing DB
+### 1. Run an existing DB
 
 To run an existing database in the `databases` directory, run SQLite in your terminal in the project root:
 
 ```
-sqlite3 databases/<table_name>
+sqlite3 data/databases/<table_name>
 ```
 
-### Launch a Gradio interface for SQL query search over the created databases
+### 2. View the force-directed graphs
+
+From the project root, run:
 ```
-python scripts/run_db_interface.py
+python -m http.server 8000
 ```
-Note: An improved version of the graph interface was created in the file `scripts/run_db_interface_improved.py`
+This will serve the `graph.html` file at `http://localhost:8000/graph.html`, where you can view the force-directed graphs by selecting a filename from the dropdown menu.
+
+
+### 3. Launch a Gradio interface for SQL query search over the created databases
+```
+python app.py
+```
+Note: `app.py` launches an improved version of the graph interface stored in `scripts/run_db_interface.py`. Previously we used `scripts/run_db_interface_basic.py`.
 
 The interface shows all the created databases in the `data/databases` directory which can be loaded and queried.
 
@@ -102,12 +117,18 @@ The schema, tests and manual_annotations are stored in the `data/manual` directo
 
 ### Run the model on downloaded arXiv raw data
 
-Run `main.py` to call Llama-3 70B Instruct and perform extractions on the downloaded papers from any of the `data/raw` folders using Slurm jobs:
+Export Huggingface API key:
+```
+export HF_TOKEN=<your_huggingface_api_key>
+```
+
+Run `main.py` to call Llama-3-70B-Instruct and perform extractions on the downloaded papers from any of the `data/raw` folders using Slurm jobs:
 ```
 sbatch run.sh
 ```
+
 You can modify the arguments passed to `main.py` as required:
-- evaluation on dev set or extracting data with a new test dataset,
+- evaluation on dev set or extracting data with a new dataset,
 - specifying the format of model responses (json or readable).
 
 You can view the options by running `python main.py --help`:

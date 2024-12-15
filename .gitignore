@@ -2,6 +2,9 @@
 __pycache__/
 *.py[cod]
 *$py.class
+*.pyc
+*.pyo
+*.pyd
 
 # C extensions
 *.so
@@ -161,7 +164,7 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 main_batch.py
-requirements.txt
+# requirements.txt
 wandb/
 slurm_logs/
 notebooks/
@@ -169,3 +172,5 @@ assets/polymathic_data_files
 assets/notes
 assets/test.ipynb
 Meta-Llama-3-70B-Instruct/
+*.db-journal
+.DS_Store

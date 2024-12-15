@@ -94,14 +94,6 @@ def save_best_config(metrics, config):
         json.dump(best_config, f, indent=4)
 
 
-def set_env_vars(fname="access_keys.json"):
-    with open(fname) as f:
-        keys = json.load(f)
-        for key in keys:
-            if key not in os.environ.keys():
-                os.environ[key.upper()] = keys[key]
-
-
 def load_sweep_config(config_path="sweep_config.json"):
     with open(config_path, "r") as f:
         return json.load(f)
