@@ -14,7 +14,10 @@ r = Rake()
 
 parser = argparse.ArgumentParser(description='Compare RAKE and LLM extractions for randomly selected papers from each domain')
 parser.add_argument('-n', type=int, default=3, help='Number of papers to analyze')
+parser.add_argument('-s', type=int, default=1, help='Seed for random number generator')
 args = parser.parse_args()
+
+random.seed(args.s)
 
 # Database paths - adjusted for your environment
 database_paths = {
