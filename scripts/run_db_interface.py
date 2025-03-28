@@ -10,6 +10,8 @@ import sqlite3
 import tempfile
 import time
 import uvicorn
+import logging
+from datetime import datetime
 
 from contextlib import contextmanager
 from fastapi import FastAPI, Request
@@ -47,6 +49,30 @@ db: Optional[ArxivDatabase] = None
 last_update_time = 0
 update_delay = 0.5  # Delay in seconds
 
+# Set up logging configuration
+def setup_logging():
+    # Create logs directory if it doesn't exist
+    log_dir = os.path.join(ROOT_DIR, "logs")
+    os.makedirs(log_dir, exist_ok=True)
+    
+    # Create a log file with timestamp
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    log_file = os.path.join(log_dir, f"surveyor_{timestamp}.log")
+    
+    # Configure logging
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+        handlers=[
+            logging.FileHandler(log_file),
+            logging.StreamHandler()  # Also print to console
+        ]
+    )
+    
+    return logging.getLogger(__name__)
+
+# Initialize logger at the top of the file
+logger = setup_logging()
 
 def truncate_or_wrap_text(text, max_length=50, wrap=False):
     """Truncate text to a maximum length, adding ellipsis if truncated, or wrap if specified."""
