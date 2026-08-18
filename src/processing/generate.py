@@ -179,7 +179,7 @@ def batch_generate_prediction(
     temperature: float = DEFAULT_TEMPERATURE,
     top_p: float = DEFAULT_TOP_P,
     max_new_tokens: int = 1200,
-    batch_size: int = 1,
+    batch_size: int = 8,
     device: torch.device = torch.device("cuda" if torch.cuda.is_available() else "cpu"),
 ) -> List[str]:
     all_predictions = []
